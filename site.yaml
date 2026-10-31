@@ -1,0 +1,44 @@
+# Site-wide settings for hypordigital.com: the header, the footer and the
+# business details search engines read. Every page uses these.
+#
+# Edit anything here or in a page's YAML (index.yaml, privacy.yaml,
+# keyword-research.yaml), then rebuild every page with:
+#   python build_site.py
+# Text fields can hold simple HTML such as <strong> and <a href="...">.
+
+name: HyporDigital
+url: https://hypordigital.com
+email: service@hypordigital.com
+linkedin: https://www.linkedin.com/in/charles-sadler
+founder: Charles Sadler
+locality: Lake Bluff
+region: IL
+country: US
+logo: logo.png
+og_image: og.png
+
+header:
+  nav:
+  - [Services, index.html#services]
+  - [Work, index.html#work]
+  - [Systems, index.html#systems]
+  - [About, index.html#about]
+  cta: [Start a project, "mailto:service@hypordigital.com?subject=New%20project"]
+
+footer:
+  line: © 2026 HyporDigital · Lake Bluff, Illinois · Serving brands across the US
+  links:
+  - [Privacy policy, privacy.html]
+  - [Keyword Research app, keyword-research.html]
+  - [LinkedIn, https://www.linkedin.com/in/charles-sadler]
+  - [service@hypordigital.com, mailto:service@hypordigital.com]
+
+# What the business is, for search engines (schema.org ProfessionalService).
+services_offered:
+- Google Ads management
+- Amazon and marketplace advertising
+- Paid social advertising
+- Shopify and WooCommerce website builds
+- Conversion rate optimization
+- Ecommerce growth consulting
+- Marketing analytics and automation

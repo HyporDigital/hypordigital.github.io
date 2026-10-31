@@ -1,0 +1,280 @@
+# The homepage. Edit any text, then run:  python build_site.py
+# Blocks run top to bottom in the order listed under `blocks:`.
+
+file: index.html
+title: HyporDigital | Ecommerce & Performance Marketing Agency
+description: >-
+  HyporDigital grows ecommerce brands with paid media, marketplaces, Shopify
+  websites and connected marketing systems. Based near Chicago, serving the US.
+
+blocks:
+
+- hero:
+    kicker: Ecommerce growth agency · Chicago area
+    title: We grow brands that <em>sell online</em>
+    sub: >-
+      HyporDigital runs the ads, builds the stores and connects the data behind
+      ecommerce and consumer brands. One partner covers paid media, marketplaces,
+      websites, automation and brand building, so nothing falls between agencies.
+    actions:
+    - [Start a project, "mailto:service@hypordigital.com?subject=New%20project", primary]
+    - [See our work, "#work", ""]
+    meta: Serving brands across the US
+    aside:
+      label: What we run for brands
+      items:
+      - Paid search, social & retail media
+      - Amazon, Walmart & marketplace growth
+      - Shopify & ecommerce websites
+      - Data, systems & automation
+      - Brand building & content
+
+- logos:
+    label: Industries we've grown brands in
+    names:
+    - Billiards & game tables
+    - Arcade games
+    - Pickleball
+    - Outdoor games
+    - Sporting goods
+    - Luxury jewelry & watches
+    - Medical & veterinary supply
+    - Outdoor media
+- figures:
+  - ["+223%", "year-over-year ad sales growth on Walmart"]
+  - ["2x+", "Amazon return on ad spend while the budget grew 4x"]
+  - ["800%", "more effective Google Ads on 40% less spend"]
+  - ["+200%", "website traffic after rebuilding a brand's online store"]
+
+- services:
+    id: services
+    kicker: What we do
+    title: Everything a growing brand needs from marketing
+    intro: >-
+      Brands usually hire one agency for ads, another for the website and a
+      consultant for the data. We do all three, and we build them to work together.
+    items:
+    - title: Paid media & marketplaces
+      text: >-
+        Campaigns run against the number you care about, whether that's ROAS, cost per
+        acquisition or margin. Budget moves to what's working every week, across search,
+        social, retail media and the marketplaces where your customers already shop.
+      tags: [Google Ads, Performance Max, YouTube, Meta, TikTok, Pinterest, Reddit, Amazon Ads,
+             Amazon DSP, Walmart, Wayfair, Home Depot, Target Roundel, Criteo]
+    - title: Websites & ecommerce
+      text: >-
+        Stores, collection pages and buying guides built to convert the traffic you pay
+        for, then tested and improved after launch. We handle product data and SEO too,
+        so your catalog reads right everywhere it's sold.
+      tags: [Shopify, WooCommerce, Landing pages, Collection pages, Buying guides, CRO,
+             A/B testing, SEO, Product data]
+    - title: Systems & automation
+      text: >-
+        We connect ad platforms, your store, your ERP and inventory into one view, then
+        automate the reporting, monitoring and busywork that eats your team's week.
+      tags: [Data pipelines, Dashboards, ERP & CRM integration, API integrations,
+             Price monitoring, Email automation, AI workflows]
+    - title: Brand & content
+      text: >-
+        Go-to-market plans, brand voice, photo and video direction, and content systems
+        that keep every channel fed, from a product launch to a YouTube series.
+      tags: [Go-to-market, Brand strategy, Photo shoots, Video, Social content,
+             Influencer marketing, Events & sponsorships]
+
+- work:
+    id: work
+    kicker: Our work
+    title: Brands we've helped grow
+    intro: >-
+      From long-established wholesale brands going direct for the first time to brands
+      built from scratch, here's what we've done and what it delivered. Client names are
+      kept confidential.
+    items:
+    - brand: Premium billiards brand
+      category: Pool & game tables · Brand + ecommerce launch
+      headline: Taking a decades-old wholesale brand direct-to-consumer
+      text: >-
+        A brand that had only ever sold through retailers. We repositioned it with a new
+        strategy, personas and product story, then planned its first direct-to-consumer
+        store and wrote the collection pages, buying guides, email automations and product
+        specs behind it. Every launch offer was designed to protect the pricing its retail
+        partners rely on.
+      result: ["2x+", "year-over-year sales for a flagship collection on Wayfair"]
+      tags: [Brand strategy, Shopify, Launch strategy, Buying guides, Email flows, Product data]
+    - brand: Game-table & outdoor-games brand
+      category: Game room & outdoor · Retail media
+      headline: Retail media growth at the biggest US retailers
+      text: >-
+        Air hockey, game tables, dartboards and outdoor games sold through Amazon, Walmart,
+        Wayfair, Target, Home Depot and the warehouse clubs. We run its retail media across
+        Amazon, Walmart, Wayfair, Target and Home Depot, with holiday takeover plans, keyword
+        and competitor targeting, and retailer business reviews built on our own reporting.
+      result: ["+223%", "year-over-year Walmart ad sales over the holiday season"]
+      tags: [Amazon Ads, Walmart, Wayfair, Target, Home Depot, Business reviews]
+    - brand: Arcade-game brand
+      category: Arcade & game room · Go-to-market
+      headline: Go-to-market for a home arcade brand
+      text: >-
+        A go-to-market plan from brand strategy and personas to marketplace merchandising
+        and paid media. A focused ad push on its arcade basketball line returned about 8 to 1
+        on its spend.
+      result: ["+30%", "average monthly sales within three months, with ads driving 46% of them"]
+      tags: [Brand strategy, Go-to-market, Marketplace growth, Retail media]
+    - brand: Pickleball brand
+      category: Pickleball · Brand launch
+      headline: Launching a pickleball brand with a cause behind it
+      text: >-
+        A Shopify launch backed by Google, Meta, TikTok, Amazon and Walmart, at least six
+        influencers and tournament sponsorships. The launch campaign earned 3.3 million
+        impressions, and a ball-recycling program gave the brand a story players care about.
+      result: ["2.2M", "pickleballs kept out of landfills through the brand's recycling program"]
+      tags: [Shopify, Paid social, Influencers, Sponsorships, Cause marketing, Email flows]
+    - brand: Multi-brand sporting goods company
+      category: Sporting goods & game room · Portfolio
+      headline: One ad program and data system across every brand and retailer
+      text: >-
+        The parent company behind several of the brands above. We built the omnichannel ad
+        program, onboarded new retail media networks such as Target and Home Depot, and
+        joined ad performance, product, inventory and revenue into one live view for
+        leadership.
+      result: ["11x", "ROAS across Amazon, Walmart and Wayfair for a full year, with ads driving 43% of total sales"]
+      tags: [Retail media, Amazon DSP, Google Ads, Meta, Data warehouse, Dashboards]
+    - brand: Luxury jeweler
+      category: Jewelry & watches · Ecommerce
+      headline: Better search results on a much smaller budget
+      text: >-
+        We consolidated scattered websites into one ecommerce store, restructured paid
+        search and built customer personas from internal and outside data. We also ran
+        co-op campaigns with luxury watch brands across social, billboards, print and events.
+      result: ["800%", "more effective Google Ads on 40% less spend, and 200% more site traffic"]
+      tags: [Google Ads, Ecommerce platform, Personas, Co-op marketing, Out-of-home]
+    - brand: Medical & veterinary supplier
+      category: Medical supply · B2B
+      headline: A new procurement channel opened from zero
+      text: >-
+        Institutional buyers purchase through procurement marketplaces, so we negotiated
+        the supplier's entry into a new one, built out its listings and ran the channel
+        alongside an ERP and CRM rollout that tied sales, catalog and customer data together.
+      result: ["11%", "of total company revenue from a channel built in under a year"]
+      tags: [Procurement marketplaces, B2B ecommerce, ERP & CRM, Catalog management]
+    - brand: Medical & veterinary store
+      category: Medical supply · Direct-to-consumer
+      headline: Profitable search ads in a heavily regulated category
+      text: >-
+        A consumer store for medical and veterinary products, with a 90,000-product catalog
+        sold on its own site and across Amazon, eBay and Walmart. We built paid search that
+        works within medical-device ad rules and lifecycle email segmented by purchase history.
+      result: ["10:1", "return on Google Ads in the first 12 months"]
+      tags: [Google Ads, Amazon, eBay, Walmart, Lifecycle email, Catalog management]
+    - brand: Outdoor adventure media brand
+      category: Adventure travel & photography · Content brand
+      headline: A content brand built from scratch
+      text: >-
+        An outdoor-adventure brand built from the ground up: brand identity and
+        voice, a documentary-style YouTube series, Shorts for Instagram and TikTok, and
+        an AI-assisted system for research, SEO and cross-channel publishing.
+      tags: [Brand identity, YouTube, Short-form video, SEO, Content systems]
+
+- systems:
+    id: systems
+    kicker: Technical infrastructure
+    title: Systems that connect your marketing
+    intro: >-
+      Good marketing decisions need clean data and fewer manual steps. We design and
+      build the infrastructure that joins your platforms together and keeps it running.
+    items:
+    - title: Unified marketing data
+      text: >-
+        Ad exports from every retailer and platform land in one database with your product,
+        inventory and revenue data, and dashboards show performance and business health in
+        real time.
+      example: Amazon, Walmart & Wayfair ad data · about 1M rows in one model
+    - title: Retailer, 3PL & ERP integrations
+      text: >-
+        Order, ship-notice and inventory feeds between retailers, warehouses, your ERP and CRM,
+        so orders confirm themselves and stock stays accurate everywhere you sell.
+      example: Five retailers connected to two 3PL warehouses
+    - title: Inventory & product data
+      text: >-
+        Stock levels sync from your ERP automatically, with a history of every stockout and
+        restock, and a product database that keeps specs consistent across channels.
+      example: Hourly inventory sync with stockout tracking
+    - title: Price & listing monitoring
+      text: >-
+        Automated checks of live retailer prices and listings against your price sheet
+        and product master, so violations and broken listings surface fast.
+      example: MAP compliance monitored across 12 retailers
+    - title: Lifecycle & email automation
+      text: >-
+        Browse, cart and checkout recovery plus segmented lifecycle flows
+        that keep selling after the first visit.
+      example: 42% of email sales from automated abandonment flows
+    - title: AI research & workflows
+      text: >-
+        Custom AI agents and workflows for brand and competitor research, search-demand
+        analysis, content production and reporting, plus training so your team can use them.
+      example: Brand audits, keyword research & content pipelines
+
+- steps:
+    id: process
+    kicker: How we work
+    title: From first look to steady growth
+    intro: >-
+      Every engagement starts with research, so the plan is built on what's actually
+      happening in your market.
+    items:
+    - title: Research
+      text: >-
+        We audit your brand from the outside: your site, ads, reviews, competitors and
+        how many people search for what you sell.
+    - title: Plan
+      text: >-
+        You get a focused plan with the changes most likely to grow revenue, what each
+        one costs and how we'll measure it.
+    - title: Build and run
+      text: >-
+        We build the campaigns, pages, systems and automations, launch them and manage
+        them day to day.
+    - title: Measure and improve
+      text: >-
+        Reporting is tied to revenue and reviewed with you on a set schedule. What
+        works gets more budget and what doesn't gets cut.
+    note: >-
+      Search-demand research runs on <a href="keyword-research.html">HyporDigital
+      Keyword Research</a>, our keyword research app built on Google Ads Keyword
+      Planner data.
+
+- about:
+    id: about
+    kicker: About HyporDigital
+    title: The depth of an in-house team, without the overhead
+    copy:
+    - >-
+      HyporDigital brings strategy, paid media, web development, data engineering and
+      brand building under one roof. Clients get senior-level attention on their account and one
+      partner accountable for the whole picture.
+    - >-
+      The agency is led by Charles Sadler, a former Chief Operating Officer and marketing
+      director with more than 10 years running ecommerce, paid media and marketplaces
+      for manufacturers, retailers and distributors. That operating background is why
+      our work ties every recommendation to revenue and margin.
+    - >-
+      We pair that experience with our own research, data and automation tools, which
+      lets us move faster and cover more ground for every client.
+    facts:
+    - [Brands grown, "9"]
+    - [Industries, "Sporting goods, luxury retail, medical supply, media"]
+    - [Sales channels managed, "15+"]
+    - [Largest catalog managed, "90,000+ products"]
+    - [Experience, 10+ years]
+    - [Certification, Google AI Essentials]
+
+- cta:
+    id: contact
+    title: Tell us what you're trying to grow
+    text: >-
+      Send a few lines about your brand, where it sells today and what you want next.
+      We'll reply with whether we're a fit and how we'd start.
+    actions:
+    - [Email service@hypordigital.com, "mailto:service@hypordigital.com?subject=New%20project", primary]
+    - [Connect on LinkedIn, "https://www.linkedin.com/in/charles-sadler", ""]

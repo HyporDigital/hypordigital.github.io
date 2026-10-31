@@ -1,0 +1,44 @@
+# The page Google's OAuth consent screen uses to identify the app.
+# Keep the app name identical to the consent screen's App name.
+# Edit any text, then run:  python build_site.py
+
+file: keyword-research.html
+title: HyporDigital Keyword Research | HyporDigital
+description: >-
+  HyporDigital Keyword Research is HyporDigital's internal app for measuring search
+  demand with Google Ads Keyword Planner data.
+heading: HyporDigital Keyword Research
+lede: >-
+  HyporDigital Keyword Research is our internal app for measuring search demand. It
+  shows how many people search for a brand's products, its category and its
+  competitors, so our campaign plans and recommendations start from real numbers.
+
+sections:
+
+- title: What it does
+  body:
+  - >-
+    The app connects to the Google Ads API and retrieves keyword ideas and historical
+    search statistics from Google Ads Keyword Planner: average monthly searches,
+    month-by-month trends, competition and top-of-page bid ranges. We use those
+    figures in brand research, keyword strategy and campaign planning for our clients.
+
+- title: Who uses it
+  body:
+  - >-
+    The app is used only by the HyporDigital team, signed in with Google accounts
+    that have access to our own Google Ads account. It isn't offered to the public and
+    there's no sign-up.
+
+- title: What it can and can't do
+  body:
+  - >-
+    It only reads keyword planning data. It doesn't create, change, pause or delete
+    campaigns, and it doesn't spend money.
+
+- title: Privacy
+  body:
+  - >-
+    How the app handles Google user data is described in our
+    <a href="privacy.html">privacy policy</a>, including how to remove its access.
+    Questions go to <a href="mailto:service@hypordigital.com">service@hypordigital.com</a>.

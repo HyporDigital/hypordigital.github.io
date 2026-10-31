@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en-US"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HyporDigital | Ecommerce &amp; Performance Marketing Agency</title>
+<meta name="description" content="HyporDigital grows ecommerce brands with paid media, marketplaces, Shopify websites and connected marketing systems. Based near Chicago, serving the US.">
+<link rel="canonical" href="https://hypordigital.com/">
+<meta name="theme-color" content="#0E1210">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HyporDigital">
+<meta property="og:title" content="HyporDigital | Ecommerce &amp; Performance Marketing Agency">
+<meta property="og:description" content="HyporDigital grows ecommerce brands with paid media, marketplaces, Shopify websites and connected marketing systems. Based near Chicago, serving the US.">
+<meta property="og:url" content="https://hypordigital.com/">
+<meta property="og:image" content="https://hypordigital.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+/* hypordigital.com — site stylesheet. Inlined into every page by build_site.py.
+   Same family as the house report style (dark ground, squared, serif against
+   grotesque, mono for figures), laid out as a marketing site instead of a report. */
+
+:root{
+  --ground:#0E1210;
+  --surface:#151A17;
+  --surface-2:#1B221E;
+  --hairline:#26302A;
+  --hairline-hi:#3A443C;
+  --ink:#ECEAE3;
+  --ink-2:#A3ACA4;
+  --ink-3:#6E786F;
+  --accent:#E2794A;       /* ember: calls to action, the contact band */
+  --accent-ink:#1A0F09;
+  --accent-2:#9FC26B;     /* lichen: small markers */
+  --accent-3:#72A9C6;     /* glacier: figures */
+  --display:'Instrument Serif',Georgia,'Times New Roman',serif;
+  --body:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --data:'JetBrains Mono',ui-monospace,Consolas,monospace;
+  --r:2px;
+  --wrap:1160px;
+  --pad:clamp(16px,4vw,40px);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--hairline-hi)}
+a:hover{color:var(--accent);border-color:var(--accent)}
+h1,h2,h3{margin:0;font-weight:400;text-wrap:balance}
+p{margin:0 0 14px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.kicker{font-family:var(--data);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 18px}
+.kicker::before{content:"";display:inline-block;width:18px;height:1px;background:currentColor;
+  vertical-align:middle;margin-right:10px}
+
+/* header */
+.top{position:sticky;top:0;z-index:10;background:rgba(14,18,16,.92);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--hairline)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:68px}
+.brand{display:flex;align-items:center;gap:11px;border:0;font-family:var(--data);font-size:13px;
+  font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.brand img{width:30px;height:30px;border-radius:var(--r)}
+.top nav{display:flex;align-items:center;gap:26px}
+.top nav a{border:0;font-size:14px;color:var(--ink-2)}
+.top nav a:hover{color:var(--ink)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border-radius:var(--r);
+  font-family:var(--data);font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  border:1px solid var(--hairline-hi);color:var(--ink);transition:background .15s,color .15s,border-color .15s}
+.btn:hover{border-color:var(--ink);color:var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{background:#EE8C5E;border-color:#EE8C5E;color:var(--accent-ink)}
+.btn.small{padding:9px 14px;font-size:11.5px}
+.btn .arrow{font-family:var(--body);font-size:15px;line-height:1}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+
+/* hero */
+.hero{padding:clamp(64px,10vw,128px) 0 clamp(48px,7vw,88px);border-bottom:1px solid var(--hairline)}
+.hero h1{font-family:var(--display);font-size:clamp(44px,7.4vw,92px);line-height:1;
+  letter-spacing:-.015em;max-width:15ch}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .sub{font-size:clamp(17px,1.6vw,20px);color:var(--ink-2);max-width:60ch;margin:28px 0 36px}
+.hero .meta{margin-top:40px;font-family:var(--data);font-size:11.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3)}
+
+/* hero with a side list */
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:48px 72px;align-items:end}
+.hero-aside{border-top:1px solid var(--hairline-hi);padding-top:6px}
+.hero-aside .label,.logos .label{font-family:var(--data);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-3);margin:0 0 6px}
+.hero-aside ul{margin:0;padding:0;list-style:none}
+.hero-aside li{display:flex;gap:16px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--hairline);
+  font-size:17px}
+.hero-aside .n{font-family:var(--data);font-size:11px;color:var(--accent)}
+
+/* brand strip */
+.logos{border-bottom:1px solid var(--hairline);padding:30px 0 34px}
+.logos ul{margin:14px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:12px 40px}
+.logos li{font-family:var(--display);font-size:clamp(21px,2.2vw,27px);color:var(--ink-2);
+  white-space:nowrap}
+
+/* portfolio */
+.work{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--hairline);
+  border:1px solid var(--hairline)}
+.work-card{background:var(--ground);padding:32px 30px 30px;display:flex;flex-direction:column}
+.work-card .cat{font-family:var(--data);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent-2);margin:0 0 14px}
+.work-card h3{font-family:var(--display);font-size:clamp(30px,3vw,40px);line-height:1.05}
+.work-card .headline{color:var(--ink);font-size:17px;font-weight:500;margin:12px 0 12px}
+.work-card p{color:var(--ink-2)}
+.work-card .result{display:flex;align-items:baseline;gap:14px;margin:6px 0 4px;padding-top:16px;
+  border-top:1px solid var(--hairline)}
+.work-card .result .v{font-family:var(--data);font-size:30px;font-weight:500;letter-spacing:-.04em;
+  color:var(--accent-3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.work-card .result .k{font-size:14px;color:var(--ink-2)}
+.work-card .tags{margin-top:auto;padding-top:18px}
+.work-card:last-child:nth-child(odd){grid-column:1/-1}
+.work-card:last-child:nth-child(odd) > p{max-width:72ch}
+
+/* systems */
+.systems-band{background:var(--surface)}
+.systems{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--hairline-hi)}
+.system{padding:28px 28px 30px 0;border-bottom:1px solid var(--hairline)}
+.system:not(:nth-child(3n)){border-right:1px solid var(--hairline)}
+.system:not(:nth-child(3n+1)){padding-left:28px}
+.system h3{font-family:var(--body);font-size:18px;font-weight:600;margin-bottom:10px}
+.system h3::before{content:"";display:inline-block;width:8px;height:8px;background:var(--accent-3);
+  margin-right:12px;vertical-align:middle}
+.system p{color:var(--ink-2);font-size:15px}
+.system .eg{font-family:var(--data);font-size:12px;color:var(--ink-3);margin:0;letter-spacing:.01em}
+
+/* figures */
+.figures{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--hairline)}
+.figure{padding:34px 24px 30px 0;border-right:1px solid var(--hairline)}
+.figure + .figure{padding-left:24px}
+.figure:last-child{border-right:0}
+.figure .v{font-family:var(--data);font-size:clamp(30px,3.4vw,44px);font-weight:500;letter-spacing:-.04em;
+  color:var(--accent-3);font-variant-numeric:tabular-nums;line-height:1.05}
+.figure .k{margin-top:10px;font-size:14px;color:var(--ink-2);max-width:26ch}
+
+/* sections */
+.band{padding:clamp(64px,9vw,112px) 0;border-bottom:1px solid var(--hairline)}
+.band-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 64px;
+  align-items:end;margin-bottom:52px}
+.band-head h2{font-family:var(--display);font-size:clamp(34px,4.6vw,58px);line-height:1.04}
+.band-head p{color:var(--ink-2);font-size:17px;margin:0;max-width:52ch}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hairline-hi)}
+.service{padding:30px 22px 34px 0;border-right:1px solid var(--hairline)}
+.service + .service{padding-left:22px}
+.service:last-child{border-right:0}
+.service .n{font-family:var(--data);font-size:12px;color:var(--ink-3);letter-spacing:.1em}
+.service h3{font-family:var(--display);font-size:29px;line-height:1.1;margin:14px 0 14px}
+.service p{color:var(--ink-2)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0;padding:0;list-style:none}
+.tags li{font-family:var(--data);font-size:11px;letter-spacing:.03em;color:var(--ink-2);
+  border:1px solid var(--hairline-hi);border-radius:var(--r);padding:4px 8px}
+
+/* results */
+.cases{border-top:1px solid var(--hairline-hi)}
+.case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:20px 64px;
+  padding:38px 0;border-bottom:1px solid var(--hairline)}
+.case .who{font-family:var(--data);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent-2);line-height:1.7}
+.case .who span{display:block;color:var(--ink-3)}
+.case h3{font-family:var(--display);font-size:clamp(26px,2.6vw,34px);line-height:1.12;margin-bottom:16px}
+.case ul{margin:0;padding:0;list-style:none}
+.case li{position:relative;padding:9px 0 9px 22px;border-top:1px solid var(--hairline);color:var(--ink-2)}
+.case li::before{content:"";position:absolute;left:0;top:20px;width:10px;height:1px;background:var(--accent)}
+.case li strong{color:var(--ink);font-weight:600}
+.note{font-size:13.5px;color:var(--ink-3);margin-top:22px;max-width:80ch}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--hairline-hi);
+  counter-reset:step}
+.step{padding:28px 24px 8px 0;border-right:1px solid var(--hairline)}
+.step + .step{padding-left:24px}
+.step:last-child{border-right:0}
+.step .n{font-family:var(--data);font-size:28px;color:var(--accent);letter-spacing:-.03em}
+.step h3{font-family:var(--body);font-size:18px;font-weight:600;margin:14px 0 10px}
+.step p{color:var(--ink-2);font-size:15px}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:32px 72px}
+.about .copy p{font-size:17px;color:var(--ink-2)}
+.about .copy p:first-child{color:var(--ink);font-size:19px}
+.facts{margin:0;padding:0;list-style:none;border-top:1px solid var(--hairline-hi)}
+.facts li{display:flex;justify-content:space-between;gap:16px;padding:13px 0;
+  border-bottom:1px solid var(--hairline);font-size:14.5px}
+.facts .k{font-family:var(--data);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.facts .v{text-align:right}
+
+/* contact band: the one bold splash */
+.cta{background:var(--accent);color:var(--accent-ink);padding:clamp(64px,9vw,104px) 0}
+.cta h2{font-family:var(--display);font-size:clamp(38px,5.4vw,68px);line-height:1.02;max-width:16ch}
+.cta p{font-size:18px;max-width:56ch;margin:22px 0 32px;color:#3A2014}
+.cta a{color:var(--accent-ink);border-color:rgba(26,15,9,.35)}
+.cta .btn{border-color:var(--accent-ink);color:var(--accent-ink)}
+.cta .btn.primary{background:var(--accent-ink);color:var(--accent)}
+.cta .btn.primary:hover{background:#000;color:#EE8C5E}
+.cta .btn:hover{background:rgba(26,15,9,.08)}
+
+/* long-form pages (privacy, app) */
+.doc{padding:clamp(56px,8vw,96px) 0 clamp(64px,8vw,96px)}
+.doc header{border-bottom:1px solid var(--hairline-hi);padding-bottom:28px;margin-bottom:12px}
+.doc h1{font-family:var(--display);font-size:clamp(40px,6vw,72px);line-height:1.02}
+.doc .lede{font-size:18px;color:var(--ink-2);max-width:64ch;margin:20px 0 0}
+.doc .date{font-family:var(--data);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);margin-top:18px}
+.doc section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:12px 56px;
+  padding:30px 0;border-bottom:1px solid var(--hairline)}
+.doc h2{font-family:var(--body);font-size:17px;font-weight:600;line-height:1.35}
+.doc .body{color:var(--ink-2);max-width:72ch}
+.doc .body strong{color:var(--ink)}
+.doc .body ul{margin:0 0 14px;padding-left:20px}
+.doc .body li{margin-bottom:7px}
+
+/* footer */
+.foot{padding:40px 0 48px;font-size:13.5px;color:var(--ink-3)}
+.foot .wrap{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+.foot .links{display:flex;flex-wrap:wrap;gap:8px 22px}
+.foot a{color:var(--ink-2);border:0}
+.foot a:hover{color:var(--accent)}
+
+/* narrow screens */
+@media (max-width:1100px) and (min-width:901px){
+  .services{grid-template-columns:repeat(2,1fr)}
+  .service:nth-child(2){border-right:0}
+  .service:nth-child(3){padding-left:0}
+  .service:nth-child(n+3){border-top:1px solid var(--hairline)}
+}
+@media (max-width:900px){
+  .top nav a:not(.btn){display:none}
+  .figures{grid-template-columns:repeat(2,1fr)}
+  .figure:nth-child(2){border-right:0}
+  .figure:nth-child(3){padding-left:0}
+  .figure:nth-child(n+3){border-top:1px solid var(--hairline)}
+  .band-head,.about,.case,.doc section,.hero-grid{grid-template-columns:1fr}
+  .work,.systems{grid-template-columns:1fr}
+  .system,.system:not(:nth-child(3n+1)){padding-left:0;padding-right:0;border-right:0}
+  .work-card{padding:26px 20px}
+  .services,.steps{grid-template-columns:1fr}
+  .service,.step,.service + .service,.step + .step{padding-left:0;padding-right:0;border-right:0;
+    border-bottom:1px solid var(--hairline)}
+}
+@media (max-width:480px){
+  .figure,.figure + .figure{padding:24px 12px 22px 0}
+  .figure:nth-child(even){padding-left:14px}
+  .brand span{display:none}
+}
+
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "HyporDigital", "url": "https://hypordigital.com/", "logo": "https://hypordigital.com/logo.png", "image": "https://hypordigital.com/og.png", "email": "service@hypordigital.com", "description": "HyporDigital grows ecommerce brands with paid media, marketplaces, Shopify websites and connected marketing systems. Based near Chicago, serving the US.", "address": {"@type": "PostalAddress", "addressLocality": "Lake Bluff", "addressRegion": "IL", "addressCountry": "US"}, "areaServed": {"@type": "Country", "name": "United States"}, "founder": {"@type": "Person", "name": "Charles Sadler", "sameAs": ["https://www.linkedin.com/in/charles-sadler"]}, "sameAs": ["https://www.linkedin.com/in/charles-sadler"], "knowsAbout": ["Google Ads management", "Amazon and marketplace advertising", "Paid social advertising", "Shopify and WooCommerce website builds", "Conversion rate optimization", "Ecommerce growth consulting", "Marketing analytics and automation"]}</script>
+</head><body>
+<header class="top"><div class="wrap"><a class="brand" href="index.html" aria-label="HyporDigital home"><img src="logo.png" alt="" width="30" height="30"><span>HyporDigital</span></a><nav aria-label="Main"><a class="" href="index.html#services">Services</a><a class="" href="index.html#work">Work</a><a class="" href="index.html#systems">Systems</a><a class="" href="index.html#about">About</a><a class="btn primary small" href="mailto:service@hypordigital.com?subject=New%20project">Start a project<span class="arrow" aria-hidden="true">→</span></a></nav></div></header>
+<main><section class="hero"><div class="wrap hero-grid"><div><p class="kicker">Ecommerce growth agency · Chicago area</p><h1>We grow brands that <em>sell online</em></h1><p class="sub">HyporDigital runs the ads, builds the stores and connects the data behind ecommerce and consumer brands. One partner covers paid media, marketplaces, websites, automation and brand building, so nothing falls between agencies.</p><div class="actions"><a class="btn primary" href="mailto:service@hypordigital.com?subject=New%20project">Start a project<span class="arrow" aria-hidden="true">→</span></a><a class="btn" href="#work">See our work<span class="arrow" aria-hidden="true">→</span></a></div><p class="meta">Serving brands across the US</p></div><aside class="hero-aside"><p class="label">What we run for brands</p><ul><li><span class="n">01</span>Paid search, social & retail media</li><li><span class="n">02</span>Amazon, Walmart & marketplace growth</li><li><span class="n">03</span>Shopify & ecommerce websites</li><li><span class="n">04</span>Data, systems & automation</li><li><span class="n">05</span>Brand building & content</li></ul></aside></div></section><section class="logos" aria-label="Industries we&#x27;ve grown brands in"><div class="wrap"><p class="label">Industries we've grown brands in</p><ul><li>Billiards &amp; game tables</li><li>Arcade games</li><li>Pickleball</li><li>Outdoor games</li><li>Sporting goods</li><li>Luxury jewelry &amp; watches</li><li>Medical &amp; veterinary supply</li><li>Outdoor media</li></ul></div></section><section aria-label="Results at a glance" class="figures-band"><div class="wrap"><div class="figures"><div class="figure"><div class="v">+223%</div><div class="k">year-over-year ad sales growth on Walmart</div></div><div class="figure"><div class="v">2x+</div><div class="k">Amazon return on ad spend while the budget grew 4x</div></div><div class="figure"><div class="v">800%</div><div class="k">more effective Google Ads on 40% less spend</div></div><div class="figure"><div class="v">+200%</div><div class="k">website traffic after rebuilding a brand's online store</div></div></div></div></section><section class="band" id="services"><div class="wrap"><div class="band-head"><div><p class="kicker">What we do</p><h2>Everything a growing brand needs from marketing</h2></div><p>Brands usually hire one agency for ads, another for the website and a consultant for the data. We do all three, and we build them to work together.</p></div><div class="services"><article class="service"><div class="n">01</div><h3>Paid media & marketplaces</h3><p>Campaigns run against the number you care about, whether that's ROAS, cost per acquisition or margin. Budget moves to what's working every week, across search, social, retail media and the marketplaces where your customers already shop.</p><ul class="tags"><li>Google Ads</li><li>Performance Max</li><li>YouTube</li><li>Meta</li><li>TikTok</li><li>Pinterest</li><li>Reddit</li><li>Amazon Ads</li><li>Amazon DSP</li><li>Walmart</li><li>Wayfair</li><li>Home Depot</li><li>Target Roundel</li><li>Criteo</li></ul></article><article class="service"><div class="n">02</div><h3>Websites & ecommerce</h3><p>Stores, collection pages and buying guides built to convert the traffic you pay for, then tested and improved after launch. We handle product data and SEO too, so your catalog reads right everywhere it's sold.</p><ul class="tags"><li>Shopify</li><li>WooCommerce</li><li>Landing pages</li><li>Collection pages</li><li>Buying guides</li><li>CRO</li><li>A/B testing</li><li>SEO</li><li>Product data</li></ul></article><article class="service"><div class="n">03</div><h3>Systems & automation</h3><p>We connect ad platforms, your store, your ERP and inventory into one view, then automate the reporting, monitoring and busywork that eats your team's week.</p><ul class="tags"><li>Data pipelines</li><li>Dashboards</li><li>ERP &amp; CRM integration</li><li>API integrations</li><li>Price monitoring</li><li>Email automation</li><li>AI workflows</li></ul></article><article class="service"><div class="n">04</div><h3>Brand & content</h3><p>Go-to-market plans, brand voice, photo and video direction, and content systems that keep every channel fed, from a product launch to a YouTube series.</p><ul class="tags"><li>Go-to-market</li><li>Brand strategy</li><li>Photo shoots</li><li>Video</li><li>Social content</li><li>Influencer marketing</li><li>Events &amp; sponsorships</li></ul></article></div></div></section><section class="band" id="work"><div class="wrap"><div class="band-head"><div><p class="kicker">Our work</p><h2>Brands we've helped grow</h2></div><p>From long-established wholesale brands going direct for the first time to brands built from scratch, here's what we've done and what it delivered. Client names are kept confidential.</p></div><div class="work"><article class="work-card"><p class="cat">Pool & game tables · Brand + ecommerce launch</p><h3>Premium billiards brand</h3><p class="headline">Taking a decades-old wholesale brand direct-to-consumer</p><p>A brand that had only ever sold through retailers. We repositioned it with a new strategy, personas and product story, then planned its first direct-to-consumer store and wrote the collection pages, buying guides, email automations and product specs behind it. Every launch offer was designed to protect the pricing its retail partners rely on.</p><div class="result"><span class="v">2x+</span><span class="k">year-over-year sales for a flagship collection on Wayfair</span></div><ul class="tags"><li>Brand strategy</li><li>Shopify</li><li>Launch strategy</li><li>Buying guides</li><li>Email flows</li><li>Product data</li></ul></article><article class="work-card"><p class="cat">Game room & outdoor · Retail media</p><h3>Game-table &amp; outdoor-games brand</h3><p class="headline">Retail media growth at the biggest US retailers</p><p>Air hockey, game tables, dartboards and outdoor games sold through Amazon, Walmart, Wayfair, Target, Home Depot and the warehouse clubs. We run its retail media across Amazon, Walmart, Wayfair, Target and Home Depot, with holiday takeover plans, keyword and competitor targeting, and retailer business reviews built on our own reporting.</p><div class="result"><span class="v">+223%</span><span class="k">year-over-year Walmart ad sales over the holiday season</span></div><ul class="tags"><li>Amazon Ads</li><li>Walmart</li><li>Wayfair</li><li>Target</li><li>Home Depot</li><li>Business reviews</li></ul></article><article class="work-card"><p class="cat">Arcade & game room · Go-to-market</p><h3>Arcade-game brand</h3><p class="headline">Go-to-market for a home arcade brand</p><p>A go-to-market plan from brand strategy and personas to marketplace merchandising and paid media. A focused ad push on its arcade basketball line returned about 8 to 1 on its spend.</p><div class="result"><span class="v">+30%</span><span class="k">average monthly sales within three months, with ads driving 46% of them</span></div><ul class="tags"><li>Brand strategy</li><li>Go-to-market</li><li>Marketplace growth</li><li>Retail media</li></ul></article><article class="work-card"><p class="cat">Pickleball · Brand launch</p><h3>Pickleball brand</h3><p class="headline">Launching a pickleball brand with a cause behind it</p><p>A Shopify launch backed by Google, Meta, TikTok, Amazon and Walmart, at least six influencers and tournament sponsorships. The launch campaign earned 3.3 million impressions, and a ball-recycling program gave the brand a story players care about.</p><div class="result"><span class="v">2.2M</span><span class="k">pickleballs kept out of landfills through the brand's recycling program</span></div><ul class="tags"><li>Shopify</li><li>Paid social</li><li>Influencers</li><li>Sponsorships</li><li>Cause marketing</li><li>Email flows</li></ul></article><article class="work-card"><p class="cat">Sporting goods & game room · Portfolio</p><h3>Multi-brand sporting goods company</h3><p class="headline">One ad program and data system across every brand and retailer</p><p>The parent company behind several of the brands above. We built the omnichannel ad program, onboarded new retail media networks such as Target and Home Depot, and joined ad performance, product, inventory and revenue into one live view for leadership.</p><div class="result"><span class="v">11x</span><span class="k">ROAS across Amazon, Walmart and Wayfair for a full year, with ads driving 43% of total sales</span></div><ul class="tags"><li>Retail media</li><li>Amazon DSP</li><li>Google Ads</li><li>Meta</li><li>Data warehouse</li><li>Dashboards</li></ul></article><article class="work-card"><p class="cat">Jewelry & watches · Ecommerce</p><h3>Luxury jeweler</h3><p class="headline">Better search results on a much smaller budget</p><p>We consolidated scattered websites into one ecommerce store, restructured paid search and built customer personas from internal and outside data. We also ran co-op campaigns with luxury watch brands across social, billboards, print and events.</p><div class="result"><span class="v">800%</span><span class="k">more effective Google Ads on 40% less spend, and 200% more site traffic</span></div><ul class="tags"><li>Google Ads</li><li>Ecommerce platform</li><li>Personas</li><li>Co-op marketing</li><li>Out-of-home</li></ul></article><article class="work-card"><p class="cat">Medical supply · B2B</p><h3>Medical &amp; veterinary supplier</h3><p class="headline">A new procurement channel opened from zero</p><p>Institutional buyers purchase through procurement marketplaces, so we negotiated the supplier's entry into a new one, built out its listings and ran the channel alongside an ERP and CRM rollout that tied sales, catalog and customer data together.</p><div class="result"><span class="v">11%</span><span class="k">of total company revenue from a channel built in under a year</span></div><ul class="tags"><li>Procurement marketplaces</li><li>B2B ecommerce</li><li>ERP &amp; CRM</li><li>Catalog management</li></ul></article><article class="work-card"><p class="cat">Medical supply · Direct-to-consumer</p><h3>Medical &amp; veterinary store</h3><p class="headline">Profitable search ads in a heavily regulated category</p><p>A consumer store for medical and veterinary products, with a 90,000-product catalog sold on its own site and across Amazon, eBay and Walmart. We built paid search that works within medical-device ad rules and lifecycle email segmented by purchase history.</p><div class="result"><span class="v">10:1</span><span class="k">return on Google Ads in the first 12 months</span></div><ul class="tags"><li>Google Ads</li><li>Amazon</li><li>eBay</li><li>Walmart</li><li>Lifecycle email</li><li>Catalog management</li></ul></article><article class="work-card"><p class="cat">Adventure travel & photography · Content brand</p><h3>Outdoor adventure media brand</h3><p class="headline">A content brand built from scratch</p><p>An outdoor-adventure brand built from the ground up: brand identity and voice, a documentary-style YouTube series, Shorts for Instagram and TikTok, and an AI-assisted system for research, SEO and cross-channel publishing.</p><ul class="tags"><li>Brand identity</li><li>YouTube</li><li>Short-form video</li><li>SEO</li><li>Content systems</li></ul></article></div></div></section><section class="band systems-band" id="systems"><div class="wrap"><div class="band-head"><div><p class="kicker">Technical infrastructure</p><h2>Systems that connect your marketing</h2></div><p>Good marketing decisions need clean data and fewer manual steps. We design and build the infrastructure that joins your platforms together and keeps it running.</p></div><div class="systems"><article class="system"><h3>Unified marketing data</h3><p>Ad exports from every retailer and platform land in one database with your product, inventory and revenue data, and dashboards show performance and business health in real time.</p><p class="eg">Amazon, Walmart & Wayfair ad data · about 1M rows in one model</p></article><article class="system"><h3>Retailer, 3PL & ERP integrations</h3><p>Order, ship-notice and inventory feeds between retailers, warehouses, your ERP and CRM, so orders confirm themselves and stock stays accurate everywhere you sell.</p><p class="eg">Five retailers connected to two 3PL warehouses</p></article><article class="system"><h3>Inventory & product data</h3><p>Stock levels sync from your ERP automatically, with a history of every stockout and restock, and a product database that keeps specs consistent across channels.</p><p class="eg">Hourly inventory sync with stockout tracking</p></article><article class="system"><h3>Price & listing monitoring</h3><p>Automated checks of live retailer prices and listings against your price sheet and product master, so violations and broken listings surface fast.</p><p class="eg">MAP compliance monitored across 12 retailers</p></article><article class="system"><h3>Lifecycle & email automation</h3><p>Browse, cart and checkout recovery plus segmented lifecycle flows that keep selling after the first visit.</p><p class="eg">42% of email sales from automated abandonment flows</p></article><article class="system"><h3>AI research & workflows</h3><p>Custom AI agents and workflows for brand and competitor research, search-demand analysis, content production and reporting, plus training so your team can use them.</p><p class="eg">Brand audits, keyword research & content pipelines</p></article></div></div></section><section class="band" id="process"><div class="wrap"><div class="band-head"><div><p class="kicker">How we work</p><h2>From first look to steady growth</h2></div><p>Every engagement starts with research, so the plan is built on what's actually happening in your market.</p></div><div class="steps"><article class="step"><div class="n">01</div><h3>Research</h3><p>We audit your brand from the outside: your site, ads, reviews, competitors and how many people search for what you sell.</p></article><article class="step"><div class="n">02</div><h3>Plan</h3><p>You get a focused plan with the changes most likely to grow revenue, what each one costs and how we'll measure it.</p></article><article class="step"><div class="n">03</div><h3>Build and run</h3><p>We build the campaigns, pages, systems and automations, launch them and manage them day to day.</p></article><article class="step"><div class="n">04</div><h3>Measure and improve</h3><p>Reporting is tied to revenue and reviewed with you on a set schedule. What works gets more budget and what doesn't gets cut.</p></article></div><p class="note">Search-demand research runs on <a href="keyword-research.html">HyporDigital Keyword Research</a>, our keyword research app built on Google Ads Keyword Planner data.</p></div></section><section class="band" id="about"><div class="wrap"><div class="band-head"><div><p class="kicker">About HyporDigital</p><h2>The depth of an in-house team, without the overhead</h2></div><span></span></div><div class="about"><div class="copy"><p>HyporDigital brings strategy, paid media, web development, data engineering and brand building under one roof. Clients get senior-level attention on their account and one partner accountable for the whole picture.</p><p>The agency is led by Charles Sadler, a former Chief Operating Officer and marketing director with more than 10 years running ecommerce, paid media and marketplaces for manufacturers, retailers and distributors. That operating background is why our work ties every recommendation to revenue and margin.</p><p>We pair that experience with our own research, data and automation tools, which lets us move faster and cover more ground for every client.</p></div><ul class="facts"><li><span class="k">Brands grown</span><span class="v">9</span></li><li><span class="k">Industries</span><span class="v">Sporting goods, luxury retail, medical supply, media</span></li><li><span class="k">Sales channels managed</span><span class="v">15+</span></li><li><span class="k">Largest catalog managed</span><span class="v">90,000+ products</span></li><li><span class="k">Experience</span><span class="v">10+ years</span></li><li><span class="k">Certification</span><span class="v">Google AI Essentials</span></li></ul></div></div></section><section class="cta" id="contact"><div class="wrap"><h2>Tell us what you're trying to grow</h2><p>Send a few lines about your brand, where it sells today and what you want next. We'll reply with whether we're a fit and how we'd start.</p><div class="actions"><a class="btn primary" href="mailto:service@hypordigital.com?subject=New%20project">Email service@hypordigital.com<span class="arrow" aria-hidden="true">→</span></a><a class="btn" href="https://www.linkedin.com/in/charles-sadler" rel="noopener" target="_blank">Connect on LinkedIn<span class="arrow" aria-hidden="true">→</span></a></div></div></section></main>
+<footer class="foot"><div class="wrap"><span>© 2026 HyporDigital · Lake Bluff, Illinois · Serving brands across the US</span><span class="links"><a class="" href="privacy.html">Privacy policy</a><a class="" href="keyword-research.html">Keyword Research app</a><a class="" href="https://www.linkedin.com/in/charles-sadler" rel="noopener" target="_blank">LinkedIn</a><a class="" href="mailto:service@hypordigital.com">service@hypordigital.com</a></span></div></footer>
+</body></html>

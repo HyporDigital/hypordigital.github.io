@@ -1,0 +1,139 @@
+# The privacy policy. Google's OAuth consent screen links to this page's URL
+# (https://hypordigital.com/privacy.html), so keep the file name.
+# Edit any text, then run:  python build_site.py
+# When the practices change, change `updated:` too.
+
+file: privacy.html
+title: Privacy Policy | HyporDigital
+description: >-
+  How HyporDigital collects, uses, shares and protects personal information on
+  hypordigital.com, in client work and in HyporDigital Keyword Research.
+heading: Privacy policy
+updated: October 31, 2026
+lede: >-
+  This policy explains what personal information HyporDigital collects, how we use
+  and protect it, and the choices you have. It applies to hypordigital.com, to our
+  marketing services and to our HyporDigital Keyword Research app.
+
+sections:
+
+- title: Who we are
+  body:
+  - >-
+    HyporDigital ("HyporDigital," "we," "us" or "our") is a digital marketing agency
+    based in Lake Bluff, Illinois, providing advertising, website and consulting
+    services to businesses in the United States.
+
+- title: Information we collect
+  body:
+  - "<strong>Information you give us.</strong> When you email us, request a proposal or become a client, we collect what you choose to share, such as your name, email address, phone number, company, job title and the details of your project. Clients also give us billing and contact details."
+  - "<strong>Information collected automatically.</strong> Our website doesn't use cookies, analytics or advertising tags. Like any website, the services that host it and deliver its fonts may record technical details such as your IP address, browser type, the page requested and the time of the request. They use these records to deliver the site and keep it secure."
+  - "<strong>Information from other sources.</strong> We may receive business contact details from referrals or from public sources such as company websites and professional networks."
+
+- title: How we use information
+  body:
+  - "We use personal information to:"
+  - - Reply to your questions and requests
+    - Prepare proposals and provide the services we've agreed to
+    - Manage our client relationships, including invoicing and record keeping
+    - Send updates about our work, which you can opt out of at any time
+    - Keep our website, systems and data secure
+    - Meet our legal, tax and accounting obligations
+  - We don't sell personal information, and we don't share it for cross-context behavioral advertising.
+
+- title: How we share information
+  body:
+  - "We share personal information only in these cases:"
+  - - "<strong>Service providers</strong> that help us run the business, such as website hosting, email, cloud storage and accounting. They may use it only to provide their services to us."
+    - "<strong>Legal reasons</strong>, when required by law or legal process, or to protect the rights, property or safety of HyporDigital, our clients or others."
+    - "<strong>Business transfers</strong>, if HyporDigital is involved in a merger, acquisition or sale of assets. We'd tell you before your information became subject to a different policy."
+    - "<strong>With your consent</strong>, or at your direction."
+
+- title: Data we handle for clients
+  body:
+  - >-
+    When we provide services, clients may give us access to their advertising
+    accounts, analytics, ecommerce platforms and customer data. We handle that data
+    on the client's behalf, only to perform the work the client asked for, and under
+    our agreement with them. The client's own privacy policy governs how their
+    customers' data is collected and used. Questions about that data should go to the
+    client first.
+
+- title: Google user data
+  body:
+  - >-
+    HyporDigital Keyword Research is our internal app for measuring search demand.
+    With permission from the person signing in, it connects to the Google Ads API
+    (scope https://www.googleapis.com/auth/adwords) and retrieves keyword ideas and
+    historical search statistics from Google Ads Keyword Planner, such as average
+    monthly searches, monthly trends, competition and bid ranges.
+  - >-
+    We use this data only to research search demand for the brands we work with and
+    to plan campaigns. The app doesn't create, change or delete anything in a Google
+    Ads account. We don't sell Google user data, use it for advertising or share it
+    with anyone except as needed to provide our services or as the law requires.
+    Sign-in credentials are stored encrypted and access is limited to our team.
+  - >-
+    HyporDigital's use and transfer to any other app of information received from
+    Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google
+    API Services User Data Policy</a>, including the Limited Use requirements.
+  - >-
+    Anyone who has signed in can remove the app's access at any time at
+    <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.
+
+- title: How long we keep information
+  body:
+  - >-
+    We keep personal information only as long as we need it for the purpose we
+    collected it for. Client and billing records are kept as long as tax and
+    accounting rules require. When we no longer need information, we delete it or
+    make it anonymous.
+
+- title: How we protect information
+  body:
+  - >-
+    We use reasonable administrative, technical and physical safeguards, including
+    encrypted storage, multi-factor sign-in and access limited to the people who need
+    it. No method of storage or transmission is completely secure, so we can't
+    guarantee absolute security.
+
+- title: Your rights and choices
+  body:
+  - "You can ask us to:"
+  - - Tell you what personal information we hold about you
+    - Correct information that's wrong
+    - Delete your information
+    - Stop sending you marketing emails
+  - >-
+    Depending on the state you live in, such as California, Colorado, Connecticut,
+    Virginia or Texas, you may have additional rights under state privacy law. To
+    make a request, email <a href="mailto:service@hypordigital.com">service@hypordigital.com</a>.
+    We may need to confirm your identity first, and we'll respond within the time the
+    law requires. We won't treat you differently for using these rights.
+
+- title: Children's privacy
+  body:
+  - >-
+    Our website and services are meant for businesses and aren't directed to
+    children under 13. We don't knowingly collect personal information from children.
+    If you believe a child has sent us information, contact us and we'll delete it.
+
+- title: Links to other websites
+  body:
+  - >-
+    Our site may link to websites we don't control, such as LinkedIn. Their privacy
+    practices are governed by their own policies.
+
+- title: Changes to this policy
+  body:
+  - >-
+    We may update this policy from time to time. When we do, we'll change the date at
+    the top of this page. If a change significantly affects how we use your
+    information, we'll take reasonable steps to let you know.
+
+- title: Contact us
+  body:
+  - >-
+    Questions about this policy or your information can go to
+    <a href="mailto:service@hypordigital.com">service@hypordigital.com</a>, or by mail
+    to HyporDigital, Lake Bluff, Illinois 60044.
