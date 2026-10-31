@@ -27,7 +27,7 @@ sections:
 - title: Information we collect
   body:
   - "<strong>Information you give us.</strong> When you email us, request a proposal or become a client, we collect what you choose to share, such as your name, email address, phone number, company, job title and the details of your project. Clients also give us billing and contact details."
-  - "<strong>Information collected automatically.</strong> Our website doesn't use cookies, analytics or advertising tags. Like any website, the services that host it and deliver its fonts may record technical details such as your IP address, browser type, the page requested and the time of the request. They use these records to deliver the site and keep it secure."
+  - "<strong>Information collected automatically.</strong> Our website uses the Google tag from Google Ads, which sets cookies and collects details such as the pages you view, the ad or link that brought you to the site, your IP address, and your browser and device. See <a href=\"#cookies\">Cookies and advertising</a> below. Like any website, the services that host it and deliver its fonts may also record technical details such as your IP address, browser type, the page requested and the time of the request, to deliver the site and keep it secure."
   - "<strong>Information from other sources.</strong> We may receive business contact details from referrals or from public sources such as company websites and professional networks."
 
 - title: How we use information
@@ -39,12 +39,28 @@ sections:
     - Send updates about our work, which you can opt out of at any time
     - Keep our website, systems and data secure
     - Meet our legal, tax and accounting obligations
-  - We don't sell personal information, and we don't share it for cross-context behavioral advertising.
+  - We don't sell personal information for money. Our website's Google tag lets Google show our ads to people who have visited the site, which some state privacy laws treat as "sharing" for targeted advertising. You can opt out as described under <a href="#cookies">Cookies and advertising</a>, or by emailing us.
+
+- title: <span id="cookies"></span>Cookies and advertising
+  body:
+  - >-
+    We use the Google tag from Google Ads to measure how well our ads work, for
+    example whether someone who clicked one of our ads later contacted us, and to
+    show our ads to people who have visited our site while they browse other
+    websites. Google collects and uses this information under its own
+    <a href="https://policies.google.com/privacy">privacy policy</a>. Google explains
+    <a href="https://policies.google.com/technologies/partner-sites">how it uses
+    information from sites that use its services</a>.
+  - "You can limit this at any time:"
+  - - Turn off personalized ads from Google in <a href="https://myadcenter.google.com">My Ad Center</a>
+    - Opt out of interest-based ads from participating companies at <a href="https://optout.aboutads.info">optout.aboutads.info</a>
+    - Block or delete cookies in your browser settings. The site works the same without them.
 
 - title: How we share information
   body:
   - "We share personal information only in these cases:"
   - - "<strong>Service providers</strong> that help us run the business, such as website hosting, email, cloud storage and accounting. They may use it only to provide their services to us."
+    - "<strong>Advertising partners</strong>, namely Google, through the Google tag on our website, as described under <a href=\"#cookies\">Cookies and advertising</a>."
     - "<strong>Legal reasons</strong>, when required by law or legal process, or to protect the rights, property or safety of HyporDigital, our clients or others."
     - "<strong>Business transfers</strong>, if HyporDigital is involved in a merger, acquisition or sale of assets. We'd tell you before your information became subject to a different policy."
     - "<strong>With your consent</strong>, or at your direction."

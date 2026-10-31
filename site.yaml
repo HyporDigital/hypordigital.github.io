@@ -21,6 +21,10 @@ icon: icon.svg
 wordmark: [Hypor, Digital]
 og_image: og.png
 
+# Google tag (Google Ads) loaded on every page. Delete the line to remove the tag.
+# If you remove it, also update the "Cookies and advertising" part of privacy.yaml.
+google_tag: AW-18548236863
+
 header:
   nav:
   - [Services, index.html#services]

@@ -366,6 +366,16 @@ def schema(site, pg) -> str:
     return f'<script type="application/ld+json">{json.dumps(data, ensure_ascii=False)}</script>'
 
 
+def gtag(site) -> str:
+    """The Google tag, placed first in <head> as Google asks."""
+    tid = site.get("google_tag")
+    if not tid:
+        return ""
+    return (f'<script async src="https://www.googletagmanager.com/gtag/js?id={a(tid)}"></script>\n'
+            f"<script>window.dataLayer = window.dataLayer || [];function gtag(){{dataLayer.push(arguments);}}"
+            f"gtag('js', new Date());gtag('config', '{a(tid)}');</script>\n")
+
+
 def page(site, pg, css) -> str:
     url = site["url"]
     path = "" if pg["file"] == "index.html" else pg["file"]
@@ -377,7 +387,7 @@ def page(site, pg, css) -> str:
     ld = schema(site, pg) if pg["file"] == "index.html" else ""
     return f"""<!doctype html>
 <html lang="en-US"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+{gtag(site)}<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{escape(pg["title"])}</title>
 <meta name="description" content="{a(desc)}">
 <link rel="canonical" href="{a(canonical)}">
