@@ -9,6 +9,10 @@ only reads them; it never writes a YAML, so your edits always win.
 Every page comes out self-contained (site.css is inlined). A page that changes
 is moved to Legacy Versions/<stamp>/ before the new one is written. The script
 also writes sitemap.xml and robots.txt.
+
+Icons: any `icon:` in a YAML names one of the ICONS below (ads, web, systems,
+brand, data, link, box, price, mail, ai, table, joystick, ball, store, gem,
+medical, cart, camera, chart, search).
 """
 
 from __future__ import annotations
@@ -28,8 +32,49 @@ STAMP = datetime.now().strftime("%Y-%m-%d_%H%M")
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
          '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600'
-         '&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap">')
+         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?'
+         'family=Bricolage+Grotesque:opsz,wght@12..96,500..800'
+         '&family=Manrope:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap">')
+
+# 24x24 line icons, drawn with stroke="currentColor".
+ICONS = {
+    "ads": '<path d="M4 18V9m6 9V5m6 13v-6m4 6H2"/>',
+    "web": '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/>',
+    "systems": '<circle cx="12" cy="12" r="3"/><circle cx="4" cy="5" r="2"/><circle cx="20" cy="5" r="2"/>'
+               '<circle cx="4" cy="19" r="2"/><circle cx="20" cy="19" r="2"/>'
+               '<path d="M5.5 6.5 9.8 10M18.5 6.5 14.2 10M5.5 17.5l4.3-3.5M18.5 17.5l-4.3-3.5"/>',
+    "brand": '<path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/>',
+    "data": '<ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/>',
+    "link": '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
+    "box": '<path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/>',
+    "price": '<path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.5"/>',
+    "mail": '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>',
+    "ai": '<rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4M10 10h4v4h-4z"/>',
+    "table": '<rect x="2" y="7" width="20" height="9" rx="1.5"/><circle cx="6" cy="11.5" r="1"/>'
+             '<circle cx="15" cy="10" r="1"/><path d="M5 16v4m14-4v4"/>',
+    "joystick": '<circle cx="12" cy="6" r="3"/><path d="M12 9v6"/><rect x="4" y="15" width="16" height="6" rx="2"/>',
+    "ball": '<circle cx="12" cy="12" r="9"/><circle cx="9" cy="8" r=".8"/><circle cx="14" cy="9" r=".8"/>'
+            '<circle cx="8" cy="13" r=".8"/><circle cx="13" cy="14" r=".8"/><circle cx="16.5" cy="13" r=".8"/>'
+            '<circle cx="11" cy="17.5" r=".8"/>',
+    "store": '<path d="M4 9h16l-1.5-5h-13zM5 9v11h14V9"/><path d="M10 20v-6h4v6"/>',
+    "gem": '<path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M9 3l-1 6 4 12 4-12-1-6"/>',
+    "medical": '<rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8m-4-4h8"/>',
+    "cart": '<circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4h11.6L22 7H6.3"/>',
+    "camera": '<path d="M3 8h4l2-3h6l2 3h4v12H3z"/><circle cx="12" cy="13.5" r="3.5"/>',
+    "chart": '<path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-7"/><path d="M16 7h4v4"/>',
+    "search": '<circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/>',
+}
+
+
+def icon(name, cls="ico") -> str:
+    if not name:
+        return ""
+    paths = ICONS.get(name)
+    if paths is None:
+        print(f"  note: no icon named '{name}', left it out")
+        return ""
+    return (f'<svg class="{cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" '
+            f'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{paths}</svg>')
 
 
 def a(s) -> str:
@@ -41,7 +86,8 @@ def link(label, href, cls="") -> str:
     ext = href.startswith("http")
     rel = ' rel="noopener" target="_blank"' if ext else ""
     arrow = '<span class="arrow" aria-hidden="true">→</span>' if "btn" in cls else ""
-    return f'<a class="{cls}" href="{a(href)}"{rel}>{label}{arrow}</a>'
+    klass = f' class="{cls}"' if cls else ""
+    return f'<a{klass} href="{a(href)}"{rel}>{label}{arrow}</a>'
 
 
 def buttons(items) -> str:
@@ -65,75 +111,152 @@ def paras(body) -> str:
 
 
 def head_of(b) -> str:
-    sid = f' id="{a(b["id"])}"' if b.get("id") else ""
-    return sid
+    return f' id="{a(b["id"])}"' if b.get("id") else ""
 
 
-def band_head(b) -> str:
-    intro = f'<p>{b["intro"]}</p>' if b.get("intro") else "<span></span>"
-    return (f'<div class="band-head"><div><p class="kicker">{b["kicker"]}</p>'
-            f'<h2>{b["title"]}</h2></div>{intro}</div>')
+def band_head(b, center=False) -> str:
+    intro = f'<p class="intro">{b["intro"]}</p>' if b.get("intro") else ""
+    cls = "band-head center" if center else "band-head"
+    return (f'<div class="{cls}"><p class="kicker">{b["kicker"]}</p>'
+            f'<h2>{b["title"]}</h2>{intro}</div>')
+
+
+def stat_tiles(results) -> str:
+    tiles = "".join(f'<div class="tile"><span class="v">{escape(str(v))}</span><span class="k">{k}</span></div>'
+                    for v, k in results)
+    return f'<div class="tiles">{tiles}</div>'
 
 
 # ------------------------------------------------------------------ blocks
 def hero(b, site):
     aside = ""
     if b.get("aside"):
-        rows = "".join(f'<li><span class="n">{i:02d}</span>{x}</li>'
-                       for i, x in enumerate(b["aside"]["items"], 1))
-        aside = (f'<aside class="hero-aside"><p class="label">{b["aside"]["label"]}</p>'
-                 f'<ul>{rows}</ul></aside>')
-    return (f'<section class="hero"><div class="wrap hero-grid"><div>'
+        ab = b["aside"]
+        if ab.get("stats"):
+            rows = "".join(f'<li><span class="v">{escape(str(v))}</span><span class="k">{k}</span></li>'
+                           for v, k in ab["stats"])
+            aside = (f'<aside class="hero-card"><p class="label"><span class="dot"></span>{ab["label"]}</p>'
+                     f'<ul>{rows}</ul>'
+                     + (f'<p class="foot-note">{ab["note"]}</p>' if ab.get("note") else "")
+                     + '</aside>')
+        else:
+            rows = "".join(f'<li>{x}</li>' for x in ab["items"])
+            aside = f'<aside class="hero-card"><p class="label">{ab["label"]}</p><ul class="plain">{rows}</ul></aside>'
+    return (f'<section class="hero"><div class="glow" aria-hidden="true"></div>'
+            f'<div class="wrap hero-grid"><div class="hero-copy">'
             f'<p class="kicker">{b["kicker"]}</p><h1>{b["title"]}</h1>'
             f'<p class="sub">{b["sub"]}</p>{buttons(b.get("actions"))}'
             f'<p class="meta">{b.get("meta", "")}</p></div>{aside}</div></section>')
 
 
 def logos(b, site):
+    """A scrolling strip of names; the second copy only makes the loop seamless."""
     names = "".join(f"<li>{escape(n)}</li>" for n in b["names"])
-    return (f'<section class="logos" aria-label="{a(b["label"])}"><div class="wrap">'
-            f'<p class="label">{b["label"]}</p><ul>{names}</ul></div></section>')
+    return (f'<section class="marquee" aria-label="{a(b["label"])}">'
+            f'<p class="label wrap">{b["label"]}</p><div class="track">'
+            f'<ul>{names}</ul><ul aria-hidden="true">{names}</ul></div></section>')
+
+
+def figures(b, site):
+    items = b["items"] if isinstance(b, dict) else b
+    cells = "".join(f'<div class="figure"><div class="v">{escape(str(v))}</div>'
+                    f'<div class="k">{k}</div></div>' for v, k in items)
+    title = ""
+    if isinstance(b, dict) and b.get("title"):
+        title = (f'<div class="panel-head"><p class="kicker">{b.get("kicker", "")}</p>'
+                 f'<h2>{b["title"]}</h2>'
+                 + (f'<p class="intro">{b["intro"]}</p>' if b.get("intro") else "") + '</div>')
+    return (f'<section class="panel-wrap" aria-label="Results at a glance"><div class="wrap">'
+            f'<div class="panel light">{title}<div class="figures">{cells}</div></div></div></section>')
+
+
+def services(b, site):
+    items = "".join(
+        f'<article class="service"><div class="badge">{icon(s.get("icon"))}</div><h3>{s["title"]}</h3>'
+        f'<p>{s["text"]}</p><ul class="tags">'
+        + "".join(f"<li>{escape(t)}</li>" for t in s.get("tags", []))
+        + "</ul></article>"
+        for s in b["items"])
+    return (f'<section class="band"{head_of(b)}><div class="wrap">{band_head(b)}'
+            f'<div class="services">{items}</div></div></section>')
 
 
 def work(b, site):
     cards = []
-    for c in b["items"]:
+    for i, c in enumerate(b["items"]):
         tags = "".join(f"<li>{escape(t)}</li>" for t in c.get("tags", []))
-        result = (f'<div class="result"><span class="v">{escape(c["result"][0])}</span>'
-                  f'<span class="k">{c["result"][1]}</span></div>') if c.get("result") else ""
-        cards.append(f'<article class="work-card"><p class="cat">{c["category"]}</p>'
-                     f'<h3>{escape(c["brand"])}</h3><p class="headline">{c["headline"]}</p>'
-                     f'<p>{c["text"]}</p>{result}<ul class="tags">{tags}</ul></article>')
+        results = c.get("results") or ([c["result"]] if c.get("result") else [])
+        tone = c.get("tone", ["ember", "violet", "cyan", "pink"][i % 4])
+        cards.append(
+            f'<article class="work-card tone-{a(tone)}">'
+            f'<div class="cover">{icon(c.get("icon"), "cover-ico")}'
+            f'<span class="pill">{c["category"]}</span></div>'
+            f'<div class="body"><p class="who">{escape(c["brand"])}</p>'
+            f'<h3>{c["headline"]}</h3><p>{c["text"]}</p>'
+            + (stat_tiles(results) if results else "")
+            + f'<ul class="tags">{tags}</ul></div></article>')
     note = f'<p class="note">{b["note"]}</p>' if b.get("note") else ""
     return (f'<section class="band"{head_of(b)}><div class="wrap">{band_head(b)}'
             f'<div class="work">{"".join(cards)}</div>{note}</div></section>')
 
 
+def diagram(d) -> str:
+    """Sources on the left feed one hub; the hub feeds outputs on the right.
+    Drawn as SVG for wide screens, with a stacked HTML version for phones."""
+    W, H = 640, 400
+    src, out = d["sources"], d["outputs"]
+
+    def ys(n):
+        step = H / (n + 1)
+        return [round(step * (i + 1)) for i in range(n)]
+
+    cx, cy, r = W / 2, H / 2, 62
+    parts = []
+    for y in ys(len(src)):
+        parts.append(f'<path class="flow" d="M150 {y} C 230 {y}, 220 {cy}, {cx - r} {cy}"/>')
+    for y in ys(len(out)):
+        parts.append(f'<path class="flow out" d="M{cx + r} {cy} C 420 {cy}, 410 {y}, 490 {y}"/>')
+    for y, label in zip(ys(len(src)), src):
+        parts.append(f'<g class="node"><rect x="10" y="{y - 17}" width="140" height="34" rx="17"/>'
+                     f'<text x="80" y="{y + 5}">{escape(label)}</text></g>')
+    for y, label in zip(ys(len(out)), out):
+        parts.append(f'<g class="node outn"><rect x="490" y="{y - 17}" width="140" height="34" rx="17"/>'
+                     f'<text x="560" y="{y + 5}">{escape(label)}</text></g>')
+    hub_lines = d["hub"].split("\n") if "\n" in d["hub"] else [d["hub"]]
+    hub_text = "".join(f'<tspan x="{cx}" dy="{0 if i == 0 else 18}">{escape(t)}</tspan>'
+                       for i, t in enumerate(hub_lines))
+    first_dy = -9 * (len(hub_lines) - 1)
+    parts.append(f'<circle class="hub-ring" cx="{cx}" cy="{cy}" r="{r + 14}"/>'
+                 f'<circle class="hub" cx="{cx}" cy="{cy}" r="{r}"/>'
+                 f'<text class="hub-t" x="{cx}" y="{cy + 5 + first_dy}">{hub_text}</text>')
+    svg = (f'<svg class="diagram-svg" viewBox="0 0 {W} {H}" role="img" '
+           f'aria-label="{a(d.get("label", "How the systems connect"))}">'
+           f'<defs><linearGradient id="hubg" x1="0" y1="0" x2="1" y2="1">'
+           f'<stop offset="0" stop-color="#FF7B47"/><stop offset=".55" stop-color="#F0508A"/>'
+           f'<stop offset="1" stop-color="#7B61FF"/></linearGradient></defs>{"".join(parts)}</svg>')
+    chips = lambda xs: "".join(f"<li>{escape(x)}</li>" for x in xs)
+    stacked = (f'<div class="diagram-stack" aria-hidden="true"><ul>{chips(src)}</ul>'
+               f'<div class="hub-chip">{escape(" ".join(hub_lines))}</div><ul class="outs">{chips(out)}</ul></div>')
+    return f'<div class="diagram">{svg}{stacked}</div>'
+
+
 def systems(b, site):
     items = "".join(
-        f'<article class="system"><h3>{s["title"]}</h3><p>{s["text"]}</p>'
+        f'<article class="system">{icon(s.get("icon"))}<div><h3>{s["title"]}</h3><p>{s["text"]}</p>'
         + (f'<p class="eg">{s["example"]}</p>' if s.get("example") else "")
-        + "</article>"
+        + "</div></article>"
         for s in b["items"])
-    return (f'<section class="band systems-band"{head_of(b)}><div class="wrap">{band_head(b)}'
+    feature = ""
+    if b.get("diagram"):
+        points = "".join(f"<li>{p}</li>" for p in b.get("points", []))
+        feature = (f'<div class="platform"><div class="platform-copy"><p class="kicker">{b["kicker"]}</p>'
+                   f'<h2>{b["title"]}</h2><p class="intro">{b.get("intro", "")}</p>'
+                   f'<ul class="checks">{points}</ul></div>{diagram(b["diagram"])}</div>')
+        head = ""
+    else:
+        head = band_head(b)
+    return (f'<section class="band systems-band"{head_of(b)}><div class="wrap">{head}{feature}'
             f'<div class="systems">{items}</div></div></section>')
-
-
-def figures(items, site):
-    cells = "".join(f'<div class="figure"><div class="v">{escape(str(v))}</div>'
-                    f'<div class="k">{k}</div></div>' for v, k in items)
-    return f'<section aria-label="Results at a glance" class="figures-band"><div class="wrap"><div class="figures">{cells}</div></div></section>'
-
-
-def services(b, site):
-    items = "".join(
-        f'<article class="service"><div class="n">{i:02d}</div><h3>{s["title"]}</h3>'
-        f'<p>{s["text"]}</p><ul class="tags">'
-        + "".join(f"<li>{escape(t)}</li>" for t in s.get("tags", []))
-        + "</ul></article>"
-        for i, s in enumerate(b["items"], 1))
-    return (f'<section class="band"{head_of(b)}><div class="wrap">{band_head(b)}'
-            f'<div class="services">{items}</div></div></section>')
 
 
 def cases(b, site):
@@ -150,26 +273,26 @@ def cases(b, site):
 
 def steps(b, site):
     items = "".join(
-        f'<article class="step"><div class="n">{i:02d}</div><h3>{s["title"]}</h3><p>{s["text"]}</p></article>'
+        f'<li class="step"><span class="n">{i}</span><h3>{s["title"]}</h3><p>{s["text"]}</p></li>'
         for i, s in enumerate(b["items"], 1))
     note = f'<p class="note">{b["note"]}</p>' if b.get("note") else ""
-    return (f'<section class="band"{head_of(b)}><div class="wrap">{band_head(b)}'
-            f'<div class="steps">{items}</div>{note}</div></section>')
+    return (f'<section class="panel-wrap"{head_of(b)}><div class="wrap"><div class="panel light">'
+            f'{band_head(b)}<ol class="steps">{items}</ol>{note}</div></div></section>')
 
 
 def about(b, site):
     copy = "".join(f"<p>{p}</p>" for p in b["copy"])
-    facts = "".join(f'<li><span class="k">{escape(k)}</span><span class="v">{escape(str(v))}</span></li>'
+    facts = "".join(f'<li><span class="v">{escape(str(v))}</span><span class="k">{escape(k)}</span></li>'
                     for k, v in b.get("facts", []))
-    return (f'<section class="band"{head_of(b)}><div class="wrap">'
-            f'<div class="band-head"><div><p class="kicker">{b["kicker"]}</p><h2>{b["title"]}</h2></div><span></span></div>'
-            f'<div class="about"><div class="copy">{copy}</div><ul class="facts">{facts}</ul></div>'
-            f'</div></section>')
+    return (f'<section class="band"{head_of(b)}><div class="wrap about">'
+            f'<div><p class="kicker">{b["kicker"]}</p><h2>{b["title"]}</h2><div class="copy">{copy}</div></div>'
+            f'<ul class="facts">{facts}</ul></div></section>')
 
 
 def cta(b, site):
-    return (f'<section class="cta"{head_of(b)}><div class="wrap"><h2>{b["title"]}</h2>'
-            f'<p>{b["text"]}</p>{buttons(b.get("actions"))}</div></section>')
+    return (f'<section class="cta-wrap"{head_of(b)}><div class="wrap"><div class="cta">'
+            f'<div class="glow" aria-hidden="true"></div><h2>{b["title"]}</h2>'
+            f'<p>{b["text"]}</p>{buttons(b.get("actions"))}</div></div></section>')
 
 
 BLOCKS = {"hero": hero, "logos": logos, "figures": figures, "services": services,
@@ -182,8 +305,10 @@ def doc_body(pg) -> str:
     date = f'<p class="date">Last updated {pg["updated"]}</p>' if pg.get("updated") else ""
     secs = "".join(f'<section><h2>{s["title"]}</h2><div class="body">{paras(s["body"])}</div></section>'
                    for s in pg["sections"])
-    return (f'<main class="doc"><div class="wrap"><header><h1>{pg["heading"]}</h1>'
-            f'<p class="lede">{pg["lede"]}</p>{date}</header>{secs}</div></main>')
+    return (f'<main class="doc"><div class="glow" aria-hidden="true"></div><div class="wrap">'
+            f'<header><p class="kicker">{pg.get("kicker", "HyporDigital")}</p><h1>{pg["heading"]}</h1>'
+            f'<p class="lede">{pg["lede"]}</p>{date}</header>'
+            f'<article class="panel light doc-panel">{secs}</article></div></main>')
 
 
 # ------------------------------------------------------------------ chrome
@@ -192,15 +317,26 @@ def header(site) -> str:
     label, href = site["header"]["cta"]
     return (f'<header class="top"><div class="wrap">'
             f'<a class="brand" href="index.html" aria-label="{a(site["name"])} home">'
-            f'<img src="{a(site["logo"])}" alt="" width="30" height="30"><span>{escape(site["name"])}</span></a>'
-            f'<nav aria-label="Main">{nav}{link(label, href, "btn primary small")}</nav>'
+            f'<img src="{a(site["logo"])}" alt="" width="34" height="34"><span>{escape(site["name"])}</span></a>'
+            f'<nav aria-label="Main">{nav}</nav>'
+            f'<div class="top-right">{link(label, href, "btn primary small")}'
+            f'<details class="menu"><summary aria-label="Menu"><span></span><span></span><span></span></summary>'
+            f'<nav aria-label="Mobile">{nav}{link(label, href)}</nav></details></div>'
             f'</div></header>')
 
 
 def footer(site) -> str:
-    links = "".join(link(t, h) for t, h in site["footer"]["links"])
-    return (f'<footer class="foot"><div class="wrap"><span>{site["footer"]["line"]}</span>'
-            f'<span class="links">{links}</span></div></footer>')
+    f = site["footer"]
+    cols = "".join(
+        f'<div class="col"><p class="h">{escape(c["title"])}</p><ul>'
+        + "".join(f"<li>{link(t, h)}</li>" for t, h in c["links"])
+        + "</ul></div>"
+        for c in f.get("columns", []))
+    return (f'<footer class="foot"><div class="wrap"><div class="foot-grid">'
+            f'<div class="col about-col"><a class="brand" href="index.html">'
+            f'<img src="{a(site["logo"])}" alt="" width="34" height="34"><span>{escape(site["name"])}</span></a>'
+            f'<p>{f.get("blurb", "")}</p>{link(site["email"], "mailto:" + site["email"], "mail")}</div>'
+            f'{cols}</div><div class="foot-line"><span>{f["line"]}</span></div></div></footer>')
 
 
 def schema(site, pg) -> str:
@@ -239,7 +375,7 @@ def page(site, pg, css) -> str:
 <title>{escape(pg["title"])}</title>
 <meta name="description" content="{a(desc)}">
 <link rel="canonical" href="{a(canonical)}">
-<meta name="theme-color" content="#0E1210">
+<meta name="theme-color" content="#0A0C18">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{a(site["name"])}">
 <meta property="og:title" content="{a(pg["title"])}">

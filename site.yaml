@@ -26,12 +26,29 @@ header:
   cta: [Start a project, "mailto:service@hypordigital.com?subject=New%20project"]
 
 footer:
+  blurb: >-
+    An ecommerce growth agency for brands that sell online. Paid media,
+    marketplaces, websites and the systems that connect them.
   line: © 2026 HyporDigital · Lake Bluff, Illinois · Serving brands across the US
-  links:
-  - [Privacy policy, privacy.html]
-  - [Keyword Research app, keyword-research.html]
-  - [LinkedIn, https://www.linkedin.com/in/charles-sadler]
-  - [service@hypordigital.com, mailto:service@hypordigital.com]
+  # Keep the Privacy policy link: Google's brand verification checks for it.
+  columns:
+  - title: Services
+    links:
+    - [Paid media & marketplaces, index.html#services]
+    - [Websites & ecommerce, index.html#services]
+    - [Systems & automation, index.html#systems]
+    - [Brand & content, index.html#services]
+  - title: Company
+    links:
+    - [Our work, index.html#work]
+    - [How we work, index.html#process]
+    - [About, index.html#about]
+    - [Contact, index.html#contact]
+  - title: More
+    links:
+    - [Privacy policy, privacy.html]
+    - [Keyword Research app, keyword-research.html]
+    - [LinkedIn, https://www.linkedin.com/in/charles-sadler]
 
 # What the business is, for search engines (schema.org ProfessionalService).
 services_offered:
