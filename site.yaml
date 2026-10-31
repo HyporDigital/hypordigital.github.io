@@ -29,6 +29,7 @@ header:
   nav:
   - [Services, index.html#services]
   - [Work, index.html#work]
+  - [Free analysis, index.html#analysis]
   - [Systems, index.html#systems]
   - [About, index.html#about]
   cta: [Start a project, "mailto:service@hypordigital.com?subject=New%20project"]

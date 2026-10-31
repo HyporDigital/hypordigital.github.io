@@ -312,6 +312,77 @@ p{margin:0 0 14px}
   background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .facts .k{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
 
+/* brand analysis offer */
+.sub-k{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:0 0 6px}
+.offer{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px 56px;align-items:start}
+.gets{list-style:none;margin:0;padding:0}
+.gets li{display:flex;gap:18px;padding:22px 0;border-top:1px solid var(--line)}
+.gets li:first-child{border-top:0}
+.gets .ico{width:44px;height:44px;padding:10px;border-radius:12px;color:var(--ember);
+  background:rgba(255,123,71,.1);border:1px solid rgba(255,123,71,.25)}
+.gets h3{font-size:21px;line-height:1.2;margin:2px 0 8px}
+.gets p{color:var(--ink-2);font-size:15.5px;margin:0}
+.scorecard{position:relative;padding:24px;border-radius:var(--r-lg);
+  background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid var(--line-hi);
+  box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+.scorecard::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;
+  background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;opacity:.5;pointer-events:none}
+.scorecard .label{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:0}
+.sc-brand{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:10px 0 14px}
+.sc-brand>span:first-child{font-family:var(--display);font-size:26px;font-weight:700;letter-spacing:-.02em}
+.overall{display:flex;flex-direction:column;align-items:flex-end;font-family:var(--display);font-size:46px;
+  font-weight:800;line-height:.9;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.overall small{font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-3);-webkit-text-fill-color:var(--ink-3);margin-bottom:6px}
+.sc-rows{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+.sc-rows li{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0;
+  border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
+.grade{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:8px;font-family:var(--display);
+  font-size:15px;font-weight:800;color:var(--ground)}
+.g-a{background:#3DDC97}.g-b{background:var(--cyan)}.g-c{background:var(--ember)}.g-d{background:var(--pink)}
+.sc-first{margin-top:16px;padding-top:14px;border-top:1px solid var(--line-hi)}
+.sc-first ol{margin:8px 0 0;padding-left:20px;font-size:14.5px;color:var(--ink)}
+.sc-first li{margin-bottom:4px}
+.sc-note{font-size:12.5px;color:var(--ink-3);margin:12px 0 0}
+.request{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:40px 56px;margin-top:40px;padding:clamp(28px,5vw,56px);border-radius:var(--r-lg);
+  background:radial-gradient(90% 120% at 100% 0%,rgba(123,97,255,.28),transparent 60%),
+    radial-gradient(80% 100% at 0% 100%,rgba(255,123,71,.18),transparent 60%),var(--surface);
+  border:1px solid var(--line-hi)}
+.request>:not(.glow){position:relative;z-index:1}
+.how{list-style:none;margin:10px 0 0;padding:0}
+.how li{display:flex;gap:16px;padding:16px 0}
+.how .n{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--grad);
+  font-family:var(--display);font-size:17px;font-weight:800;color:#fff}
+.how h3{font-size:19px;margin:6px 0 6px}
+.how p{color:var(--ink-2);font-size:15.5px;margin:0}
+.lead-form{padding:28px;border-radius:var(--r);background:var(--paper);color:var(--paper-ink)}
+.lead-form h3{font-size:26px;letter-spacing:-.02em;color:var(--paper-ink)}
+.lead-form .lede{color:var(--paper-ink-2);font-size:15px;margin:8px 0 18px}
+.lead-form label{display:block;font-size:13.5px;font-weight:700;color:var(--paper-ink);margin-bottom:14px}
+.lead-form .opt{font-weight:500;color:var(--paper-ink-2)}
+.lead-form input{display:block;width:100%;margin-top:6px;padding:13px 14px;font:inherit;font-size:16px;font-weight:500;
+  color:var(--paper-ink);background:#fff;border:1px solid var(--paper-line);border-radius:12px;outline:none;
+  transition:border-color .15s,box-shadow .15s}
+.lead-form input:focus{border-color:#E0602C;box-shadow:0 0 0 4px rgba(255,123,71,.18)}
+.lead-form input::placeholder{color:#9A9DB0}
+.lead-form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.lead-form button{width:100%;justify-content:center;margin-top:6px;cursor:pointer}
+.lead-form button:disabled{opacity:.6;cursor:wait}
+.lead-form .fine{font-size:12.5px;color:var(--paper-ink-2);margin:14px 0 0}
+.lead-form .fine a,.lead-form .err a{color:#D2522A;border-bottom:1px solid rgba(210,82,42,.35)}
+.lead-form .err{display:none;font-size:14px;color:#B3263E;margin:12px 0 0}
+.lead-form.failed .err{display:block}
+.lead-form .ok{display:none;text-align:center;padding:24px 0 8px}
+.lead-form .ok p{color:var(--paper-ink-2);margin:10px 0 0}
+.lead-form .tick{display:block;width:56px;height:56px;margin:0 auto 16px;border-radius:50%;background:var(--grad);position:relative}
+.lead-form .tick::after{content:"";position:absolute;left:21px;top:14px;width:11px;height:20px;
+  border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg)}
+.lead-form.sent{display:flex;align-items:center;justify-content:center}
+.lead-form.sent>:not(.ok){display:none}
+.lead-form.sent .ok{display:block}
+
 /* contact panel */
 .cta-wrap{padding:clamp(72px,10vw,128px) 0 clamp(56px,7vw,88px)}
 .cta{position:relative;overflow:hidden;border-radius:var(--r-lg);padding:clamp(40px,7vw,88px);
@@ -374,6 +445,7 @@ p{margin:0 0 14px}
   .figures{grid-template-columns:repeat(2,1fr)}
   .platform{grid-template-columns:1fr}
   .systems{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .offer,.request{grid-template-columns:1fr}
 }
 @media (max-width:900px){
   .top nav[aria-label="Main"]{display:none}
@@ -411,13 +483,16 @@ p{margin:0 0 14px}
   .panel{padding:28px 20px}
   .platform{padding:28px 20px}
   .cta{padding:44px 22px}
+  .request{padding:24px 18px}
+  .lead-form{padding:22px 18px}
+  .sc-rows{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
 }
 
 </style>
 
 </head><body>
-<header class="top"><div class="wrap"><a class="brand" href="index.html" aria-label="HyporDigital home"><img src="icon.svg" alt="" width="34" height="34"><span>Hypor<span class="w2">Digital</span></span></a><nav aria-label="Main"><a href="index.html#services">Services</a><a href="index.html#work">Work</a><a href="index.html#systems">Systems</a><a href="index.html#about">About</a></nav><div class="top-right"><a class="btn primary small" href="mailto:service@hypordigital.com?subject=New%20project">Start a project<span class="arrow" aria-hidden="true">→</span></a><details class="menu"><summary aria-label="Menu"><span></span><span></span><span></span></summary><nav aria-label="Mobile"><a href="index.html#services">Services</a><a href="index.html#work">Work</a><a href="index.html#systems">Systems</a><a href="index.html#about">About</a><a href="mailto:service@hypordigital.com?subject=New%20project">Start a project</a></nav></details></div></div></header>
+<header class="top"><div class="wrap"><a class="brand" href="index.html" aria-label="HyporDigital home"><img src="icon.svg" alt="" width="34" height="34"><span>Hypor<span class="w2">Digital</span></span></a><nav aria-label="Main"><a href="index.html#services">Services</a><a href="index.html#work">Work</a><a href="index.html#analysis">Free analysis</a><a href="index.html#systems">Systems</a><a href="index.html#about">About</a></nav><div class="top-right"><a class="btn primary small" href="mailto:service@hypordigital.com?subject=New%20project">Start a project<span class="arrow" aria-hidden="true">→</span></a><details class="menu"><summary aria-label="Menu"><span></span><span></span><span></span></summary><nav aria-label="Mobile"><a href="index.html#services">Services</a><a href="index.html#work">Work</a><a href="index.html#analysis">Free analysis</a><a href="index.html#systems">Systems</a><a href="index.html#about">About</a><a href="mailto:service@hypordigital.com?subject=New%20project">Start a project</a></nav></details></div></div></header>
 <main class="doc"><div class="glow" aria-hidden="true"></div><div class="wrap"><header><p class="kicker">HyporDigital</p><h1>HyporDigital Keyword Research</h1><p class="lede">HyporDigital Keyword Research is our internal app for measuring search demand. It shows how many people search for a brand's products, its category and its competitors, so our campaign plans and recommendations start from real numbers.</p></header><article class="panel light doc-panel"><section><h2>What it does</h2><div class="body"><p>The app connects to the Google Ads API and retrieves keyword ideas and historical search statistics from Google Ads Keyword Planner: average monthly searches, month-by-month trends, competition and top-of-page bid ranges. We use those figures in brand research, keyword strategy and campaign planning for our clients.</p></div></section><section><h2>Who uses it</h2><div class="body"><p>The app is used only by the HyporDigital team, signed in with Google accounts that have access to our own Google Ads account. It isn't offered to the public and there's no sign-up.</p></div></section><section><h2>What it can and can't do</h2><div class="body"><p>It only reads keyword planning data. It doesn't create, change, pause or delete campaigns, and it doesn't spend money.</p></div></section><section><h2>Privacy</h2><div class="body"><p>How the app handles Google user data is described in our <a href="privacy.html">privacy policy</a>, including how to remove its access. Questions go to <a href="mailto:service@hypordigital.com">service@hypordigital.com</a>.</p></div></section></article></div></main>
 <footer class="foot"><div class="wrap"><div class="foot-grid"><div class="col about-col"><a class="brand" href="index.html"><img src="icon.svg" alt="" width="34" height="34"><span>Hypor<span class="w2">Digital</span></span></a><p>An ecommerce growth agency for brands that sell online. Paid media, marketplaces, websites and the systems that connect them.</p><a class="mail" href="mailto:service@hypordigital.com">service@hypordigital.com</a></div><div class="col"><p class="h">Services</p><ul><li><a href="index.html#services">Paid media & marketplaces</a></li><li><a href="index.html#services">Websites & ecommerce</a></li><li><a href="index.html#systems">Systems & automation</a></li><li><a href="index.html#services">Brand & content</a></li></ul></div><div class="col"><p class="h">Company</p><ul><li><a href="index.html#work">Our work</a></li><li><a href="index.html#process">How we work</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#contact">Contact</a></li></ul></div><div class="col"><p class="h">More</p><ul><li><a href="privacy.html">Privacy policy</a></li><li><a href="keyword-research.html">Keyword Research app</a></li><li><a href="https://www.linkedin.com/in/charles-sadler" rel="noopener" target="_blank">LinkedIn</a></li></ul></div></div><div class="foot-line"><span>© 2026 HyporDigital · Lake Bluff, Illinois · Serving brands across the US</span></div></div></footer>
 </body></html>

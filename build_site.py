@@ -289,6 +289,78 @@ def about(b, site):
             f'<ul class="facts">{facts}</ul></div></section>')
 
 
+GRADE_TONE = {"A": "a", "B": "b", "C": "c", "D": "d"}
+
+LEAD_JS = """<script>
+document.querySelectorAll('form.lead-form').forEach(function (f) {
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (f.elements.company && f.elements.company.value) return;
+    var d = Object.fromEntries(new FormData(f)), btn = f.querySelector('button');
+    function done() {
+      f.querySelector('.ok b').textContent = d.brand;
+      f.classList.remove('failed'); f.classList.add('sent');
+      if (window.gtag && f.dataset.conversion) gtag('event', 'conversion', {send_to: f.dataset.conversion});
+    }
+    if (!f.dataset.endpoint) {
+      location.href = 'mailto:' + f.dataset.to + '?subject=' + encodeURIComponent('Brand analysis request: ' + d.brand)
+        + '&body=' + encodeURIComponent('Brand: ' + d.brand + '\\nWebsite: ' + (d.website || '-') + '\\nEmail: ' + d.email);
+      done(); return;
+    }
+    btn.disabled = true;
+    fetch(f.dataset.endpoint, {method: 'POST', headers: {Accept: 'application/json'}, body: new FormData(f)})
+      .then(function (r) { if (!r.ok) throw r; done(); })
+      .catch(function () { f.classList.add('failed'); btn.disabled = false; });
+  });
+});
+</script>"""
+
+
+def analysis(b, site):
+    """The brand-analysis offer: what's in it, a sample scorecard, and the request form."""
+    gets = "".join(
+        f'<li>{icon(g.get("icon"))}<div><h3>{g["title"]}</h3><p>{g["text"]}</p></div></li>'
+        for g in b["gets"])
+    s = b["sample"]
+    rows = "".join(
+        f'<li><span>{escape(area)}</span><span class="grade g-{GRADE_TONE.get(str(g)[0], "d")}">{escape(str(g))}</span></li>'
+        for area, g in s["areas"])
+    sample = (f'<aside class="scorecard" aria-label="{a(s["label"])}">'
+              f'<div class="sc-head"><p class="label">{s["label"]}</p>'
+              f'<div class="sc-brand"><span>{escape(s["brand"])}</span>'
+              f'<span class="overall"><small>Overall</small>{escape(str(s["overall"]))}</span></div></div>'
+              f'<ul class="sc-rows">{rows}</ul>'
+              f'<div class="sc-first"><p class="label">{s["first_label"]}</p><ol>'
+              + "".join(f"<li>{p}</li>" for p in s["first"])
+              + f'</ol></div><p class="sc-note">{s["note"]}</p></aside>')
+    steps_html = "".join(f'<li><span class="n">{i}</span><div><h3>{st["title"]}</h3><p>{st["text"]}</p></div></li>'
+                         for i, st in enumerate(b["steps"], 1))
+    fm = b["form"]
+    hidden = "".join(f'<input type="hidden" name="{a(k)}" value="{a(v)}">'
+                     for k, v in (fm.get("hidden") or {}).items())
+    form = (f'<form class="lead-form" data-endpoint="{a(fm.get("endpoint", ""))}" data-to="{a(site["email"])}"'
+            f' data-conversion="{a(fm.get("ads_conversion", ""))}">'
+            f'<h3>{fm["title"]}</h3><p class="lede">{fm["text"]}</p>{hidden}'
+            f'<label>{fm["brand_label"]}<input name="brand" required autocomplete="organization" '
+            f'placeholder="{a(fm["brand_hint"])}"></label>'
+            f'<label>{fm["email_label"]}<input name="email" type="email" required autocomplete="email" '
+            f'placeholder="{a(fm["email_hint"])}"></label>'
+            f'<label>{fm["site_label"]} <span class="opt">{fm["site_optional"]}</span>'
+            f'<input name="website" type="text" inputmode="url" autocomplete="url" placeholder="{a(fm["site_hint"])}"></label>'
+            f'<label class="hp" aria-hidden="true">Company<input name="company" tabindex="-1" autocomplete="off"></label>'
+            f'<button class="btn primary" type="submit">{fm["button"]}<span class="arrow" aria-hidden="true">→</span></button>'
+            f'<p class="fine">{fm["fine"]}</p>'
+            f'<p class="err" role="alert">{fm["error"]}</p>'
+            f'<div class="ok" role="status"><span class="tick" aria-hidden="true"></span>'
+            f'<h3>{fm["success_title"]}</h3><p>{fm["success"]}</p></div></form>')
+    return (f'<section class="band analysis-band"{head_of(b)}><div class="wrap">{band_head(b)}'
+            f'<div class="offer"><div><p class="sub-k">{b["gets_label"]}</p><ul class="gets">{gets}</ul></div>'
+            f'{sample}</div>'
+            f'<div class="request"><div class="glow" aria-hidden="true"></div>'
+            f'<div class="request-copy"><p class="sub-k">{b["steps_label"]}</p><ol class="how">{steps_html}</ol></div>'
+            f'{form}</div></div></section>{LEAD_JS}')
+
+
 def cta(b, site):
     return (f'<section class="cta-wrap"{head_of(b)}><div class="wrap"><div class="cta">'
             f'<div class="glow" aria-hidden="true"></div><h2>{b["title"]}</h2>'
@@ -297,7 +369,7 @@ def cta(b, site):
 
 BLOCKS = {"hero": hero, "logos": logos, "figures": figures, "services": services,
           "work": work, "systems": systems, "cases": cases, "steps": steps, "about": about,
-          "cta": cta}
+          "analysis": analysis, "cta": cta}
 
 
 def doc_body(pg) -> str:

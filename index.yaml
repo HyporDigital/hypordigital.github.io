@@ -214,6 +214,103 @@ blocks:
         an AI-assisted system for research, SEO and cross-channel publishing.
       tags: [Brand identity, YouTube, Short-form video, SEO, Content systems]
 
+- analysis:
+    id: analysis
+    kicker: Free brand analysis
+    title: See your brand the way <em>your market</em> sees it
+    intro: >-
+      Send us your brand name and an email address. We'll research how you show up
+      online, from search and reviews to ads and competitors, and send you a graded
+      report with the three things we'd fix first.
+    gets_label: What's in your report
+    gets:
+    - title: A scorecard across 11 growth areas
+      icon: chart
+      text: >-
+        Search demand, Google rankings, marketplace rankings, website SEO, page speed,
+        site quality, reviews, ad reach, checkout and trust, AI search visibility and
+        brand consistency. Each one is graded A to D against a stated standard, so you
+        can see exactly what was measured.
+    - title: How you stack up against your rivals
+      icon: search
+      text: >-
+        Wherever we can measure them, your numbers sit next to the brands you compete with, so a grade comes with
+        context, like 2nd of 5 on search demand, or 3 of 4 rivals ahead of you on page speed.
+    - title: Your advertising, mapped
+      icon: ads
+      text: >-
+        Which ad platforms you're on, the creative and offers running now, how deep you
+        discount, and how often you email and publish. You'll see where the gaps are
+        before a competitor finds them.
+    - title: Three priorities to start with
+      icon: brand
+      text: >-
+        The changes most likely to grow revenue, picked across every area and checked
+        against the data before they reach you. Each one says what to do and why.
+    sample:
+      label: Example scorecard
+      brand: Your brand
+      overall: C
+      areas:
+      - [Search demand, B]
+      - [Google ranking, C]
+      - [Marketplace ranking, B]
+      - [Website SEO, D]
+      - [Page speed, C]
+      - [Site quality, B]
+      - [Reviews, A]
+      - [Ad reach, C]
+      - [Checkout & trust, B]
+      - [AI search visibility, D]
+      - [Brand consistency, B]
+      first_label: Where we'd start
+      first:
+      - Fix the product pages Google can't read
+      - Get named in AI search answers for your category
+      - Show your reviews where people decide to buy
+      note: Grades and priorities here are an illustration. Yours come from your brand's own data.
+    steps_label: How it works
+    steps:
+    - title: Tell us your brand
+      text: >-
+        Your brand name and where to send the report. Add your website if another company
+        shares your name, so we analyze the right one.
+    - title: We do the research
+      text: >-
+        We work from public data: your site, search demand, reviews, marketplaces, ads
+        and competitors. There's nothing to install and we never ask for logins.
+    - title: You get the report
+      text: >-
+        It comes by email with your scorecard, rival standings and three priorities.
+        If you'd like help with any of it, reply and we'll talk. If not, it's yours to keep.
+    form:
+      title: Request your free analysis
+      text: Two fields, and we'll take it from there.
+      brand_label: Brand name
+      brand_hint: e.g. Northline Outdoor
+      email_label: Email
+      email_hint: you@yourbrand.com
+      site_label: Website
+      site_optional: (optional)
+      site_hint: yourbrand.com
+      button: Send my brand
+      fine: >-
+        We use your email only to send your analysis and follow up on it. See our
+        <a href="privacy.html">privacy policy</a>.
+      error: >-
+        That didn't go through. Email <a href="mailto:service@hypordigital.com">service@hypordigital.com</a>
+        with your brand name and we'll get started.
+      success_title: Got it
+      success: We've got <b></b> on the list. Your analysis will arrive by email.
+      # Where the form posts. Blank opens the visitor's email app with the request
+      # filled in, addressed to the site email. Paste a form-relay URL here to
+      # receive requests without that step.
+      endpoint: ""
+      # Extra fields the form relay needs, such as an access key. name: value.
+      hidden: {}
+      # Google Ads conversion to fire on a request, as AW-ID/label. Blank fires none.
+      ads_conversion: ""
+
 - systems:
     id: systems
     kicker: Technical infrastructure
