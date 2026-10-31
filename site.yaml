@@ -14,7 +14,11 @@ founder: Charles Sadler
 locality: Lake Bluff
 region: IL
 country: US
+# Logo files come from D:\Projects\HyporDigital\assets\2026-10-31 logo\ (export_logo.py).
+# logo.png is the 120x120 square the Google sign-in screen uses; keep that size.
 logo: logo.png
+icon: icon.svg
+wordmark: [Hypor, Digital]
 og_image: og.png
 
 header:

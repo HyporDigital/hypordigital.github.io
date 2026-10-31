@@ -312,12 +312,19 @@ def doc_body(pg) -> str:
 
 
 # ------------------------------------------------------------------ chrome
+def brand(site, label=True) -> str:
+    """The icon plus the two-weight wordmark (Hypor bold, Digital lighter)."""
+    w1, w2 = site.get("wordmark", [site["name"], ""])
+    aria = f' aria-label="{a(site["name"])} home"' if label else ""
+    return (f'<a class="brand" href="index.html"{aria}>'
+            f'<img src="{a(site.get("icon", site["logo"]))}" alt="" width="34" height="34">'
+            f'<span>{escape(w1)}<span class="w2">{escape(w2)}</span></span></a>')
+
+
 def header(site) -> str:
     nav = "".join(link(t, h) for t, h in site["header"]["nav"])
     label, href = site["header"]["cta"]
-    return (f'<header class="top"><div class="wrap">'
-            f'<a class="brand" href="index.html" aria-label="{a(site["name"])} home">'
-            f'<img src="{a(site["logo"])}" alt="" width="34" height="34"><span>{escape(site["name"])}</span></a>'
+    return (f'<header class="top"><div class="wrap">{brand(site)}'
             f'<nav aria-label="Main">{nav}</nav>'
             f'<div class="top-right">{link(label, href, "btn primary small")}'
             f'<details class="menu"><summary aria-label="Menu"><span></span><span></span><span></span></summary>'
@@ -333,8 +340,7 @@ def footer(site) -> str:
         + "</ul></div>"
         for c in f.get("columns", []))
     return (f'<footer class="foot"><div class="wrap"><div class="foot-grid">'
-            f'<div class="col about-col"><a class="brand" href="index.html">'
-            f'<img src="{a(site["logo"])}" alt="" width="34" height="34"><span>{escape(site["name"])}</span></a>'
+            f'<div class="col about-col">{brand(site, label=False)}'
             f'<p>{f.get("blurb", "")}</p>{link(site["email"], "mailto:" + site["email"], "mail")}</div>'
             f'{cols}</div><div class="foot-line"><span>{f["line"]}</span></div></div></footer>')
 
@@ -383,7 +389,9 @@ def page(site, pg, css) -> str:
 <meta property="og:url" content="{a(canonical)}">
 <meta property="og:image" content="{a(url + "/" + site["og_image"])}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" href="{a(site["logo"])}">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 {FONTS}
 <style>
 {css}
