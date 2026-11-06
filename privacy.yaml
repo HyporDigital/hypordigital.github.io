@@ -51,6 +51,9 @@ sections:
     <a href="https://policies.google.com/privacy">privacy policy</a>. Google explains
     <a href="https://policies.google.com/technologies/partner-sites">how it uses
     information from sites that use its services</a>.
+  - >-
+    We also use Google Tag Manager to manage the Google tags on our site. Tag Manager
+    itself doesn't set cookies; the tags it loads work as described above.
   - "You can limit this at any time:"
   - - Turn off personalized ads from Google in <a href="https://myadcenter.google.com">My Ad Center</a>
     - Opt out of interest-based ads from participating companies at <a href="https://optout.aboutads.info">optout.aboutads.info</a>

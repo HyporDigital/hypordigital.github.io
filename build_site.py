@@ -448,6 +448,26 @@ def gtag(site) -> str:
             f"gtag('js', new Date());gtag('config', '{a(tid)}');</script>\n")
 
 
+def gtm_head(site) -> str:
+    """Google Tag Manager's container, high in <head> as Google asks."""
+    cid = site.get("google_tag_manager")
+    if not cid:
+        return ""
+    return ("<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});"
+            "var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;"
+            "j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);"
+            f"}})(window,document,'script','dataLayer','{a(cid)}');</script>\n")
+
+
+def gtm_body(site) -> str:
+    """Tag Manager's fallback for browsers without JavaScript, right after <body>."""
+    cid = site.get("google_tag_manager")
+    if not cid:
+        return ""
+    return (f'<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={a(cid)}" '
+            'height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>\n')
+
+
 def page(site, pg, css) -> str:
     url = site["url"]
     path = "" if pg["file"] == "index.html" else pg["file"]
@@ -459,7 +479,7 @@ def page(site, pg, css) -> str:
     ld = schema(site, pg) if pg["file"] == "index.html" else ""
     return f"""<!doctype html>
 <html lang="en-US"><head><meta charset="utf-8">
-{gtag(site)}<meta name="viewport" content="width=device-width,initial-scale=1">
+{gtm_head(site)}{gtag(site)}<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{escape(pg["title"])}</title>
 <meta name="description" content="{a(desc)}">
 <link rel="canonical" href="{a(canonical)}">
@@ -480,7 +500,7 @@ def page(site, pg, css) -> str:
 </style>
 {ld}
 </head><body>
-{header(site)}
+{gtm_body(site)}{header(site)}
 {main_open}{body}{main_close}
 {footer(site)}
 </body></html>

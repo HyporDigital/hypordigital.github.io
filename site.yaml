@@ -25,6 +25,10 @@ og_image: og.png
 # If you remove it, also update the "Cookies and advertising" part of privacy.yaml.
 google_tag: AW-18548236863
 
+# Google Tag Manager container loaded on every page. Delete the line to remove it.
+# Tags added inside Tag Manager may also need the privacy policy updated.
+google_tag_manager: GTM-P4Q24P4C
+
 header:
   nav:
   - [Services, index.html#services]
