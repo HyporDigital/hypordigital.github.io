@@ -311,7 +311,7 @@ blocks:
         email <a href="mailto:service@hypordigital.com">service@hypordigital.com</a>.
       # Where the form posts: the web-app URL of form-relay.gs (work\website\form-relay\).
       # Blank opens the visitor's email app with the request filled in instead.
-      endpoint: ""
+      endpoint: "https://script.google.com/macros/s/AKfycbx8cKqnY4fkxdsPoGFdNYFQ-nJ0f5gwGwrh-bByQNrvaX-jLsCAiKkpyzKeBac00elp/exec"
       # Extra fields the form relay needs, such as an access key. name: value.
       hidden: {}
       # Google Ads conversion to fire on a request, as AW-ID/label. Blank fires none.
