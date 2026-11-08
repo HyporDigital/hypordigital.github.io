@@ -1,7 +1,9 @@
 # The homepage. Edit any text, then run:  python build_site.py
 # Blocks run top to bottom in the order listed under `blocks:`.
-# <em>…</em> in a title sets those words in the gradient italic accent.
+# <em>…</em> in a title sets those words in ember.
 # icon: names an icon listed at the top of build_site.py.
+# A work item can take image: (a screenshot in the site folder, e.g. images/work-billiards.jpg) and image_alt:
+# to replace its colour block. Only with the client's OK, since the image can identify them.
 
 file: index.html
 title: HyporDigital | Ecommerce & Performance Marketing Agency
@@ -302,9 +304,13 @@ blocks:
         with your brand name and we'll get started.
       success_title: Got it
       success: We've got <b></b> on the list. Your analysis will arrive by email.
-      # Where the form posts. Blank opens the visitor's email app with the request
-      # filled in, addressed to the site email. Paste a form-relay URL here to
-      # receive requests without that step.
+      # Shown when there's no endpoint and the visitor's email app opens instead: nothing is sent yet.
+      mail_title: One more step
+      mail_text: >-
+        Your email app should open with the request for <b></b> ready to send. If it doesn't,
+        email <a href="mailto:service@hypordigital.com">service@hypordigital.com</a>.
+      # Where the form posts: the web-app URL of form-relay.gs (work\website\form-relay\).
+      # Blank opens the visitor's email app with the request filled in instead.
       endpoint: ""
       # Extra fields the form relay needs, such as an access key. name: value.
       hidden: {}

@@ -4,8 +4,9 @@ The HyporDigital website, served by GitHub Pages.
 
 The YAML files are the source. `site.yaml` holds the header, footer and business
 details every page shares; `index.yaml`, `privacy.yaml` and `keyword-research.yaml`
-each hold one page. `site.css` is the stylesheet. To change anything, edit the
-YAML or CSS and rebuild:
+each hold one page. `site.css` is the stylesheet and `motion.js` the scroll and
+pointer motion; both are inlined into every page. To change anything, edit the
+YAML, CSS or JS and rebuild:
 
 ```bash
 python build_site.py

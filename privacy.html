@@ -4,6 +4,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18548236863"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'AW-18548236863');</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches){var r=document.documentElement;r.classList.add('m');setTimeout(function(){if(!window.__hdm)r.classList.remove('m')},4000)}</script>
 <title>Privacy Policy | HyporDigital</title>
 <meta name="description" content="How HyporDigital collects, uses, shares and protects personal information on hypordigital.com, in client work and in HyporDigital Keyword Research.">
 <link rel="canonical" href="https://hypordigital.com/privacy.html">
@@ -18,11 +19,21 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Manrope:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap">
+<link rel="preload" href="fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 /* hypordigital.com — site stylesheet. Inlined into every page by build_site.py.
-   Deep ink-navy ground, ember orange from the logo as the brand color, an
-   ember-to-violet gradient for emphasis, and light panels to break up the dark. */
+   Deep ink-navy ground, ember orange from the logo as the brand colour, the ember-to-violet gradient
+   as a fill on the few things that act (buttons, the closing panel). Rev 11/08/2026 (Charles): older
+   colours kept; no glows, grid masks, glass sheen, dot textures, gradient text, capitals labels or
+   white panels; tighter radii, squarer buttons and quieter weights for a premium finish; motion and depth.
+   Text on ember or the gradient is navy: white there fails contrast. */
+
+/* brand fonts (Charles, 11/08/2026): Schibsted Grotesk for display, Public Sans for text. Both OFL, served from
+   fonts/ beside this file, latin subset, variable weight. */
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:400 900;font-display:swap;
+  src:url(fonts/schibsted-grotesk-latin.woff2) format('woff2')}
+@font-face{font-family:'Public Sans';font-style:normal;font-weight:400 700;font-display:swap;
+  src:url(fonts/public-sans-latin.woff2) format('woff2')}
 
 :root{
   --ground:#0A0C18;
@@ -36,22 +47,28 @@
   --ink-3:#80849E;
   --ember:#FF7B47;
   --ember-hi:#FF936A;
+  --on-ember:#0A0C18;
+  --ochre:#FF936A;
   --pink:#F0508A;
   --violet:#7B61FF;
   --cyan:#4FD1E8;
   --grad:linear-gradient(115deg,#FF7B47 0%,#F0508A 48%,#7B61FF 100%);
-  --paper:#F6F3EE;
-  --paper-2:#ECE7DF;
-  --paper-ink:#14162B;
-  --paper-ink-2:#4B4F68;
-  --paper-line:#DDD6CA;
-  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
-  --body:'Manrope','Segoe UI',system-ui,sans-serif;
-  --accent-serif:'Instrument Serif',Georgia,'Times New Roman',serif;
-  --r:18px;
-  --r-lg:28px;
+  --paper:#11152B;
+  --paper-2:#171C38;
+  --paper-ink:#F4F2ED;
+  --paper-ink-2:#B6B9CC;
+  --paper-line:rgba(255,255,255,.1);
+  --display:'Schibsted Grotesk','Segoe UI',system-ui,sans-serif;
+  --body:'Public Sans','Segoe UI',system-ui,sans-serif;
+  --r:12px;
+  --r-lg:18px;
   --wrap:1200px;
   --pad:clamp(16px,4vw,40px);
+  --ease:cubic-bezier(.2,.7,.1,1);
+  /* elevation: a hairline of light on the top edge and a soft cast shadow, deeper as the thing matters more */
+  --lift-1:inset 0 1px 0 rgba(255,255,255,.05),0 1px 2px rgba(2,3,12,.45),0 10px 24px -12px rgba(2,3,12,.6);
+  --lift-2:inset 0 1px 0 rgba(255,255,255,.07),0 2px 6px rgba(2,3,12,.4),0 22px 44px -18px rgba(2,3,12,.75);
+  --lift-3:inset 0 1px 0 rgba(255,255,255,.09),0 6px 14px rgba(2,3,12,.4),0 44px 90px -30px rgba(2,3,12,.9);
   color-scheme:dark;
 }
 
@@ -61,29 +78,32 @@ body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);
   font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-h1,h2,h3{margin:0;font-family:var(--display);font-weight:700;letter-spacing:-.02em;text-wrap:balance}
-h1 em,h2 em{font-family:var(--accent-serif);font-style:italic;font-weight:400;letter-spacing:0;
-  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
-  padding-right:.08em}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:650;letter-spacing:-.02em;text-wrap:balance}
+h1 em,h2 em{font-style:normal;color:var(--ember)}
 p{margin:0 0 14px}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
-.kicker{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;
-  letter-spacing:.14em;text-transform:uppercase;color:var(--ember);margin:0 0 18px}
-.kicker::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--grad)}
+.kicker{display:block;font-size:15px;font-weight:700;color:var(--ember);margin:0 0 14px}
 .intro{color:var(--ink-2);font-size:18px;max-width:58ch}
 .ico{width:24px;height:24px;flex:none}
 
+/* keyboard focus */
+:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+main:focus{outline:none}
+.skip{position:absolute;left:12px;top:-64px;z-index:50;padding:10px 16px;border-radius:10px;
+  background:var(--ember);color:var(--on-ember);font-weight:700;font-size:15px}
+.skip:focus{top:12px}
+
 /* header */
-.top{position:sticky;top:0;z-index:20;background:rgba(10,12,24,.78);
-  backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);
-  border-bottom:1px solid var(--line)}
+.top{position:sticky;top:0;z-index:20;background:var(--ground);
+  border-bottom:1px solid var(--line);transition:box-shadow .3s,border-color .3s}
+.top.scrolled{box-shadow:0 12px 32px -20px rgba(0,0,0,.9);border-bottom-color:var(--line-hi)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
 .brand{display:flex;align-items:center;gap:12px;font-family:var(--display);font-size:20px;
   font-weight:700;letter-spacing:-.01em}
 .brand img{width:34px;height:34px}
 .brand .w2{font-weight:500;color:var(--ink-2)}
 .top nav{display:flex;align-items:center;gap:6px}
-.top nav a{font-size:15px;font-weight:600;color:var(--ink-2);padding:8px 14px;border-radius:999px;
+.top nav a{font-size:15px;font-weight:600;color:var(--ink-2);padding:8px 14px;border-radius:8px;
   transition:color .15s,background .15s}
 .top nav a:hover{color:var(--ink);background:rgba(255,255,255,.06)}
 .top-right{display:flex;align-items:center;gap:10px}
@@ -99,47 +119,42 @@ p{margin:0 0 14px}
 .menu nav a{padding:12px 14px;border-radius:10px}
 
 /* buttons */
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:10px;
   font-family:var(--body);font-size:15px;font-weight:700;border:1px solid var(--line-hi);
   color:var(--ink);transition:transform .15s,background .15s,border-color .15s,box-shadow .15s}
-.btn:hover{border-color:var(--ink);transform:translateY(-1px)}
-.btn.primary{background:var(--grad);border-color:transparent;color:#fff;
-  box-shadow:0 10px 30px -10px rgba(240,80,138,.7)}
-.btn.primary:hover{box-shadow:0 14px 36px -10px rgba(240,80,138,.9)}
+.btn:hover{border-color:var(--ink)}
+.btn.primary{background:var(--grad);background-size:200% 100%;background-position:0 50%;
+  border-color:transparent;color:var(--on-ember);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 10px 22px -10px rgba(2,3,12,.9);
+  transition:background-position .7s var(--ease),border-color .15s,transform .15s}
+.btn.primary:hover{background-position:100% 50%}
+.btn.primary:active{transform:translateY(1px)}
 .btn.small{padding:10px 18px;font-size:14px}
 .btn .arrow{transition:transform .15s}
 .btn:hover .arrow{transform:translateX(3px)}
 .actions{display:flex;flex-wrap:wrap;gap:12px}
 
-/* background glow + grid, shared by hero, doc pages and the contact panel */
-.glow{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
-.glow::before{content:"";position:absolute;width:780px;height:780px;right:-220px;top:-300px;
-  background:radial-gradient(closest-side,rgba(123,97,255,.42),transparent);filter:blur(10px)}
-.glow::after{content:"";position:absolute;width:640px;height:640px;left:-260px;bottom:-320px;
-  background:radial-gradient(closest-side,rgba(255,123,71,.32),transparent);filter:blur(10px)}
-
 /* hero */
 .hero{position:relative;padding:clamp(72px,10vw,136px) 0 clamp(64px,8vw,104px);overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;z-index:0;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:64px 64px;
-  -webkit-mask-image:radial-gradient(ellipse 80% 70% at 60% 30%,#000 20%,transparent 75%);
-  mask-image:radial-gradient(ellipse 80% 70% at 60% 30%,#000 20%,transparent 75%)}
 .hero .wrap{position:relative;z-index:1}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:56px 64px;align-items:center}
-.hero h1{font-size:clamp(46px,7vw,96px);line-height:.98;font-weight:800;letter-spacing:-.035em}
-.hero h1 em{font-size:1.08em;line-height:.9}
+.hero h1{font-size:clamp(44px,6.4vw,80px);line-height:1;font-weight:700;letter-spacing:-.035em}
+.hero h1 em{line-height:.9}
 .hero .sub{font-size:clamp(17px,1.5vw,20px);color:var(--ink-2);max-width:56ch;margin:28px 0 34px}
 .hero .meta{margin:30px 0 0;font-size:14px;color:var(--ink-3)}
-.hero-card{position:relative;padding:26px 26px 10px;border-radius:var(--r-lg);
-  background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.03));
-  border:1px solid var(--line-hi);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
-.hero-card::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;
-  background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-  -webkit-mask-composite:xor;mask-composite:exclude;opacity:.55;pointer-events:none}
-.hero-card .label{display:flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;
-  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin:0 0 8px}
+/* the results card rests at an angle in 3D, with two cards layered behind it */
+.hero-stack{position:relative;transform-style:preserve-3d;
+  transform:perspective(1300px) rotateY(calc(-9deg + var(--tx,0deg))) rotateX(calc(4deg + var(--ty,0deg)));
+  transition:transform .9s var(--ease)}
+.hero-stack.tilting{transition:transform .15s ease-out}
+.hero-stack::before,.hero-stack::after{content:"";position:absolute;inset:0;border-radius:var(--r-lg);
+  background:var(--surface-2);border:1px solid var(--line);pointer-events:none}
+.hero-stack::before{transform:translate3d(20px,22px,-50px);opacity:.55}
+.hero-stack::after{transform:translate3d(40px,44px,-100px);opacity:.25}
+.hero-card{position:relative;z-index:1;padding:26px 26px 10px;border-radius:var(--r-lg);
+  background:var(--surface);border:1px solid var(--line-hi);box-shadow:var(--lift-3)}
+.hero-card .label{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;
+  color:var(--ink-2);margin:0 0 8px}
 .hero-card .dot{width:8px;height:8px;border-radius:50%;background:#3DDC97;
   box-shadow:0 0 0 4px rgba(61,220,151,.18)}
 .hero-card ul{list-style:none;margin:0;padding:0}
@@ -147,42 +162,41 @@ p{margin:0 0 14px}
   border-top:1px solid var(--line)}
 .hero-card li:first-child{border-top:0}
 .hero-card .v{font-family:var(--display);font-size:clamp(34px,3.4vw,44px);font-weight:800;letter-spacing:-.04em;
-  line-height:1;min-width:3.4ch;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  line-height:1;min-width:3.4ch;color:var(--ember);
   font-variant-numeric:tabular-nums}
 .hero-card .k{font-size:15px;color:var(--ink-2);line-height:1.4}
 .hero-card .plain li{display:block;font-size:16px}
 .hero-card .foot-note{font-size:12.5px;color:var(--ink-3);margin:6px 0 14px}
 
-/* scrolling industry strip */
+/* industry strip */
 .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;
   background:var(--ground-2);overflow:hidden}
-.marquee .label{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--ink-3);margin-bottom:14px}
-.marquee .track{display:flex;width:max-content;animation:slide 48s linear infinite}
-.marquee ul{display:flex;margin:0;padding:0;list-style:none}
-.marquee li{font-family:var(--display);font-size:clamp(22px,2.4vw,30px);font-weight:600;color:var(--ink);
+.marquee .label{font-size:15px;font-weight:600;color:var(--ink-3);margin-bottom:14px}
+.marquee .track{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.marquee ul{display:flex;flex-wrap:wrap;gap:8px 40px;margin:0;padding:0;list-style:none}
+.marquee li{font-family:var(--display);font-size:clamp(19px,2vw,24px);font-weight:500;color:var(--ink-2);
   white-space:nowrap;display:flex;align-items:center}
-.marquee li::after{content:"✦";font-size:.6em;margin:0 34px;color:var(--ember)}
-.marquee:hover .track{animation-play-state:paused}
-@keyframes slide{to{transform:translateX(-50%)}}
 
-/* light panels (results, process, doc pages) */
+/* panels (results, process, doc pages) */
 .panel-wrap{padding:clamp(56px,8vw,96px) 0 0}
-.panel{border-radius:var(--r-lg);padding:clamp(32px,5vw,64px)}
-.panel.light{background:var(--paper);color:var(--paper-ink)}
-.panel.light .kicker{color:#E0602C}
+.panel{border-radius:var(--r-lg);padding:clamp(32px,5vw,64px);box-shadow:var(--lift-1)}
+.panel.light{background:var(--paper);color:var(--paper-ink);border:1px solid var(--paper-line)}
+.panel.light .kicker{color:var(--ochre)}
 .panel.light .intro,.panel.light p{color:var(--paper-ink-2)}
 .panel.light h2{color:var(--paper-ink)}
+.panel.light h1 em,.panel.light h2 em,.lead-form h3 em{color:var(--ember)}
 .panel-head{max-width:760px;margin-bottom:40px}
 .panel-head h2,.band-head h2,.platform h2,.about h2{font-size:clamp(36px,4.8vw,62px);line-height:1.02;
-  letter-spacing:-.03em;font-weight:800}
+  letter-spacing:-.03em;font-weight:700}
 .panel-head .intro{margin:18px 0 0}
 
 /* figures */
 .figures{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.figure{background:#fff;border:1px solid var(--paper-line);border-radius:var(--r);padding:26px 22px 22px}
+.figure{background:var(--paper-2);border:1px solid var(--paper-line);border-radius:var(--r);padding:26px 22px 22px;
+  box-shadow:var(--lift-1);transition:box-shadow .4s var(--ease),border-color .3s}
+.figure:hover{box-shadow:var(--lift-3)}
 .figure .v{font-family:var(--display);font-size:clamp(40px,4.4vw,60px);font-weight:800;letter-spacing:-.045em;
-  line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  line-height:1;color:var(--ember);
   font-variant-numeric:tabular-nums;padding-bottom:4px}
 .figure .k{margin-top:12px;font-size:15px;color:var(--paper-ink-2);line-height:1.45}
 
@@ -196,44 +210,48 @@ p{margin:0 0 14px}
 /* services */
 .services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 .service{position:relative;padding:28px 24px 26px;border-radius:var(--r);
-  background:linear-gradient(180deg,var(--surface),var(--ground-2));border:1px solid var(--line);
-  transition:transform .2s,border-color .2s}
-.service:hover{transform:translateY(-4px);border-color:rgba(255,123,71,.5)}
-.badge{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:var(--grad);
-  color:#fff;box-shadow:0 12px 26px -12px rgba(240,80,138,.8)}
+  background:var(--surface);border:1px solid var(--line);box-shadow:var(--lift-1);
+  transition:box-shadow .4s var(--ease),border-color .3s}
+.service:hover{border-color:rgba(255,123,71,.45);box-shadow:var(--lift-3)}
+.badge{width:48px;height:48px;border-radius:10px;display:grid;place-items:center;
+  color:var(--ember);border:1px solid rgba(255,123,71,.35);background:rgba(255,123,71,.07);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 8px 18px -8px rgba(2,3,12,.85);
+  transition:background-color .3s,border-color .3s}
+.service:hover .badge{background:rgba(255,123,71,.1);border-color:rgba(255,123,71,.65)}
 .badge .ico{width:26px;height:26px}
 .service h3{font-size:23px;line-height:1.15;margin:22px 0 12px}
 .service p{color:var(--ink-2);font-size:15.5px}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 0;padding:0;list-style:none}
-.tags li{font-size:12.5px;font-weight:600;color:var(--ink-2);background:rgba(255,255,255,.05);
-  border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+.tags li{font-size:12.5px;font-weight:600;color:var(--ink-2);background:transparent;
+  border:1px solid var(--line);border-radius:6px;padding:4px 10px}
 
 /* work */
 .work{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .work-card{border-radius:var(--r-lg);overflow:hidden;background:var(--surface);border:1px solid var(--line);
-  display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
-.work-card:hover{transform:translateY(-4px);border-color:var(--line-hi)}
+  display:flex;flex-direction:column;box-shadow:var(--lift-2);
+  transition:box-shadow .4s var(--ease),border-color .3s}
+.work-card:hover{border-color:var(--line-hi);box-shadow:var(--lift-3)}
 .cover{position:relative;height:150px;display:flex;align-items:flex-end;justify-content:space-between;
   padding:20px 24px;overflow:hidden}
-.tone-ember .cover{background:radial-gradient(120% 140% at 100% 0%,#FFB089 0%,#FF7B47 35%,#C2335F 100%)}
-.tone-violet .cover{background:radial-gradient(120% 140% at 100% 0%,#B7A8FF 0%,#7B61FF 40%,#3A2A9E 100%)}
-.tone-cyan .cover{background:radial-gradient(120% 140% at 100% 0%,#9DF0FF 0%,#2FB6D6 40%,#1F4E9A 100%)}
-.tone-pink .cover{background:radial-gradient(120% 140% at 100% 0%,#FFA9C8 0%,#F0508A 40%,#7B2C8F 100%)}
-.cover::before{content:"";position:absolute;inset:0;
-  background-image:radial-gradient(rgba(255,255,255,.28) 1px,transparent 1.4px);background-size:16px 16px;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000);mask-image:linear-gradient(90deg,transparent,#000)}
+.tone-ember .cover{background:#A9502C}
+.tone-violet .cover{background:#3F3790}
+.tone-cyan .cover{background:#1D6479}
+.tone-pink .cover{background:#8C2C55}
 .cover-ico{position:absolute;right:18px;top:14px;width:96px;height:96px;color:rgba(255,255,255,.9);
-  stroke-width:1.1}
+  stroke-width:1.1;transition:transform .8s var(--ease)}
+.work-card:hover .cover-ico{transform:scale(1.07) rotate(-5deg)}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;
+  transition:transform .8s var(--ease)}
+.work-card:hover .cover-img{transform:scale(1.04)}
 .pill{position:relative;font-size:12.5px;font-weight:700;color:#fff;background:rgba(10,12,24,.35);
-  border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 13px;
-  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  border:1px solid rgba(255,255,255,.35);border-radius:6px;padding:5px 11px}
 .work-card .body{padding:26px 26px 26px;display:flex;flex-direction:column;flex:1}
-.work-card .who{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--ember);margin:0 0 8px}
+.work-card .who{font-size:15px;font-weight:700;color:var(--ember);margin:0 0 8px}
 .work-card h3{font-size:clamp(23px,2.2vw,28px);line-height:1.15;margin-bottom:12px}
 .work-card p{color:var(--ink-2);font-size:15.5px}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:8px 0 4px}
-.tile{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px}
+.tile{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;
+  box-shadow:var(--lift-1)}
 .tile .v{display:block;font-family:var(--display);font-size:30px;font-weight:800;letter-spacing:-.04em;
   line-height:1.05;color:var(--ink);font-variant-numeric:tabular-nums}
 .tone-ember .tile .v{color:var(--ember-hi)}
@@ -249,16 +267,15 @@ p{margin:0 0 14px}
 /* systems / platform */
 .platform{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:40px 56px;
   align-items:center;padding:clamp(32px,5vw,56px);border-radius:var(--r-lg);margin-bottom:20px;
-  background:radial-gradient(90% 120% at 100% 0%,rgba(123,97,255,.28),transparent 60%),
-    radial-gradient(80% 100% at 0% 100%,rgba(255,123,71,.18),transparent 60%),var(--surface);
+  background:var(--surface);box-shadow:var(--lift-2);
   border:1px solid var(--line-hi);overflow:hidden}
 .platform .intro{margin:18px 0 22px}
 .checks{list-style:none;margin:0;padding:0}
 .checks li{position:relative;padding:8px 0 8px 34px;color:var(--ink)}
 .checks li::before{content:"";position:absolute;left:0;top:11px;width:20px;height:20px;border-radius:50%;
-  background:var(--grad)}
+  background:var(--ember)}
 .checks li::after{content:"";position:absolute;left:7px;top:15px;width:5px;height:9px;
-  border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+  border:solid var(--on-ember);border-width:0 2px 2px 0;transform:rotate(45deg)}
 .diagram-svg{width:100%;height:auto;display:block;overflow:visible}
 .diagram-svg .flow{fill:none;stroke:rgba(79,209,232,.55);stroke-width:1.6;stroke-dasharray:5 7;
   animation:flow 1.6s linear infinite}
@@ -267,38 +284,36 @@ p{margin:0 0 14px}
 .diagram-svg .node rect{fill:rgba(255,255,255,.06);stroke:rgba(79,209,232,.55)}
 .diagram-svg .outn rect{stroke:rgba(255,123,71,.6)}
 .diagram-svg text{fill:var(--ink);font-family:var(--body);font-size:13.5px;font-weight:600;text-anchor:middle}
-.diagram-svg .hub{fill:url(#hubg)}
+.diagram-svg .hub{fill:var(--ember)}
 .diagram-svg .hub-ring{fill:none;stroke:rgba(255,255,255,.18);stroke-dasharray:2 6}
-.diagram-svg .hub-t{font-family:var(--display);font-size:15px;font-weight:700;fill:#fff}
+.diagram-svg .hub-t{font-family:var(--display);font-size:15px;font-weight:700;fill:var(--on-ember)}
 .diagram-stack{display:none}
 .systems{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .system{display:flex;gap:16px;padding:24px 22px;border-radius:var(--r);background:var(--ground-2);
-  border:1px solid var(--line)}
-.system .ico{width:42px;height:42px;padding:9px;border-radius:12px;color:var(--ember);
-  background:rgba(255,123,71,.1);border:1px solid rgba(255,123,71,.25)}
+  border:1px solid var(--line);box-shadow:var(--lift-1);transition:box-shadow .4s var(--ease),border-color .3s}
+.system:hover{box-shadow:var(--lift-3)}
+.system .ico,.gets .ico{border-radius:12px;color:var(--ember);border:1px solid rgba(255,123,71,.3);
+  background:rgba(255,123,71,.07);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 8px 18px -8px rgba(2,3,12,.85)}
+.system .ico{width:42px;height:42px;padding:9px}
 .system h3{font-size:19px;line-height:1.25;margin:2px 0 8px}
 .system p{color:var(--ink-2);font-size:15px;margin-bottom:10px}
 .system .eg{display:inline-block;font-size:12.5px;font-weight:600;color:var(--cyan);margin:0;
   background:rgba(79,209,232,.08);border:1px solid rgba(79,209,232,.2);border-radius:999px;padding:4px 11px}
 
-/* process */
+/* process: the line between the steps draws across when it arrives */
 .panel.light .band-head{margin-bottom:40px}
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
   position:relative}
 .steps::before{content:"";position:absolute;left:28px;right:28px;top:28px;height:2px;
-  background:linear-gradient(90deg,#FF7B47,#F0508A,#7B61FF);opacity:.35}
+  background:var(--paper-line);transform-origin:left center}
 .step{position:relative}
 .step .n{position:relative;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;
-  background:var(--paper-ink);color:#fff;font-family:var(--display);font-size:22px;font-weight:800;
-  box-shadow:0 0 0 6px var(--paper)}
-.step:nth-child(1) .n{background:#FF7B47}
-.step:nth-child(2) .n{background:#F0508A}
-.step:nth-child(3) .n{background:#A35AD0}
-.step:nth-child(4) .n{background:#7B61FF}
+  background:var(--paper);color:var(--ember);font-family:var(--display);font-size:20px;font-weight:700;
+  border:1px solid rgba(255,123,71,.45);box-shadow:0 0 0 6px var(--paper)}
 .step h3{font-size:21px;margin:20px 0 8px;color:var(--paper-ink)}
 .step p{font-size:15.5px}
 .panel.light .note{color:var(--paper-ink-2)}
-.panel.light .note a{color:#D2522A;border-color:rgba(210,82,42,.35)}
+.panel.light .note a{color:var(--ochre);border-color:rgba(138,100,16,.35)}
 
 /* about */
 .about{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px 72px;align-items:start}
@@ -307,35 +322,28 @@ p{margin:0 0 14px}
 .about .copy p:first-child{color:var(--ink);font-size:19px}
 .facts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .facts li{padding:20px 18px;border-radius:var(--r);background:var(--surface);border:1px solid var(--line);
-  display:flex;flex-direction:column-reverse;justify-content:flex-end;gap:6px}
+  box-shadow:var(--lift-1);display:flex;flex-direction:column-reverse;justify-content:flex-end;gap:6px}
 .facts .v{font-family:var(--display);font-size:22px;font-weight:700;line-height:1.2;letter-spacing:-.01em}
-.facts li:nth-child(-n+4) .v{font-size:34px;font-weight:800;letter-spacing:-.03em;
-  background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.facts .k{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.facts li:nth-child(-n+4) .v{font-size:34px;font-weight:800;letter-spacing:-.03em;color:var(--ember)}
+.facts .k{font-size:14px;font-weight:600;color:var(--ink-3)}
 
 /* brand analysis offer */
-.sub-k{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin:0 0 6px}
+.sub-k{font-size:15px;font-weight:600;color:var(--ink-3);margin:0 0 6px}
 .offer{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px 56px;align-items:start}
 .gets{list-style:none;margin:0;padding:0}
 .gets li{display:flex;gap:18px;padding:22px 0;border-top:1px solid var(--line)}
 .gets li:first-child{border-top:0}
-.gets .ico{width:44px;height:44px;padding:10px;border-radius:12px;color:var(--ember);
-  background:rgba(255,123,71,.1);border:1px solid rgba(255,123,71,.25)}
+.gets .ico{width:44px;height:44px;padding:10px}
 .gets h3{font-size:21px;line-height:1.2;margin:2px 0 8px}
 .gets p{color:var(--ink-2);font-size:15.5px;margin:0}
 .scorecard{position:relative;padding:24px;border-radius:var(--r-lg);
-  background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid var(--line-hi);
-  box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
-.scorecard::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;
-  background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-  -webkit-mask-composite:xor;mask-composite:exclude;opacity:.5;pointer-events:none}
-.scorecard .label{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:0}
+  background:var(--surface);border:1px solid var(--line-hi);box-shadow:var(--lift-2)}
+.scorecard .label{font-size:14px;font-weight:600;color:var(--ink-3);margin:0}
 .sc-brand{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:10px 0 14px}
 .sc-brand>span:first-child{font-family:var(--display);font-size:26px;font-weight:700;letter-spacing:-.02em}
 .overall{display:flex;flex-direction:column;align-items:flex-end;font-family:var(--display);font-size:46px;
-  font-weight:800;line-height:.9;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.overall small{font-family:var(--body);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--ink-3);-webkit-text-fill-color:var(--ink-3);margin-bottom:6px}
+  font-weight:800;line-height:.9;color:var(--ember)}
+.overall small{font-family:var(--body);font-size:13px;font-weight:600;color:var(--ink-3);margin-bottom:6px}
 .sc-rows{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
 .sc-rows li{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0;
   border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
@@ -346,59 +354,64 @@ p{margin:0 0 14px}
 .sc-first ol{margin:8px 0 0;padding-left:20px;font-size:14.5px;color:var(--ink)}
 .sc-first li{margin-bottom:4px}
 .sc-note{font-size:12.5px;color:var(--ink-3);margin:12px 0 0}
+/* the free analysis request: the one place on the page that asks for something, so it stands forward */
 .request{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  gap:40px 56px;margin-top:40px;padding:clamp(28px,5vw,56px);border-radius:var(--r-lg);
-  background:radial-gradient(90% 120% at 100% 0%,rgba(123,97,255,.28),transparent 60%),
-    radial-gradient(80% 100% at 0% 100%,rgba(255,123,71,.18),transparent 60%),var(--surface);
-  border:1px solid var(--line-hi)}
-.request>:not(.glow){position:relative;z-index:1}
+  gap:40px 56px;margin-top:56px;padding:clamp(32px,5vw,64px);border-radius:var(--r-lg);
+  background:#1C1531;border:1px solid rgba(255,123,71,.42);box-shadow:var(--lift-3)}
+.request::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--grad);z-index:2}
+.request>*{position:relative;z-index:1}
 .how{list-style:none;margin:10px 0 0;padding:0}
 .how li{display:flex;gap:16px;padding:16px 0}
-.how .n{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--grad);
-  font-family:var(--display);font-size:17px;font-weight:800;color:#fff}
+.how .n{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:transparent;
+  font-family:var(--display);font-size:17px;font-weight:700;color:var(--ember);border:1px solid rgba(255,123,71,.45)}
 .how h3{font-size:19px;margin:6px 0 6px}
 .how p{color:var(--ink-2);font-size:15.5px;margin:0}
-.lead-form{padding:28px;border-radius:var(--r);background:var(--paper);color:var(--paper-ink)}
+.lead-form{position:relative;overflow:hidden;padding:32px;border-radius:var(--r);background:var(--paper-2);
+  color:var(--paper-ink);border:1px solid var(--paper-line);box-shadow:var(--lift-3),0 0 0 1px rgba(255,123,71,.4)}
+.lead-form::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--grad)}
 .lead-form h3{font-size:26px;letter-spacing:-.02em;color:var(--paper-ink)}
+.lead-form > h3{font-size:clamp(26px,2.6vw,32px)}
 .lead-form .lede{color:var(--paper-ink-2);font-size:15px;margin:8px 0 18px}
 .lead-form label{display:block;font-size:13.5px;font-weight:700;color:var(--paper-ink);margin-bottom:14px}
 .lead-form .opt{font-weight:500;color:var(--paper-ink-2)}
 .lead-form input{display:block;width:100%;margin-top:6px;padding:13px 14px;font:inherit;font-size:16px;font-weight:500;
-  color:var(--paper-ink);background:#fff;border:1px solid var(--paper-line);border-radius:12px;outline:none;
-  transition:border-color .15s,box-shadow .15s}
-.lead-form input:focus{border-color:#E0602C;box-shadow:0 0 0 4px rgba(255,123,71,.18)}
-.lead-form input::placeholder{color:#9A9DB0}
+  color:var(--paper-ink);background:var(--ground);border:1px solid var(--line-hi);border-radius:10px;
+  transition:border-color .15s}
+.lead-form input:focus{border-color:var(--ember);outline:2px solid var(--ember);outline-offset:2px}
+.lead-form input::placeholder{color:var(--ink-3)}
 .lead-form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.lead-form button{width:100%;justify-content:center;margin-top:6px;cursor:pointer}
+.lead-form button{width:100%;justify-content:center;margin-top:6px;cursor:pointer;padding:17px 24px;font-size:16px}
 .lead-form button:disabled{opacity:.6;cursor:wait}
 .lead-form .fine{font-size:12.5px;color:var(--paper-ink-2);margin:14px 0 0}
-.lead-form .fine a,.lead-form .err a{color:#D2522A;border-bottom:1px solid rgba(210,82,42,.35)}
-.lead-form .err{display:none;font-size:14px;color:#B3263E;margin:12px 0 0}
+.lead-form .fine a,.lead-form .err a{color:var(--ember);border-bottom:1px solid rgba(255,123,71,.35)}
+.lead-form .err{display:none;font-size:14px;color:#FF8FA8;margin:12px 0 0}
 .lead-form.failed .err{display:block}
 .lead-form .ok{display:none;text-align:center;padding:24px 0 8px}
 .lead-form .ok p{color:var(--paper-ink-2);margin:10px 0 0}
 .lead-form .tick{display:block;width:56px;height:56px;margin:0 auto 16px;border-radius:50%;background:var(--grad);position:relative}
 .lead-form .tick::after{content:"";position:absolute;left:21px;top:14px;width:11px;height:20px;
-  border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg)}
-.lead-form.sent{display:flex;align-items:center;justify-content:center}
-.lead-form.sent>:not(.ok){display:none}
-.lead-form.sent .ok{display:block}
+  border:solid var(--on-ember);border-width:0 3px 3px 0;transform:rotate(45deg)}
+.lead-form.sent,.lead-form.mailed{display:flex;align-items:center;justify-content:center}
+.lead-form.sent>:not(.is-sent),.lead-form.mailed>:not(.is-mailed){display:none}
+.lead-form.sent .is-sent,.lead-form.mailed .is-mailed{display:block}
+.lead-form .is-mailed a{color:var(--ember);border-bottom:1px solid rgba(255,123,71,.35)}
 
-/* contact panel */
+/* contact panel: navy type on the gradient */
 .cta-wrap{padding:clamp(72px,10vw,128px) 0 clamp(56px,7vw,88px)}
 .cta{position:relative;overflow:hidden;border-radius:var(--r-lg);padding:clamp(40px,7vw,88px);
-  background:var(--grad);color:#fff;text-align:center}
-.cta .glow::before{background:radial-gradient(closest-side,rgba(255,255,255,.28),transparent)}
-.cta .glow::after{background:radial-gradient(closest-side,rgba(10,12,24,.35),transparent)}
+  background:var(--grad);background-size:200% 200%;animation:drift 18s ease-in-out infinite alternate;
+  color:var(--on-ember);text-align:center}
+@keyframes drift{from{background-position:0% 30%}to{background-position:100% 70%}}
 .cta h2,.cta p,.cta .actions{position:relative;z-index:1}
-.cta h2{font-size:clamp(38px,5.6vw,72px);line-height:1;font-weight:800;letter-spacing:-.035em;
+.cta h2{font-size:clamp(36px,5vw,64px);line-height:1.02;font-weight:700;letter-spacing:-.035em;
   max-width:16ch;margin:0 auto}
-.cta h2 em{background:none;color:#fff}
-.cta p{font-size:19px;max-width:54ch;margin:22px auto 34px;color:rgba(255,255,255,.88)}
+.cta h2 em{color:inherit}
+.cta p{font-size:19px;max-width:54ch;margin:22px auto 34px;color:var(--on-ember)}
 .cta .actions{justify-content:center}
-.cta .btn{border-color:rgba(255,255,255,.6);color:#fff}
-.cta .btn:hover{background:rgba(255,255,255,.12);border-color:#fff}
-.cta .btn.primary{background:var(--ground);color:#fff;box-shadow:0 14px 34px -12px rgba(10,12,24,.8)}
+.cta .btn{border-color:rgba(10,12,24,.55);color:var(--on-ember)}
+.cta .btn:hover{background:rgba(10,12,24,.08);border-color:var(--on-ember)}
+.cta .btn.primary{background:var(--ground);border-color:var(--ground);color:var(--ink)}
+.cta :focus-visible{outline-color:var(--ground)}
 
 /* long-form pages (privacy, app) */
 .doc{position:relative;padding:clamp(56px,8vw,96px) 0 clamp(64px,8vw,96px);overflow:hidden}
@@ -406,8 +419,7 @@ p{margin:0 0 14px}
 .doc header{margin-bottom:36px}
 .doc h1{font-size:clamp(42px,6vw,76px);line-height:1;font-weight:800;letter-spacing:-.035em}
 .doc .lede{font-size:19px;color:var(--ink-2);max-width:62ch;margin:20px 0 0}
-.doc .date{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--ink-3);margin-top:18px}
+.doc .date{font-size:15px;font-weight:600;color:var(--ink-3);margin-top:18px}
 .doc-panel section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.5fr);gap:10px 48px;
   padding:28px 0;border-top:1px solid var(--paper-line)}
 .doc-panel section:first-child{border-top:0;padding-top:0}
@@ -416,7 +428,7 @@ p{margin:0 0 14px}
 .doc-panel .body{max-width:70ch}
 .doc-panel .body p,.doc-panel .body li{color:var(--paper-ink-2)}
 .doc-panel .body strong{color:var(--paper-ink)}
-.doc-panel .body a{color:#D2522A;border-bottom:1px solid rgba(210,82,42,.35)}
+.doc-panel .body a{color:var(--ember);border-bottom:1px solid rgba(255,123,71,.35)}
 .doc-panel .body ul{margin:0 0 14px;padding-left:20px}
 .doc-panel .body li{margin-bottom:7px}
 
@@ -425,7 +437,7 @@ p{margin:0 0 14px}
 .foot-grid{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,1fr));gap:32px 40px}
 .foot .about-col p{color:var(--ink-2);max-width:40ch;margin:16px 0 14px}
 .foot .mail{color:var(--ember);font-weight:700}
-.foot .h{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);
+.foot .h{font-size:15px;font-weight:600;color:var(--ink-3);
   margin:6px 0 14px}
 .foot ul{list-style:none;margin:0;padding:0}
 .foot li{margin-bottom:9px}
@@ -433,11 +445,55 @@ p{margin:0 0 14px}
 .foot .col a:hover{color:var(--ink)}
 .foot-line{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-3)}
 
-/* motion */
+/* motion (Charles, 11/08/2026). Start states apply only under .m, which the head script sets when JavaScript
+   runs and reduced motion is off; motion.js reveals them as they scroll into view. The hero never waits on the
+   script: its parts rise by CSS alone. */
+@keyframes rise{from{opacity:0;transform:translateY(26px)}}
+@keyframes arrive{from{opacity:0;transform:translateX(34px)}}
+@keyframes hold{0%,99%{opacity:0}}
+.m .hero h1:not([data-hl]):not(.hl-done),.m .doc h1:not([data-hl]):not(.hl-done){animation:hold 1.3s linear}
+.m .hero-copy>:not(h1){animation:rise .9s var(--ease) both}
+.m .hero-copy>.sub{animation-delay:.12s}
+.m .hero-copy>.actions{animation-delay:.24s}
+.m .hero-copy>.meta{animation-delay:.36s}
+.m .hero-card{animation:arrive 1s var(--ease) .2s both}
+.m .hero-card li{animation:rise .8s var(--ease) both}
+.m .hero-card li:nth-child(1){animation-delay:.35s}
+.m .hero-card li:nth-child(2){animation-delay:.45s}
+.m .hero-card li:nth-child(3){animation-delay:.55s}
+.m .hero-card li:nth-child(4){animation-delay:.65s}
+.m [data-rv]{opacity:0;transform:translateY(26px)}
+.m [data-rv].in{opacity:1;transform:none;transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.ln{display:block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em}
+.m [data-hl] .li{display:inline-block;transform:translateY(112%)}
+.m [data-hl].in .li{transform:none;transition:transform 1.05s var(--ease)}
+.m .steps::before{transform:scaleX(0)}
+.m .steps.in::before{transform:scaleX(1);transition:transform 1.6s var(--ease) .25s}
+/* work-card colour blocks wipe in from the bottom as the card arrives */
+.m .work-card[data-rv] .cover{clip-path:inset(100% 0 0 0)}
+.m .work-card[data-rv].in .cover{clip-path:inset(0 0 0 0);transition:clip-path 1.2s var(--ease) .15s}
+/* pointer tilt with a light that follows the cursor (motion.js adds .tilt on mouse and trackpad devices).
+   The transform applies only while the pointer is on the card, so the scroll reveal is the same on every device. */
+.tilt.tilting:not(.hero-stack){transform:perspective(1100px) rotateX(var(--ty,0deg)) rotateY(var(--tx,0deg));
+  background-image:radial-gradient(420px circle at var(--lx) var(--ly),rgba(255,255,255,.06),transparent 60%)}
+.tilt.tilting{transition:transform .15s ease-out,box-shadow .4s var(--ease)!important}
+/* looping animations rest while off screen */
+.cta.still,.diagram-svg.still .flow{animation-play-state:paused}
+/* Lenis (smooth scroll): its recommended base rules */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .marquee .track,.diagram-svg .flow{animation:none}
-  .btn,.service,.work-card{transition:none}
+  .diagram-svg .flow,.cta{animation:none}
+  .btn,.btn.primary,.service,.work-card,.system,.figure,.badge,.cover-ico,.cover-img,.hero-stack,.top{transition:none}
+}
+@media print{
+  .m [data-rv],.m [data-hl] .li,.m .hero-copy>*,.m .doc h1,.m .hero-card,.m .hero-card li{opacity:1;transform:none;animation:none}
+  .m .work-card .cover{clip-path:none}
+  .top,.skip{position:static}
 }
 
 /* narrow screens */
@@ -453,6 +509,9 @@ p{margin:0 0 14px}
   .menu{display:block}
   .menu[open] nav{display:flex}
   .hero-grid,.band-head,.about,.doc-panel section,.foot-grid{grid-template-columns:1fr}
+  .hero-stack{transform:none}
+  .hero-stack::before{transform:translate(10px,12px)}
+  .hero-stack::after{transform:translate(20px,24px)}
   .foot-grid{grid-template-columns:1fr 1fr}
   .foot .about-col{grid-column:1/-1}
   .work,.systems{grid-template-columns:1fr}
@@ -465,7 +524,7 @@ p{margin:0 0 14px}
     border:1px solid rgba(79,209,232,.55);background:rgba(255,255,255,.05)}
   .diagram-stack .outs li{border-color:rgba(255,123,71,.6)}
   .diagram-stack .hub-chip{font-family:var(--display);font-weight:700;padding:16px 24px;border-radius:999px;
-    background:var(--grad);position:relative}
+    background:var(--grad);color:var(--on-ember);position:relative}
   .diagram-stack .hub-chip::before,.diagram-stack .hub-chip::after{content:"";position:absolute;left:50%;
     width:2px;height:14px;background:var(--line-hi)}
   .diagram-stack .hub-chip::before{top:-14px}
@@ -494,7 +553,141 @@ p{margin:0 0 14px}
 
 </head><body>
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4Q24P4C" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<a class="skip" href="#main">Skip to content</a>
 <header class="top"><div class="wrap"><a class="brand" href="index.html" aria-label="HyporDigital home"><img src="icon.svg" alt="" width="34" height="34"><span>Hypor<span class="w2">Digital</span></span></a><nav aria-label="Main"><a href="index.html#services">Services</a><a href="index.html#work">Work</a><a href="index.html#analysis">Free analysis</a><a href="index.html#systems">Systems</a><a href="index.html#about">About</a></nav><div class="top-right"><a class="btn primary small" href="mailto:service@hypordigital.com?subject=New%20project">Start a project<span class="arrow" aria-hidden="true">→</span></a><details class="menu"><summary aria-label="Menu"><span></span><span></span><span></span></summary><nav aria-label="Mobile"><a href="index.html#services">Services</a><a href="index.html#work">Work</a><a href="index.html#analysis">Free analysis</a><a href="index.html#systems">Systems</a><a href="index.html#about">About</a><a href="mailto:service@hypordigital.com?subject=New%20project">Start a project</a></nav></details></div></div></header>
-<main class="doc"><div class="glow" aria-hidden="true"></div><div class="wrap"><header><p class="kicker">HyporDigital</p><h1>Privacy policy</h1><p class="lede">This policy explains what personal information HyporDigital collects, how we use and protect it, and the choices you have. It applies to hypordigital.com, to our marketing services and to our HyporDigital Keyword Research app.</p><p class="date">Last updated October 31, 2026</p></header><article class="panel light doc-panel"><section><h2>Who we are</h2><div class="body"><p>HyporDigital ("HyporDigital," "we," "us" or "our") is a digital marketing agency based in Lake Bluff, Illinois, providing advertising, website and consulting services to businesses in the United States.</p></div></section><section><h2>Information we collect</h2><div class="body"><p><strong>Information you give us.</strong> When you email us, request a proposal or become a client, we collect what you choose to share, such as your name, email address, phone number, company, job title and the details of your project. Clients also give us billing and contact details.</p><p><strong>Information collected automatically.</strong> Our website uses the Google tag from Google Ads, which sets cookies and collects details such as the pages you view, the ad or link that brought you to the site, your IP address, and your browser and device. See <a href="#cookies">Cookies and advertising</a> below. Like any website, the services that host it and deliver its fonts may also record technical details such as your IP address, browser type, the page requested and the time of the request, to deliver the site and keep it secure.</p><p><strong>Information from other sources.</strong> We may receive business contact details from referrals or from public sources such as company websites and professional networks.</p></div></section><section><h2>How we use information</h2><div class="body"><p>We use personal information to:</p><ul><li>Reply to your questions and requests</li><li>Prepare proposals and provide the services we've agreed to</li><li>Manage our client relationships, including invoicing and record keeping</li><li>Send updates about our work, which you can opt out of at any time</li><li>Keep our website, systems and data secure</li><li>Meet our legal, tax and accounting obligations</li></ul><p>We don't sell personal information for money. Our website's Google tag lets Google show our ads to people who have visited the site, which some state privacy laws treat as "sharing" for targeted advertising. You can opt out as described under <a href="#cookies">Cookies and advertising</a>, or by emailing us.</p></div></section><section><h2><span id="cookies"></span>Cookies and advertising</h2><div class="body"><p>We use the Google tag from Google Ads to measure how well our ads work, for example whether someone who clicked one of our ads later contacted us, and to show our ads to people who have visited our site while they browse other websites. Google collects and uses this information under its own <a href="https://policies.google.com/privacy">privacy policy</a>. Google explains <a href="https://policies.google.com/technologies/partner-sites">how it uses information from sites that use its services</a>.</p><p>We also use Google Tag Manager to manage the Google tags on our site. Tag Manager itself doesn't set cookies; the tags it loads work as described above.</p><p>You can limit this at any time:</p><ul><li>Turn off personalized ads from Google in <a href="https://myadcenter.google.com">My Ad Center</a></li><li>Opt out of interest-based ads from participating companies at <a href="https://optout.aboutads.info">optout.aboutads.info</a></li><li>Block or delete cookies in your browser settings. The site works the same without them.</li></ul></div></section><section><h2>How we share information</h2><div class="body"><p>We share personal information only in these cases:</p><ul><li><strong>Service providers</strong> that help us run the business, such as website hosting, email, cloud storage and accounting. They may use it only to provide their services to us.</li><li><strong>Advertising partners</strong>, namely Google, through the Google tag on our website, as described under <a href="#cookies">Cookies and advertising</a>.</li><li><strong>Legal reasons</strong>, when required by law or legal process, or to protect the rights, property or safety of HyporDigital, our clients or others.</li><li><strong>Business transfers</strong>, if HyporDigital is involved in a merger, acquisition or sale of assets. We'd tell you before your information became subject to a different policy.</li><li><strong>With your consent</strong>, or at your direction.</li></ul></div></section><section><h2>Data we handle for clients</h2><div class="body"><p>When we provide services, clients may give us access to their advertising accounts, analytics, ecommerce platforms and customer data. We handle that data on the client's behalf, only to perform the work the client asked for, and under our agreement with them. The client's own privacy policy governs how their customers' data is collected and used. Questions about that data should go to the client first.</p></div></section><section><h2>Google user data</h2><div class="body"><p>HyporDigital Keyword Research is our internal app for measuring search demand. With permission from the person signing in, it connects to the Google Ads API (scope https://www.googleapis.com/auth/adwords) and retrieves keyword ideas and historical search statistics from Google Ads Keyword Planner, such as average monthly searches, monthly trends, competition and bid ranges.</p><p>We use this data only to research search demand for the brands we work with and to plan campaigns. The app doesn't create, change or delete anything in a Google Ads account. We don't sell Google user data, use it for advertising or share it with anyone except as needed to provide our services or as the law requires. Sign-in credentials are stored encrypted and access is limited to our team.</p><p>HyporDigital's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p><p>Anyone who has signed in can remove the app's access at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p></div></section><section><h2>How long we keep information</h2><div class="body"><p>We keep personal information only as long as we need it for the purpose we collected it for. Client and billing records are kept as long as tax and accounting rules require. When we no longer need information, we delete it or make it anonymous.</p></div></section><section><h2>How we protect information</h2><div class="body"><p>We use reasonable administrative, technical and physical safeguards, including encrypted storage, multi-factor sign-in and access limited to the people who need it. No method of storage or transmission is completely secure, so we can't guarantee absolute security.</p></div></section><section><h2>Your rights and choices</h2><div class="body"><p>You can ask us to:</p><ul><li>Tell you what personal information we hold about you</li><li>Correct information that's wrong</li><li>Delete your information</li><li>Stop sending you marketing emails</li></ul><p>Depending on the state you live in, such as California, Colorado, Connecticut, Virginia or Texas, you may have additional rights under state privacy law. To make a request, email <a href="mailto:service@hypordigital.com">service@hypordigital.com</a>. We may need to confirm your identity first, and we'll respond within the time the law requires. We won't treat you differently for using these rights.</p></div></section><section><h2>Children's privacy</h2><div class="body"><p>Our website and services are meant for businesses and aren't directed to children under 13. We don't knowingly collect personal information from children. If you believe a child has sent us information, contact us and we'll delete it.</p></div></section><section><h2>Links to other websites</h2><div class="body"><p>Our site may link to websites we don't control, such as LinkedIn. Their privacy practices are governed by their own policies.</p></div></section><section><h2>Changes to this policy</h2><div class="body"><p>We may update this policy from time to time. When we do, we'll change the date at the top of this page. If a change significantly affects how we use your information, we'll take reasonable steps to let you know.</p></div></section><section><h2>Contact us</h2><div class="body"><p>Questions about this policy or your information can go to <a href="mailto:service@hypordigital.com">service@hypordigital.com</a>, or by mail to HyporDigital, Lake Bluff, Illinois 60044.</p></div></section></article></div></main>
+<main class="doc" id="main" tabindex="-1"><div class="wrap"><header><p class="kicker">HyporDigital</p><h1>Privacy policy</h1><p class="lede">This policy explains what personal information HyporDigital collects, how we use and protect it, and the choices you have. It applies to hypordigital.com, to our marketing services and to our HyporDigital Keyword Research app.</p><p class="date">Last updated October 31, 2026</p></header><article class="panel light doc-panel"><section><h2>Who we are</h2><div class="body"><p>HyporDigital ("HyporDigital," "we," "us" or "our") is a digital marketing agency based in Lake Bluff, Illinois, providing advertising, website and consulting services to businesses in the United States.</p></div></section><section><h2>Information we collect</h2><div class="body"><p><strong>Information you give us.</strong> When you email us, request a proposal or become a client, we collect what you choose to share, such as your name, email address, phone number, company, job title and the details of your project. Clients also give us billing and contact details.</p><p><strong>Information collected automatically.</strong> Our website uses the Google tag from Google Ads, which sets cookies and collects details such as the pages you view, the ad or link that brought you to the site, your IP address, and your browser and device. See <a href="#cookies">Cookies and advertising</a> below. Like any website, the services that host it and deliver its fonts may also record technical details such as your IP address, browser type, the page requested and the time of the request, to deliver the site and keep it secure.</p><p><strong>Information from other sources.</strong> We may receive business contact details from referrals or from public sources such as company websites and professional networks.</p></div></section><section><h2>How we use information</h2><div class="body"><p>We use personal information to:</p><ul><li>Reply to your questions and requests</li><li>Prepare proposals and provide the services we've agreed to</li><li>Manage our client relationships, including invoicing and record keeping</li><li>Send updates about our work, which you can opt out of at any time</li><li>Keep our website, systems and data secure</li><li>Meet our legal, tax and accounting obligations</li></ul><p>We don't sell personal information for money. Our website's Google tag lets Google show our ads to people who have visited the site, which some state privacy laws treat as "sharing" for targeted advertising. You can opt out as described under <a href="#cookies">Cookies and advertising</a>, or by emailing us.</p></div></section><section><h2><span id="cookies"></span>Cookies and advertising</h2><div class="body"><p>We use the Google tag from Google Ads to measure how well our ads work, for example whether someone who clicked one of our ads later contacted us, and to show our ads to people who have visited our site while they browse other websites. Google collects and uses this information under its own <a href="https://policies.google.com/privacy">privacy policy</a>. Google explains <a href="https://policies.google.com/technologies/partner-sites">how it uses information from sites that use its services</a>.</p><p>We also use Google Tag Manager to manage the Google tags on our site. Tag Manager itself doesn't set cookies; the tags it loads work as described above.</p><p>You can limit this at any time:</p><ul><li>Turn off personalized ads from Google in <a href="https://myadcenter.google.com">My Ad Center</a></li><li>Opt out of interest-based ads from participating companies at <a href="https://optout.aboutads.info">optout.aboutads.info</a></li><li>Block or delete cookies in your browser settings. The site works the same without them.</li></ul></div></section><section><h2>How we share information</h2><div class="body"><p>We share personal information only in these cases:</p><ul><li><strong>Service providers</strong> that help us run the business, such as website hosting, email, cloud storage and accounting. They may use it only to provide their services to us.</li><li><strong>Advertising partners</strong>, namely Google, through the Google tag on our website, as described under <a href="#cookies">Cookies and advertising</a>.</li><li><strong>Legal reasons</strong>, when required by law or legal process, or to protect the rights, property or safety of HyporDigital, our clients or others.</li><li><strong>Business transfers</strong>, if HyporDigital is involved in a merger, acquisition or sale of assets. We'd tell you before your information became subject to a different policy.</li><li><strong>With your consent</strong>, or at your direction.</li></ul></div></section><section><h2>Data we handle for clients</h2><div class="body"><p>When we provide services, clients may give us access to their advertising accounts, analytics, ecommerce platforms and customer data. We handle that data on the client's behalf, only to perform the work the client asked for, and under our agreement with them. The client's own privacy policy governs how their customers' data is collected and used. Questions about that data should go to the client first.</p></div></section><section><h2>Google user data</h2><div class="body"><p>HyporDigital Keyword Research is our internal app for measuring search demand. With permission from the person signing in, it connects to the Google Ads API (scope https://www.googleapis.com/auth/adwords) and retrieves keyword ideas and historical search statistics from Google Ads Keyword Planner, such as average monthly searches, monthly trends, competition and bid ranges.</p><p>We use this data only to research search demand for the brands we work with and to plan campaigns. The app doesn't create, change or delete anything in a Google Ads account. We don't sell Google user data, use it for advertising or share it with anyone except as needed to provide our services or as the law requires. Sign-in credentials are stored encrypted and access is limited to our team.</p><p>HyporDigital's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p><p>Anyone who has signed in can remove the app's access at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</p></div></section><section><h2>How long we keep information</h2><div class="body"><p>We keep personal information only as long as we need it for the purpose we collected it for. Client and billing records are kept as long as tax and accounting rules require. When we no longer need information, we delete it or make it anonymous.</p></div></section><section><h2>How we protect information</h2><div class="body"><p>We use reasonable administrative, technical and physical safeguards, including encrypted storage, multi-factor sign-in and access limited to the people who need it. No method of storage or transmission is completely secure, so we can't guarantee absolute security.</p></div></section><section><h2>Your rights and choices</h2><div class="body"><p>You can ask us to:</p><ul><li>Tell you what personal information we hold about you</li><li>Correct information that's wrong</li><li>Delete your information</li><li>Stop sending you marketing emails</li></ul><p>Depending on the state you live in, such as California, Colorado, Connecticut, Virginia or Texas, you may have additional rights under state privacy law. To make a request, email <a href="mailto:service@hypordigital.com">service@hypordigital.com</a>. We may need to confirm your identity first, and we'll respond within the time the law requires. We won't treat you differently for using these rights.</p></div></section><section><h2>Children's privacy</h2><div class="body"><p>Our website and services are meant for businesses and aren't directed to children under 13. We don't knowingly collect personal information from children. If you believe a child has sent us information, contact us and we'll delete it.</p></div></section><section><h2>Links to other websites</h2><div class="body"><p>Our site may link to websites we don't control, such as LinkedIn. Their privacy practices are governed by their own policies.</p></div></section><section><h2>Changes to this policy</h2><div class="body"><p>We may update this policy from time to time. When we do, we'll change the date at the top of this page. If a change significantly affects how we use your information, we'll take reasonable steps to let you know.</p></div></section><section><h2>Contact us</h2><div class="body"><p>Questions about this policy or your information can go to <a href="mailto:service@hypordigital.com">service@hypordigital.com</a>, or by mail to HyporDigital, Lake Bluff, Illinois 60044.</p></div></section></article></div></main>
 <footer class="foot"><div class="wrap"><div class="foot-grid"><div class="col about-col"><a class="brand" href="index.html"><img src="icon.svg" alt="" width="34" height="34"><span>Hypor<span class="w2">Digital</span></span></a><p>An ecommerce growth agency for brands that sell online. Paid media, marketplaces, websites and the systems that connect them.</p><a class="mail" href="mailto:service@hypordigital.com">service@hypordigital.com</a></div><div class="col"><p class="h">Services</p><ul><li><a href="index.html#services">Paid media & marketplaces</a></li><li><a href="index.html#services">Websites & ecommerce</a></li><li><a href="index.html#systems">Systems & automation</a></li><li><a href="index.html#services">Brand & content</a></li></ul></div><div class="col"><p class="h">Company</p><ul><li><a href="index.html#work">Our work</a></li><li><a href="index.html#process">How we work</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#contact">Contact</a></li></ul></div><div class="col"><p class="h">More</p><ul><li><a href="privacy.html">Privacy policy</a></li><li><a href="keyword-research.html">Keyword Research app</a></li><li><a href="https://www.linkedin.com/in/charles-sadler" rel="noopener" target="_blank">LinkedIn</a></li></ul></div></div><div class="foot-line"><span>© 2026 HyporDigital · Lake Bluff, Illinois · Serving brands across the US</span></div></div></footer>
+<script>
+(function(){
+var d=document,root=d.documentElement;
+if(!root.classList.contains('m'))return;
+window.__hdm=1;
+if(!('IntersectionObserver' in window)){root.classList.remove('m');return;}
+function $(s,c){return [].slice.call((c||d).querySelectorAll(s));}
+var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+/* Headings: split into the lines they actually wrap to, each rising through its own mask, then put back. */
+function lines(h){
+  var orig=h.innerHTML,words=[];
+  (function walk(n,wrap){[].slice.call(n.childNodes).forEach(function(c){
+    if(c.nodeType===3){c.textContent.split(/\s+/).forEach(function(t){if(!t)return;
+      var s=d.createElement('span');s.textContent=t;s.style.display='inline-block';var node=s;
+      if(wrap){node=wrap.cloneNode(false);node.appendChild(s);}words.push({node:node,s:s});});}
+    else if(c.nodeType===1&&c.tagName!=='BR'){walk(c,c);}
+  });})(h,null);
+  if(!words.length)return;
+  h.textContent='';
+  words.forEach(function(w,i){h.appendChild(w.node);if(i<words.length-1)h.appendChild(d.createTextNode(' '));});
+  /* a word starts a new row only when it sits half a line lower: words inside an <em> with its own line-height
+     measure a few pixels off on the same line */
+  var rows=[],top=null,half=parseFloat(getComputedStyle(h).fontSize)/2;
+  words.forEach(function(w){var t=w.s.offsetTop;if(top===null||Math.abs(t-top)>half){rows.push([]);top=t;}
+    rows[rows.length-1].push(w.node);});
+  h.textContent='';
+  rows.forEach(function(r,i){var m=d.createElement('span');m.className='ln';var l=d.createElement('span');
+    l.className='li';l.style.transitionDelay=(i*120)+'ms';
+    r.forEach(function(n,j){l.appendChild(n);if(j<r.length-1)l.appendChild(d.createTextNode(' '));});
+    m.appendChild(l);h.appendChild(m);});
+  h.setAttribute('data-hl','');
+  h._done=function(){setTimeout(function(){h.innerHTML=orig;h.classList.add('hl-done');h.removeAttribute('data-hl');},rows.length*120+1200);};
+}
+
+/* The Results panel's figures count up to exactly the text the page shows. */
+function count(el){
+  var t=el.textContent.trim(),m=t.match(/^(\D*?)(\d[\d,]*(?:\.\d+)?)(.*)$/);
+  if(!m)return;
+  var pre=m[1],raw=m[2],suf=m[3],end=parseFloat(raw.replace(/,/g,'')),dec=(raw.split('.')[1]||'').length,
+      fmt={minimumFractionDigits:dec,maximumFractionDigits:dec,useGrouping:raw.indexOf(',')>-1},t0=null;
+  el.style.minWidth=el.getBoundingClientRect().width+'px';
+  el.textContent=pre+(0).toLocaleString('en-US',fmt)+suf;
+  function step(ts){if(t0===null)t0=ts;var p=Math.min(1,(ts-t0)/1400),e=1-Math.pow(1-p,3);
+    el.textContent=p<1?pre+(end*e).toLocaleString('en-US',fmt)+suf:t;
+    if(p<1)requestAnimationFrame(step);}
+  requestAnimationFrame(step);
+}
+
+var io=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;
+  var el=en.target;io.unobserve(el);el.classList.add('in');
+  if(el.hasAttribute('data-rv'))setTimeout(function(){el.style.transitionDelay='';},1600);
+  if(el._done)el._done();
+  if(el.hasAttribute('data-ct'))setTimeout(function(){count(el);},150);
+});},{rootMargin:'0px 0px -8% 0px',threshold:.12});
+function watch(el){io.observe(el);}
+
+/* Headings split once the web fonts are in, so line breaks are measured in the real face. The first-screen heading
+   waits at most a second (site.css holds it for 1.3s on its own, so it never depends on this script); the hero's
+   other parts rise by CSS alone. */
+function fontsIn(ms){return d.fonts&&d.fonts.ready?Promise.race([d.fonts.ready,new Promise(function(r){setTimeout(r,ms);})]):Promise.resolve();}
+var first=$('.hero h1,.doc h1');
+fontsIn(1000).then(function(){first.forEach(function(h){lines(h);if(h.hasAttribute('data-hl'))watch(h);else h.classList.add('hl-done');});});
+var heads=$('.band-head h2,.panel-head h2,.platform h2,.about h2,.cta h2,.offer h2');
+fontsIn(2500).then(function(){heads.forEach(function(h){if(h.getBoundingClientRect().top<innerHeight*.9){return;}lines(h);watch(h);});});
+
+/* Cards and steps rise as they arrive; running copy, kickers, notes and the footer simply sit there
+   (Charles, 11/08/2026: the architect's signature set). */
+var groups=['.figure','.service','.work-card','.system','.step','.facts li','.gets li','.scorecard','.how li',
+  '.lead-form','.doc-panel section'];
+var seen=[];
+groups.forEach(function(sel){$(sel).forEach(function(el){
+  if(seen.indexOf(el)>-1||el.closest('.hero')||el.closest('h1,h2'))return;seen.push(el);
+  var sib=el.parentNode?[].slice.call(el.parentNode.children).filter(function(x){return x.matches(sel);}):[];
+  el.style.transitionDelay=Math.min(sib.indexOf(el),6)*90+'ms';el.setAttribute('data-rv','');watch(el);});});
+$('.steps').forEach(watch);
+$('.figure .v').forEach(function(el){
+  if(/\d/.test(el.textContent)){el.setAttribute('data-ct','');watch(el);}});
+
+var top=d.querySelector('.top');
+if(top){var on=function(){top.classList.toggle('scrolled',scrollY>8);};on();addEventListener('scroll',on,{passive:true});}
+
+/* Animations that would otherwise run forever stop while they're off screen. */
+var loop=new IntersectionObserver(function(es){es.forEach(function(en){
+  en.target.classList.toggle('still',!en.isIntersecting);});});
+$('.diagram-svg,.cta').forEach(function(el){el.classList.add('still');loop.observe(el);});
+
+/* Depth on pointer: cards tilt toward the cursor in 3D and a soft light follows it (mouse and trackpad only). */
+if(fine){
+  $('.hero-stack,.work-card').forEach(function(el){
+    var max=el.classList.contains('hero-stack')?9:6;el.classList.add('tilt');
+    el.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect(),
+      x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      el.style.setProperty('--tx',(x*max).toFixed(2)+'deg');el.style.setProperty('--ty',(-y*max).toFixed(2)+'deg');
+      el.style.setProperty('--lx',((x+.5)*100).toFixed(1)+'%');el.style.setProperty('--ly',((y+.5)*100).toFixed(1)+'%');
+      el.classList.add('tilting');});
+    el.addEventListener('pointerleave',function(){['--tx','--ty','--lx','--ly'].forEach(function(p){
+      el.style.removeProperty(p);});el.classList.remove('tilting');});
+  });
+
+  /* Parallax: a slight drift through the translate property, so it adds to any transform. All reads, then all
+     writes, once per frame. Mouse and trackpad only. */
+  var par=$('.hero-card,.cover-ico,.diagram-svg').map(function(el){
+    return {el:el,y:0,k:el.classList.contains('cover-ico')?.12:el.classList.contains('hero-card')?.05:.04};});
+  var queued=false;
+  var drift=function(){queued=false;var vh=innerHeight,rs=par.map(function(p){return p.el.getBoundingClientRect();});
+    par.forEach(function(p,i){var r=rs[i];if(r.bottom<-300||r.top>vh+300)return;
+      var c=(r.top-p.y)+r.height/2-vh/2;p.y=-c*p.k;p.el.style.translate='0 '+p.y.toFixed(1)+'px';});};
+  var ask=function(){if(!queued){queued=true;requestAnimationFrame(drift);}};
+  drift();addEventListener('scroll',ask,{passive:true});addEventListener('resize',ask);
+}
+
+/* Smooth, inertial scrolling (Lenis, after spykercars.com), loaded after everything above so nothing waits on it.
+   Anchor links still land under the header. */
+var ls=d.createElement('script');
+ls.src='https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js';
+ls.integrity='sha384-B2WBjDzEjJpYvhmi2UyEn7rektqkf5suS6sNoyyrf0EBAwBHdkiXxIlU0V5Ru2ed';
+ls.crossOrigin='anonymous';
+ls.onload=function(){
+  if(!window.Lenis)return;
+  var lenis=new Lenis({lerp:.09});root.style.scrollBehavior='auto';
+  var raf=function(t){lenis.raf(t);requestAnimationFrame(raf);};requestAnimationFrame(raf);
+  var here=function(p){return p.replace(/index\.html$/,'');};
+  d.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="#"]');if(!a)return;
+    if(a.origin!==location.origin||here(a.pathname)!==here(location.pathname))return;
+    var id=a.hash;if(id.length<2)return;var tg=d.getElementById(id.slice(1));if(!tg)return;
+    e.preventDefault();lenis.scrollTo(tg,{offset:-88});history.pushState(null,'',id);
+    if(id==='#main')tg.focus({preventScroll:true});
+    var m=a.closest('details');if(m)m.removeAttribute('open');});
+};
+d.head.appendChild(ls);
+})();
+</script>
 </body></html>

@@ -30,11 +30,8 @@ HERE = Path(__file__).resolve().parent
 LEGACY = "Legacy Versions"
 STAMP = datetime.now().strftime("%Y-%m-%d_%H%M")
 
-FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
-         '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?'
-         'family=Bricolage+Grotesque:opsz,wght@12..96,500..800'
-         '&family=Manrope:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap">')
+FONTS = ('<link rel="preload" href="fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>'
+         '<link rel="preload" href="fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin>')
 
 # 24x24 line icons, drawn with stroke="currentColor".
 ICONS = {
@@ -142,19 +139,21 @@ def hero(b, site):
         else:
             rows = "".join(f'<li>{x}</li>' for x in ab["items"])
             aside = f'<aside class="hero-card"><p class="label">{ab["label"]}</p><ul class="plain">{rows}</ul></aside>'
-    return (f'<section class="hero"><div class="glow" aria-hidden="true"></div>'
+    return (f'<section class="hero">'
             f'<div class="wrap hero-grid"><div class="hero-copy">'
             f'<p class="kicker">{b["kicker"]}</p><h1>{b["title"]}</h1>'
             f'<p class="sub">{b["sub"]}</p>{buttons(b.get("actions"))}'
-            f'<p class="meta">{b.get("meta", "")}</p></div>{aside}</div></section>')
+            f'<p class="meta">{b.get("meta", "")}</p></div>'
+            + (f'<div class="hero-stack">{aside}</div>' if aside else "")   # layered cards behind it, in 3D
+            + '</div></section>')
 
 
 def logos(b, site):
-    """A scrolling strip of names; the second copy only makes the loop seamless."""
+    """The strip of industries."""
     names = "".join(f"<li>{escape(n)}</li>" for n in b["names"])
     return (f'<section class="marquee" aria-label="{a(b["label"])}">'
             f'<p class="label wrap">{b["label"]}</p><div class="track">'
-            f'<ul>{names}</ul><ul aria-hidden="true">{names}</ul></div></section>')
+            f'<ul>{names}</ul></div></section>')
 
 
 def figures(b, site):
@@ -187,9 +186,13 @@ def work(b, site):
         tags = "".join(f"<li>{escape(t)}</li>" for t in c.get("tags", []))
         results = c.get("results") or ([c["result"]] if c.get("result") else [])
         tone = c.get("tone", ["ember", "violet", "cyan", "pink"][i % 4])
+        # image: an optional screenshot for the cover (a path in the site folder); without one, the colour block
+        # and its icon stand in
+        cover = (f'<img class="cover-img" src="{a(c["image"])}" alt="{a(c.get("image_alt", ""))}" loading="lazy">'
+                 if c.get("image") else icon(c.get("icon"), "cover-ico"))
         cards.append(
             f'<article class="work-card tone-{a(tone)}">'
-            f'<div class="cover">{icon(c.get("icon"), "cover-ico")}'
+            f'<div class="cover">{cover}'
             f'<span class="pill">{c["category"]}</span></div>'
             f'<div class="body"><p class="who">{escape(c["brand"])}</p>'
             f'<h3>{c["headline"]}</h3><p>{c["text"]}</p>'
@@ -231,9 +234,7 @@ def diagram(d) -> str:
                  f'<text class="hub-t" x="{cx}" y="{cy + 5 + first_dy}">{hub_text}</text>')
     svg = (f'<svg class="diagram-svg" viewBox="0 0 {W} {H}" role="img" '
            f'aria-label="{a(d.get("label", "How the systems connect"))}">'
-           f'<defs><linearGradient id="hubg" x1="0" y1="0" x2="1" y2="1">'
-           f'<stop offset="0" stop-color="#FF7B47"/><stop offset=".55" stop-color="#F0508A"/>'
-           f'<stop offset="1" stop-color="#7B61FF"/></linearGradient></defs>{"".join(parts)}</svg>')
+           f'{"".join(parts)}</svg>')
     chips = lambda xs: "".join(f"<li>{escape(x)}</li>" for x in xs)
     stacked = (f'<div class="diagram-stack" aria-hidden="true"><ul>{chips(src)}</ul>'
                f'<div class="hub-chip">{escape(" ".join(hub_lines))}</div><ul class="outs">{chips(out)}</ul></div>')
@@ -297,19 +298,27 @@ document.querySelectorAll('form.lead-form').forEach(function (f) {
     e.preventDefault();
     if (f.elements.company && f.elements.company.value) return;
     var d = Object.fromEntries(new FormData(f)), btn = f.querySelector('button');
-    function done() {
-      f.querySelector('.ok b').textContent = d.brand;
-      f.classList.remove('failed'); f.classList.add('sent');
-      if (window.gtag && f.dataset.conversion) gtag('event', 'conversion', {send_to: f.dataset.conversion});
+    function show(state) {
+      f.querySelectorAll('.ok b').forEach(function (b) { b.textContent = d.brand; });
+      f.classList.remove('failed'); f.classList.add(state);
     }
+    /* No relay: hand the request to the visitor's email app. Nothing has been sent yet, so the page says so and
+       no conversion fires. */
     if (!f.dataset.endpoint) {
       location.href = 'mailto:' + f.dataset.to + '?subject=' + encodeURIComponent('Brand analysis request: ' + d.brand)
         + '&body=' + encodeURIComponent('Brand: ' + d.brand + '\\nWebsite: ' + (d.website || '-') + '\\nEmail: ' + d.email);
-      done(); return;
+      show('mailed'); return;
     }
+    /* The relay (form-relay.gs, a Google Apps Script web app) answers {"ok":true} only once the request is stored
+       and mailed; anything else is a failure. URL-encoded and without custom headers, so no CORS preflight. */
     btn.disabled = true;
-    fetch(f.dataset.endpoint, {method: 'POST', headers: {Accept: 'application/json'}, body: new FormData(f)})
-      .then(function (r) { if (!r.ok) throw r; done(); })
+    fetch(f.dataset.endpoint, {method: 'POST', body: new URLSearchParams(new FormData(f))})
+      .then(function (r) { if (!r.ok) throw r; return r.json(); })
+      .then(function (j) {
+        if (!j || !j.ok) throw j;
+        show('sent');
+        if (window.gtag && f.dataset.conversion) gtag('event', 'conversion', {send_to: f.dataset.conversion});
+      })
       .catch(function () { f.classList.add('failed'); btn.disabled = false; });
   });
 });
@@ -351,19 +360,21 @@ def analysis(b, site):
             f'<button class="btn primary" type="submit">{fm["button"]}<span class="arrow" aria-hidden="true">→</span></button>'
             f'<p class="fine">{fm["fine"]}</p>'
             f'<p class="err" role="alert">{fm["error"]}</p>'
-            f'<div class="ok" role="status"><span class="tick" aria-hidden="true"></span>'
-            f'<h3>{fm["success_title"]}</h3><p>{fm["success"]}</p></div></form>')
+            f'<div class="ok is-sent" role="status"><span class="tick" aria-hidden="true"></span>'
+            f'<h3>{fm["success_title"]}</h3><p>{fm["success"]}</p></div>'
+            f'<div class="ok is-mailed" role="status"><h3>{fm.get("mail_title", "One more step")}</h3>'
+            f'<p>{fm.get("mail_text", "Your email app should open with the request ready to send.")}</p></div></form>')
     return (f'<section class="band analysis-band"{head_of(b)}><div class="wrap">{band_head(b)}'
             f'<div class="offer"><div><p class="sub-k">{b["gets_label"]}</p><ul class="gets">{gets}</ul></div>'
             f'{sample}</div>'
-            f'<div class="request"><div class="glow" aria-hidden="true"></div>'
+            f'<div class="request">'
             f'<div class="request-copy"><p class="sub-k">{b["steps_label"]}</p><ol class="how">{steps_html}</ol></div>'
             f'{form}</div></div></section>{LEAD_JS}')
 
 
 def cta(b, site):
     return (f'<section class="cta-wrap"{head_of(b)}><div class="wrap"><div class="cta">'
-            f'<div class="glow" aria-hidden="true"></div><h2>{b["title"]}</h2>'
+            f'<h2>{b["title"]}</h2>'
             f'<p>{b["text"]}</p>{buttons(b.get("actions"))}</div></div></section>')
 
 
@@ -377,7 +388,7 @@ def doc_body(pg) -> str:
     date = f'<p class="date">Last updated {pg["updated"]}</p>' if pg.get("updated") else ""
     secs = "".join(f'<section><h2>{s["title"]}</h2><div class="body">{paras(s["body"])}</div></section>'
                    for s in pg["sections"])
-    return (f'<main class="doc"><div class="glow" aria-hidden="true"></div><div class="wrap">'
+    return (f'<main class="doc" id="main" tabindex="-1"><div class="wrap">'
             f'<header><p class="kicker">{pg.get("kicker", "HyporDigital")}</p><h1>{pg["heading"]}</h1>'
             f'<p class="lede">{pg["lede"]}</p>{date}</header>'
             f'<article class="panel light doc-panel">{secs}</article></div></main>')
@@ -468,6 +479,19 @@ def gtm_body(site) -> str:
             'height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>\n')
 
 
+# ------------------------------------------------------------------ motion
+# Charles, 11/08/2026: motion in the spirit of digitalsilk.com (headings rising through a mask, reveals on scroll,
+# figures counting up, a line drawing across the process). Only with JavaScript and without reduced motion: the head
+# script adds .m; if the motion script never starts, the guard drops .m after 4 seconds so nothing stays hidden.
+# The script itself lives in motion.js beside site.css and is inlined the same way. It loads Lenis last, so the
+# page never waits on the CDN.
+MOTION_HEAD = ("<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches){var r=document.documentElement;"
+               "r.classList.add('m');setTimeout(function(){if(!window.__hdm)r.classList.remove('m')},4000)}</script>")
+
+MOTION_JS = "<script>\n" + (HERE / "motion.js").read_text(encoding="utf-8") + "</script>"
+
+
+
 def page(site, pg, css) -> str:
     url = site["url"]
     path = "" if pg["file"] == "index.html" else pg["file"]
@@ -475,11 +499,12 @@ def page(site, pg, css) -> str:
     desc = " ".join(pg["description"].split())
     body = ("".join(BLOCKS[k](v, site) for b in pg["blocks"] for k, v in b.items())
             if "blocks" in pg else doc_body(pg))
-    main_open, main_close = ("<main>", "</main>") if "blocks" in pg else ("", "")
+    main_open, main_close = ('<main id="main" tabindex="-1">', "</main>") if "blocks" in pg else ("", "")
     ld = schema(site, pg) if pg["file"] == "index.html" else ""
     return f"""<!doctype html>
 <html lang="en-US"><head><meta charset="utf-8">
 {gtm_head(site)}{gtag(site)}<meta name="viewport" content="width=device-width,initial-scale=1">
+{MOTION_HEAD}
 <title>{escape(pg["title"])}</title>
 <meta name="description" content="{a(desc)}">
 <link rel="canonical" href="{a(canonical)}">
@@ -500,9 +525,11 @@ def page(site, pg, css) -> str:
 </style>
 {ld}
 </head><body>
-{gtm_body(site)}{header(site)}
+{gtm_body(site)}<a class="skip" href="#main">Skip to content</a>
+{header(site)}
 {main_open}{body}{main_close}
 {footer(site)}
+{MOTION_JS}
 </body></html>
 """
 
