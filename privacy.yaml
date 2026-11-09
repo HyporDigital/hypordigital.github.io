@@ -9,7 +9,7 @@ description: >-
   How HyporDigital collects, uses, shares and protects personal information on
   hypordigital.com, in client work and in HyporDigital Keyword Research.
 heading: Privacy policy
-updated: October 31, 2026
+updated: November 9, 2026
 lede: >-
   This policy explains what personal information HyporDigital collects, how we use
   and protect it, and the choices you have. It applies to hypordigital.com, to our
@@ -81,23 +81,20 @@ sections:
 - title: Google user data
   body:
   - >-
-    HyporDigital Keyword Research is our internal app for measuring search demand.
-    With permission from the person signing in, it connects to the Google Ads API
-    (scope https://www.googleapis.com/auth/adwords) and retrieves keyword ideas and
-    historical search statistics from Google Ads Keyword Planner, such as average
-    monthly searches, monthly trends, competition and bid ranges.
+    HyporDigital Keyword Research is our internal app for keyword research, reporting and managing advertising
+    for the businesses we work with. With permission, it accesses data from Google services such as Google Ads,
+    Search Console, Google Analytics and Merchant Center, only for accounts a business has chosen to share
+    with us.
   - >-
-    We use this data only to research search demand for the brands we work with and
-    to plan campaigns. The app doesn't create, change or delete anything in a Google
-    Ads account. We don't sell Google user data, use it for advertising or share it
-    with anyone except as needed to provide our services or as the law requires.
-    Sign-in credentials are stored encrypted and access is limited to our team.
+    We use this data only to provide our services to that business. We don't sell Google user data or share it
+    with anyone except as needed to provide our services or as the law requires. Access is limited to our team
+    and credentials are stored securely.
   - >-
     HyporDigital's use and transfer to any other app of information received from
     Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google
     API Services User Data Policy</a>, including the Limited Use requirements.
   - >-
-    Anyone who has signed in can remove the app's access at any time at
+    A business can remove our access at any time from the settings of the Google service it shared, or at
     <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.
 
 - title: How long we keep information

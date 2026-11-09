@@ -2,7 +2,7 @@
 # business details search engines read. Every page uses these.
 #
 # Edit anything here or in a page's YAML (index.yaml, privacy.yaml,
-# keyword-research.yaml), then rebuild every page with:
+# keyword-research.yaml, google-access.yaml), then rebuild every page with:
 #   python build_site.py
 # Text fields can hold simple HTML such as <strong> and <a href="...">.
 
