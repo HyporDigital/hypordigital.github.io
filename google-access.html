@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="en-US"><head><meta charset="utf-8">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P4Q24P4C');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18548236863"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'AW-18548236863');</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches){var r=document.documentElement;r.classList.add('m');setTimeout(function(){if(!window.__hdm)r.classList.remove('m')},4000)}</script>
+<title>Get set up with HyporDigital | HyporDigital</title>
+<meta name="description" content="A short, animated walkthrough for connecting HyporDigital to your Google Search Console, Google Analytics, Merchant Center and Google Ads.">
+<link rel="canonical" href="https://hypordigital.com/google-access.html">
+<meta name="theme-color" content="#0A0C18">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HyporDigital">
+<meta property="og:title" content="Get set up with HyporDigital | HyporDigital">
+<meta property="og:description" content="A short, animated walkthrough for connecting HyporDigital to your Google Search Console, Google Analytics, Merchant Center and Google Ads.">
+<meta property="og:url" content="https://hypordigital.com/google-access.html">
+<meta property="og:image" content="https://hypordigital.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* hypordigital.com — site stylesheet. Inlined into every page by build_site.py.
+   Deep ink-navy ground, ember orange from the logo as the brand colour, the ember-to-violet gradient
+   as a fill on the few things that act (buttons, the closing panel). Rev 11/08/2026 (Charles): older
+   colours kept; no glows, grid masks, glass sheen, dot textures, gradient text, capitals labels or
+   white panels; tighter radii, squarer buttons and quieter weights for a premium finish; motion and depth.
+   Text on ember or the gradient is navy: white there fails contrast. */
+
+/* brand fonts (Charles, 11/08/2026): Schibsted Grotesk for display, Public Sans for text. Both OFL, served from
+   fonts/ beside this file, latin subset, variable weight. */
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:400 900;font-display:swap;
+  src:url(fonts/schibsted-grotesk-latin.woff2) format('woff2')}
+@font-face{font-family:'Public Sans';font-style:normal;font-weight:400 700;font-display:swap;
+  src:url(fonts/public-sans-latin.woff2) format('woff2')}
+
+:root{
+  --ground:#0A0C18;
+  --ground-2:#0F1224;
+  --surface:#141833;
+  --surface-2:#1B2043;
+  --line:rgba(255,255,255,.09);
+  --line-hi:rgba(255,255,255,.18);
+  --ink:#F4F2ED;
+  --ink-2:#B6B9CC;
+  --ink-3:#80849E;
+  --ember:#FF7B47;
+  --ember-hi:#FF936A;
+  --on-ember:#0A0C18;
+  --ochre:#FF936A;
+  --pink:#F0508A;
+  --violet:#7B61FF;
+  --cyan:#4FD1E8;
+  --grad:linear-gradient(115deg,#FF7B47 0%,#F0508A 48%,#7B61FF 100%);
+  --paper:#11152B;
+  --paper-2:#171C38;
+  --paper-ink:#F4F2ED;
+  --paper-ink-2:#B6B9CC;
+  --paper-line:rgba(255,255,255,.1);
+  --display:'Schibsted Grotesk','Segoe UI',system-ui,sans-serif;
+  --body:'Public Sans','Segoe UI',system-ui,sans-serif;
+  --r:12px;
+  --r-lg:18px;
+  --wrap:1200px;
+  --pad:clamp(16px,4vw,40px);
+  --ease:cubic-bezier(.2,.7,.1,1);
+  /* elevation: a hairline of light on the top edge and a soft cast shadow, deeper as the thing matters more */
+  --lift-1:inset 0 1px 0 rgba(255,255,255,.05),0 1px 2px rgba(2,3,12,.45),0 10px 24px -12px rgba(2,3,12,.6);
+  --lift-2:inset 0 1px 0 rgba(255,255,255,.07),0 2px 6px rgba(2,3,12,.4),0 22px 44px -18px rgba(2,3,12,.75);
+  --lift-3:inset 0 1px 0 rgba(255,255,255,.09),0 6px 14px rgba(2,3,12,.4),0 44px 90px -30px rgba(2,3,12,.9);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);
+  font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:650;letter-spacing:-.02em;text-wrap:balance}
+h1 em,h2 em{font-style:normal;color:var(--ember)}
+p{margin:0 0 14px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.kicker{display:block;font-size:15px;font-weight:700;color:var(--ember);margin:0 0 14px}
+.intro{color:var(--ink-2);font-size:18px;max-width:58ch}
+.ico{width:24px;height:24px;flex:none}
+
+/* keyboard focus */
+:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+main:focus{outline:none}
+.skip{position:absolute;left:12px;top:-64px;z-index:50;padding:10px 16px;border-radius:10px;
+  background:var(--ember);color:var(--on-ember);font-weight:700;font-size:15px}
+.skip:focus{top:12px}
+
+/* header */
+.top{position:sticky;top:0;z-index:20;background:var(--ground);
+  border-bottom:1px solid var(--line);transition:box-shadow .3s,border-color .3s}
+.top.scrolled{box-shadow:0 12px 32px -20px rgba(0,0,0,.9);border-bottom-color:var(--line-hi)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--display);font-size:20px;
+  font-weight:700;letter-spacing:-.01em}
+.brand img{width:34px;height:34px}
+.brand .w2{font-weight:500;color:var(--ink-2)}
+.top nav{display:flex;align-items:center;gap:6px}
+.top nav a{font-size:15px;font-weight:600;color:var(--ink-2);padding:8px 14px;border-radius:8px;
+  transition:color .15s,background .15s}
+.top nav a:hover{color:var(--ink);background:rgba(255,255,255,.06)}
+.top-right{display:flex;align-items:center;gap:10px}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;cursor:pointer;width:44px;height:44px;border-radius:12px;
+  border:1px solid var(--line-hi);display:flex;flex-direction:column;justify-content:center;
+  align-items:center;gap:4px}
+.menu summary::-webkit-details-marker{display:none}
+.menu summary span{width:18px;height:2px;border-radius:2px;background:var(--ink)}
+.menu nav{position:absolute;right:0;top:54px;flex-direction:column;align-items:stretch;min-width:200px;
+  padding:8px;background:var(--surface);border:1px solid var(--line-hi);border-radius:16px;
+  box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.menu nav a{padding:12px 14px;border-radius:10px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:10px;
+  font-family:var(--body);font-size:15px;font-weight:700;border:1px solid var(--line-hi);
+  color:var(--ink);transition:transform .15s,background .15s,border-color .15s,box-shadow .15s}
+.btn:hover{border-color:var(--ink)}
+.btn.primary{background:var(--grad);background-size:200% 100%;background-position:0 50%;
+  border-color:transparent;color:var(--on-ember);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 10px 22px -10px rgba(2,3,12,.9);
+  transition:background-position .7s var(--ease),border-color .15s,transform .15s}
+.btn.primary:hover{background-position:100% 50%}
+.btn.primary:active{transform:translateY(1px)}
+.btn.small{padding:10px 18px;font-size:14px}
+.btn .arrow{transition:transform .15s}
+.btn:hover .arrow{transform:translateX(3px)}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+
+/* hero */
+.hero{position:relative;padding:clamp(72px,10vw,136px) 0 clamp(64px,8vw,104px);overflow:hidden}
+.hero .wrap{position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:56px 64px;align-items:center}
+.hero h1{font-size:clamp(44px,6.4vw,80px);line-height:1;font-weight:700;letter-spacing:-.035em}
+.hero h1 em{line-height:.9}
+.hero .sub{font-size:clamp(17px,1.5vw,20px);color:var(--ink-2);max-width:56ch;margin:28px 0 34px}
+.hero .meta{margin:30px 0 0;font-size:14px;color:var(--ink-3)}
+/* the results card rests at an angle in 3D, with two cards layered behind it */
+.hero-stack{position:relative;transform-style:preserve-3d;
+  transform:perspective(1300px) rotateY(calc(-9deg + var(--tx,0deg))) rotateX(calc(4deg + var(--ty,0deg)));
+  transition:transform .9s var(--ease)}
+.hero-stack.tilting{transition:transform .15s ease-out}
+.hero-stack::before,.hero-stack::after{content:"";position:absolute;inset:0;border-radius:var(--r-lg);
+  background:var(--surface-2);border:1px solid var(--line);pointer-events:none}
+.hero-stack::before{transform:translate3d(20px,22px,-50px);opacity:.55}
+.hero-stack::after{transform:translate3d(40px,44px,-100px);opacity:.25}
+.hero-card{position:relative;z-index:1;padding:26px 26px 10px;border-radius:var(--r-lg);
+  background:var(--surface);border:1px solid var(--line-hi);box-shadow:var(--lift-3)}
+.hero-card .label{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;
+  color:var(--ink-2);margin:0 0 8px}
+.hero-card .dot{width:8px;height:8px;border-radius:50%;background:#3DDC97;
+  box-shadow:0 0 0 4px rgba(61,220,151,.18)}
+.hero-card ul{list-style:none;margin:0;padding:0}
+.hero-card li{display:grid;grid-template-columns:clamp(96px,10vw,136px) 1fr;gap:16px;align-items:center;padding:16px 0;
+  border-top:1px solid var(--line)}
+.hero-card li:first-child{border-top:0}
+.hero-card .v{font-family:var(--display);font-size:clamp(34px,3.4vw,44px);font-weight:800;letter-spacing:-.04em;
+  line-height:1;min-width:3.4ch;color:var(--ember);
+  font-variant-numeric:tabular-nums}
+.hero-card .k{font-size:15px;color:var(--ink-2);line-height:1.4}
+.hero-card .plain li{display:block;font-size:16px}
+.hero-card .foot-note{font-size:12.5px;color:var(--ink-3);margin:6px 0 14px}
+
+/* industry strip */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;
+  background:var(--ground-2);overflow:hidden}
+.marquee .label{font-size:15px;font-weight:600;color:var(--ink-3);margin-bottom:14px}
+.marquee .track{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+.marquee ul{display:flex;flex-wrap:wrap;gap:8px 40px;margin:0;padding:0;list-style:none}
+.marquee ul[aria-hidden]{display:none}
+.marquee li{font-family:var(--display);font-size:clamp(19px,2vw,24px);font-weight:500;color:var(--ink-2);
+  white-space:nowrap;display:flex;align-items:center}
+/* with motion: one full-width line that drifts left on a loop, fading in and out at the screen edges.
+   It pauses under the pointer and while off screen. */
+.m .marquee .track{max-width:none;padding:0;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.m .marquee .lane{display:flex;width:max-content;animation:marquee 60s linear infinite}
+.m .marquee ul{flex-wrap:nowrap;gap:0}
+.m .marquee ul[aria-hidden]{display:flex}
+.m .marquee li::after{content:"";width:6px;height:6px;margin:0 30px;border-radius:1px;transform:rotate(45deg);
+  background:var(--ember);opacity:.7;flex:none}
+.marquee:hover .lane,.marquee.still .lane{animation-play-state:paused}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* panels (results, process, doc pages) */
+.panel-wrap{padding:clamp(56px,8vw,96px) 0 0}
+.panel{border-radius:var(--r-lg);padding:clamp(32px,5vw,64px);box-shadow:var(--lift-1)}
+.panel.light{background:var(--paper);color:var(--paper-ink);border:1px solid var(--paper-line)}
+.panel.light .kicker{color:var(--ochre)}
+.panel.light .intro,.panel.light p{color:var(--paper-ink-2)}
+.panel.light h2{color:var(--paper-ink)}
+.panel.light h1 em,.panel.light h2 em,.lead-form h3 em{color:var(--ember)}
+.panel-head{max-width:760px;margin-bottom:40px}
+.panel-head h2,.band-head h2,.platform h2,.about h2{font-size:clamp(36px,4.8vw,62px);line-height:1.02;
+  letter-spacing:-.03em;font-weight:700}
+.panel-head .intro{margin:18px 0 0}
+
+/* figures */
+.figures{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.figure{background:var(--paper-2);border:1px solid var(--paper-line);border-radius:var(--r);padding:26px 22px 22px;
+  box-shadow:var(--lift-1);transition:box-shadow .4s var(--ease),border-color .3s}
+.figure:hover{box-shadow:var(--lift-3)}
+.figure .v{font-family:var(--display);font-size:clamp(40px,4.4vw,60px);font-weight:800;letter-spacing:-.045em;
+  line-height:1;color:var(--ember);
+  font-variant-numeric:tabular-nums;padding-bottom:4px}
+.figure .k{margin-top:12px;font-size:15px;color:var(--paper-ink-2);line-height:1.45}
+
+/* sections */
+.band{padding:clamp(72px,10vw,128px) 0 0}
+.band-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:8px 64px;
+  align-items:end;margin-bottom:48px}
+.band-head .kicker{grid-column:1/-1}
+.band-head .intro{margin:0}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.service{position:relative;padding:28px 24px 26px;border-radius:var(--r);
+  background:var(--surface);border:1px solid var(--line);box-shadow:var(--lift-1);
+  transition:box-shadow .4s var(--ease),border-color .3s}
+.service:hover{border-color:rgba(255,123,71,.45);box-shadow:var(--lift-3)}
+.badge{width:48px;height:48px;border-radius:10px;display:grid;place-items:center;
+  color:var(--ember);border:1px solid rgba(255,123,71,.35);background:rgba(255,123,71,.07);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 8px 18px -8px rgba(2,3,12,.85);
+  transition:background-color .3s,border-color .3s}
+.service:hover .badge{background:rgba(255,123,71,.1);border-color:rgba(255,123,71,.65)}
+.badge .ico{width:26px;height:26px}
+.service h3{font-size:23px;line-height:1.15;margin:22px 0 12px}
+.service p{color:var(--ink-2);font-size:15.5px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 0;padding:0;list-style:none}
+.tags li{font-size:12.5px;font-weight:600;color:var(--ink-2);background:transparent;
+  border:1px solid var(--line);border-radius:6px;padding:4px 10px}
+
+/* work */
+.work{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.work-card{border-radius:var(--r-lg);overflow:hidden;background:var(--surface);border:1px solid var(--line);
+  display:flex;flex-direction:column;box-shadow:var(--lift-2);
+  transition:box-shadow .4s var(--ease),border-color .3s}
+.work-card:hover{border-color:var(--line-hi);box-shadow:var(--lift-3)}
+.cover{position:relative;height:150px;display:flex;align-items:flex-end;justify-content:space-between;
+  padding:20px 24px;overflow:hidden}
+.tone-ember .cover{background:#A9502C}
+.tone-violet .cover{background:#3F3790}
+.tone-cyan .cover{background:#1D6479}
+.tone-pink .cover{background:#8C2C55}
+.cover-ico{position:absolute;right:18px;top:14px;width:96px;height:96px;color:rgba(255,255,255,.9);
+  stroke-width:1.1;transition:transform .8s var(--ease)}
+.work-card:hover .cover-ico{transform:scale(1.07) rotate(-5deg)}
+.cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;
+  transition:transform .8s var(--ease)}
+.work-card:hover .cover-img{transform:scale(1.04)}
+.pill{position:relative;font-size:12.5px;font-weight:700;color:#fff;background:rgba(10,12,24,.35);
+  border:1px solid rgba(255,255,255,.35);border-radius:6px;padding:5px 11px}
+.work-card .body{padding:26px 26px 26px;display:flex;flex-direction:column;flex:1}
+.work-card .who{font-size:15px;font-weight:700;color:var(--ember);margin:0 0 8px}
+.work-card h3{font-size:clamp(23px,2.2vw,28px);line-height:1.15;margin-bottom:12px}
+.work-card p{color:var(--ink-2);font-size:15.5px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:8px 0 4px}
+.tile{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;
+  box-shadow:var(--lift-1)}
+.tile .v{display:block;font-family:var(--display);font-size:30px;font-weight:800;letter-spacing:-.04em;
+  line-height:1.05;color:var(--ink);font-variant-numeric:tabular-nums}
+.tone-ember .tile .v{color:var(--ember-hi)}
+.tone-violet .tile .v{color:#A897FF}
+.tone-cyan .tile .v{color:var(--cyan)}
+.tone-pink .tile .v{color:#FF7FAE}
+.tile .k{display:block;font-size:13px;color:var(--ink-2);line-height:1.4;margin-top:6px}
+.work-card .tags{margin-top:auto;padding-top:18px}
+.work-card:last-child:nth-child(odd){grid-column:1/-1}
+.note{font-size:14px;color:var(--ink-3);margin-top:24px;max-width:80ch}
+.note a{color:var(--ember);border-bottom:1px solid rgba(255,123,71,.4)}
+
+/* systems / platform */
+.platform{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:40px 56px;
+  align-items:center;padding:clamp(32px,5vw,56px);border-radius:var(--r-lg);margin-bottom:20px;
+  background:var(--surface);box-shadow:var(--lift-2);
+  border:1px solid var(--line-hi);overflow:hidden}
+.platform .intro{margin:18px 0 22px}
+.checks{list-style:none;margin:0;padding:0}
+.checks li{position:relative;padding:8px 0 8px 34px;color:var(--ink)}
+.checks li::before{content:"";position:absolute;left:0;top:11px;width:20px;height:20px;border-radius:50%;
+  background:var(--ember)}
+.checks li::after{content:"";position:absolute;left:7px;top:15px;width:5px;height:9px;
+  border:solid var(--on-ember);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.diagram-svg{width:100%;height:auto;display:block;overflow:visible}
+.diagram-svg .flow{fill:none;stroke:rgba(79,209,232,.55);stroke-width:1.6;stroke-dasharray:5 7;
+  animation:flow 1.6s linear infinite}
+.diagram-svg .flow.out{stroke:rgba(255,123,71,.6)}
+@keyframes flow{to{stroke-dashoffset:-24}}
+.diagram-svg .node rect{fill:rgba(255,255,255,.06);stroke:rgba(79,209,232,.55)}
+.diagram-svg .outn rect{stroke:rgba(255,123,71,.6)}
+.diagram-svg text{fill:var(--ink);font-family:var(--body);font-size:13.5px;font-weight:600;text-anchor:middle}
+.diagram-svg .hub{fill:var(--ember)}
+.diagram-svg .hub-ring{fill:none;stroke:rgba(255,255,255,.18);stroke-dasharray:2 6}
+.diagram-svg .hub-t{font-family:var(--display);font-size:15px;font-weight:700;fill:var(--on-ember)}
+.diagram-stack{display:none}
+.systems{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.system{display:flex;gap:16px;padding:24px 22px;border-radius:var(--r);background:var(--ground-2);
+  border:1px solid var(--line);box-shadow:var(--lift-1);transition:box-shadow .4s var(--ease),border-color .3s}
+.system:hover{box-shadow:var(--lift-3)}
+.system .ico,.gets .ico{border-radius:12px;color:var(--ember);border:1px solid rgba(255,123,71,.3);
+  background:rgba(255,123,71,.07);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 8px 18px -8px rgba(2,3,12,.85)}
+.system .ico{width:42px;height:42px;padding:9px}
+.system h3{font-size:19px;line-height:1.25;margin:2px 0 8px}
+.system p{color:var(--ink-2);font-size:15px;margin-bottom:10px}
+.system .eg{display:inline-block;font-size:12.5px;font-weight:600;color:var(--cyan);margin:0;
+  background:rgba(79,209,232,.08);border:1px solid rgba(79,209,232,.2);border-radius:999px;padding:4px 11px}
+
+/* process: the line between the steps draws across when it arrives */
+.panel.light .band-head{margin-bottom:40px}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  position:relative}
+.steps::before{content:"";position:absolute;left:28px;right:28px;top:28px;height:2px;
+  background:var(--paper-line);transform-origin:left center}
+.step{position:relative}
+.step .n{position:relative;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;
+  background:var(--paper);color:var(--ember);font-family:var(--display);font-size:20px;font-weight:700;
+  border:1px solid rgba(255,123,71,.45);box-shadow:0 0 0 6px var(--paper)}
+.step h3{font-size:21px;margin:20px 0 8px;color:var(--paper-ink)}
+.step p{font-size:15.5px}
+.panel.light .note{color:var(--paper-ink-2)}
+.panel.light .note a{color:var(--ochre);border-color:rgba(138,100,16,.35)}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px 72px;align-items:start}
+.about .copy{margin-top:24px}
+.about .copy p{font-size:17px;color:var(--ink-2)}
+.about .copy p:first-child{color:var(--ink);font-size:19px}
+.facts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.facts li{padding:20px 18px;border-radius:var(--r);background:var(--surface);border:1px solid var(--line);
+  box-shadow:var(--lift-1);display:flex;flex-direction:column-reverse;justify-content:flex-end;gap:6px}
+.facts .v{font-family:var(--display);font-size:22px;font-weight:700;line-height:1.2;letter-spacing:-.01em}
+.facts li:nth-child(-n+4) .v{font-size:34px;font-weight:800;letter-spacing:-.03em;color:var(--ember)}
+.facts .k{font-size:14px;font-weight:600;color:var(--ink-3)}
+
+/* brand analysis offer */
+.sub-k{font-size:15px;font-weight:600;color:var(--ink-3);margin:0 0 6px}
+.offer{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px 56px;align-items:start}
+.gets{list-style:none;margin:0;padding:0}
+.gets li{display:flex;gap:18px;padding:22px 0;border-top:1px solid var(--line)}
+.gets li:first-child{border-top:0}
+.gets .ico{width:44px;height:44px;padding:10px}
+.gets h3{font-size:21px;line-height:1.2;margin:2px 0 8px}
+.gets p{color:var(--ink-2);font-size:15.5px;margin:0}
+.scorecard{position:relative;padding:24px;border-radius:var(--r-lg);
+  background:var(--surface);border:1px solid var(--line-hi);box-shadow:var(--lift-2)}
+.scorecard .label{font-size:14px;font-weight:600;color:var(--ink-3);margin:0}
+.sc-brand{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:10px 0 14px}
+.sc-brand>span:first-child{font-family:var(--display);font-size:26px;font-weight:700;letter-spacing:-.02em}
+.overall{display:flex;flex-direction:column;align-items:flex-end;font-family:var(--display);font-size:46px;
+  font-weight:800;line-height:.9;color:var(--ember)}
+.overall small{font-family:var(--body);font-size:13px;font-weight:600;color:var(--ink-3);margin-bottom:6px}
+.sc-rows{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+.sc-rows li{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0;
+  border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
+.grade{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:8px;font-family:var(--display);
+  font-size:15px;font-weight:800;color:var(--ground)}
+.g-a{background:#3DDC97}.g-b{background:var(--cyan)}.g-c{background:var(--ember)}.g-d{background:var(--pink)}
+.sc-first{margin-top:16px;padding-top:14px;border-top:1px solid var(--line-hi)}
+.sc-first ol{margin:8px 0 0;padding-left:20px;font-size:14.5px;color:var(--ink)}
+.sc-first li{margin-bottom:4px}
+.sc-note{font-size:12.5px;color:var(--ink-3);margin:12px 0 0}
+/* the free analysis request: the one place on the page that asks for something, so it stands forward */
+.request{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:40px 56px;margin-top:56px;padding:clamp(32px,5vw,64px);border-radius:var(--r-lg);
+  background:#1C1531;border:1px solid rgba(255,123,71,.42);box-shadow:var(--lift-3)}
+.request::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--grad);z-index:2}
+.request>*{position:relative;z-index:1}
+.how{list-style:none;margin:10px 0 0;padding:0}
+.how li{display:flex;gap:16px;padding:16px 0}
+.how .n{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:transparent;
+  font-family:var(--display);font-size:17px;font-weight:700;color:var(--ember);border:1px solid rgba(255,123,71,.45)}
+.how h3{font-size:19px;margin:6px 0 6px}
+.how p{color:var(--ink-2);font-size:15.5px;margin:0}
+.lead-form{position:relative;overflow:hidden;padding:32px;border-radius:var(--r);background:var(--paper-2);
+  color:var(--paper-ink);border:1px solid var(--paper-line);box-shadow:var(--lift-3),0 0 0 1px rgba(255,123,71,.4)}
+.lead-form::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--grad)}
+.lead-form h3{font-size:26px;letter-spacing:-.02em;color:var(--paper-ink)}
+.lead-form > h3{font-size:clamp(26px,2.6vw,32px)}
+.lead-form .lede{color:var(--paper-ink-2);font-size:15px;margin:8px 0 18px}
+.lead-form label{display:block;font-size:13.5px;font-weight:700;color:var(--paper-ink);margin-bottom:14px}
+.lead-form .opt{font-weight:500;color:var(--paper-ink-2)}
+.lead-form input{display:block;width:100%;margin-top:6px;padding:13px 14px;font:inherit;font-size:16px;font-weight:500;
+  color:var(--paper-ink);background:var(--ground);border:1px solid var(--line-hi);border-radius:10px;
+  transition:border-color .15s}
+.lead-form input:focus{border-color:var(--ember);outline:2px solid var(--ember);outline-offset:2px}
+.lead-form input::placeholder{color:var(--ink-3)}
+.lead-form .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.lead-form button{width:100%;justify-content:center;margin-top:6px;cursor:pointer;padding:17px 24px;font-size:16px}
+.lead-form button:disabled{opacity:.6;cursor:wait}
+.lead-form .fine{font-size:12.5px;color:var(--paper-ink-2);margin:14px 0 0}
+.lead-form .fine a,.lead-form .err a{color:var(--ember);border-bottom:1px solid rgba(255,123,71,.35)}
+.lead-form .err{display:none;font-size:14px;color:#FF8FA8;margin:12px 0 0}
+.lead-form.failed .err{display:block}
+.lead-form .ok{display:none;text-align:center;padding:24px 0 8px}
+.lead-form .ok p{color:var(--paper-ink-2);margin:10px 0 0}
+.lead-form .tick{display:block;width:56px;height:56px;margin:0 auto 16px;border-radius:50%;background:var(--grad);position:relative}
+.lead-form .tick::after{content:"";position:absolute;left:21px;top:14px;width:11px;height:20px;
+  border:solid var(--on-ember);border-width:0 3px 3px 0;transform:rotate(45deg)}
+.lead-form.sent,.lead-form.mailed{display:flex;align-items:center;justify-content:center}
+.lead-form.sent>:not(.is-sent),.lead-form.mailed>:not(.is-mailed){display:none}
+.lead-form.sent .is-sent,.lead-form.mailed .is-mailed{display:block}
+.lead-form .is-mailed a{color:var(--ember);border-bottom:1px solid rgba(255,123,71,.35)}
+
+/* contact panel: navy type on the gradient */
+.cta-wrap{padding:clamp(72px,10vw,128px) 0 clamp(56px,7vw,88px)}
+.cta{position:relative;overflow:hidden;border-radius:var(--r-lg);padding:clamp(40px,7vw,88px);
+  background:var(--grad);background-size:200% 200%;animation:drift 18s ease-in-out infinite alternate;
+  color:var(--on-ember);text-align:center}
+@keyframes drift{from{background-position:0% 30%}to{background-position:100% 70%}}
+.cta h2,.cta p,.cta .actions{position:relative;z-index:1}
+.cta h2{font-size:clamp(36px,5vw,64px);line-height:1.02;font-weight:700;letter-spacing:-.035em;
+  max-width:16ch;margin:0 auto}
+.cta h2 em{color:inherit}
+.cta p{font-size:19px;max-width:54ch;margin:22px auto 34px;color:var(--on-ember)}
+.cta .actions{justify-content:center}
+.cta .btn{border-color:rgba(10,12,24,.55);color:var(--on-ember)}
+.cta .btn:hover{background:rgba(10,12,24,.08);border-color:var(--on-ember)}
+.cta .btn.primary{background:var(--ground);border-color:var(--ground);color:var(--ink)}
+.cta :focus-visible{outline-color:var(--ground)}
+
+/* long-form pages (privacy, app) */
+.doc{position:relative;padding:clamp(56px,8vw,96px) 0 clamp(64px,8vw,96px);overflow:hidden}
+.doc .wrap{position:relative;z-index:1;max-width:1040px}
+.doc header{margin-bottom:36px}
+.doc h1{font-size:clamp(42px,6vw,76px);line-height:1;font-weight:800;letter-spacing:-.035em}
+.doc .lede{font-size:19px;color:var(--ink-2);max-width:62ch;margin:20px 0 0}
+.doc .date{font-size:15px;font-weight:600;color:var(--ink-3);margin-top:18px}
+.doc-panel section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.5fr);gap:10px 48px;
+  padding:28px 0;border-top:1px solid var(--paper-line)}
+.doc-panel section:first-child{border-top:0;padding-top:0}
+.doc-panel section:last-child{padding-bottom:0}
+.doc-panel h2{font-size:19px;font-weight:700;line-height:1.3;letter-spacing:-.01em}
+.doc-panel .body{max-width:70ch}
+.doc-panel .body p,.doc-panel .body li{color:var(--paper-ink-2)}
+.doc-panel .body strong{color:var(--paper-ink)}
+.doc-panel .body a{color:var(--ember);border-bottom:1px solid rgba(255,123,71,.35)}
+.doc-panel .body ul{margin:0 0 14px;padding-left:20px}
+.doc-panel .body li{margin-bottom:7px}
+
+/* footer */
+.foot{border-top:1px solid var(--line);background:var(--ground-2);padding:56px 0 28px;font-size:15px}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,1fr));gap:32px 40px}
+.foot .about-col p{color:var(--ink-2);max-width:40ch;margin:16px 0 14px}
+.foot .mail{color:var(--ember);font-weight:700}
+.foot .h{font-size:15px;font-weight:600;color:var(--ink-3);
+  margin:6px 0 14px}
+.foot ul{list-style:none;margin:0;padding:0}
+.foot li{margin-bottom:9px}
+.foot .col a:not(.brand):not(.mail){color:var(--ink-2)}
+.foot .col a:hover{color:var(--ink)}
+.foot-line{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-3)}
+
+/* motion (Charles, 11/08/2026). Start states apply only under .m, which the head script sets when JavaScript
+   runs and reduced motion is off; motion.js reveals them as they scroll into view. The hero never waits on the
+   script: its parts rise by CSS alone. */
+@keyframes rise{from{opacity:0;transform:translateY(26px)}}
+@keyframes arrive{from{opacity:0;transform:translateX(34px)}}
+@keyframes hold{0%,99%{opacity:0}}
+.m .hero h1:not([data-hl]):not(.hl-done),.m .doc h1:not([data-hl]):not(.hl-done){animation:hold 1.3s linear}
+.m .hero-copy>:not(h1){animation:rise .9s var(--ease) both}
+.m .hero-copy>.sub{animation-delay:.12s}
+.m .hero-copy>.actions{animation-delay:.24s}
+.m .hero-copy>.meta{animation-delay:.36s}
+.m .hero-card{animation:arrive 1s var(--ease) .2s both}
+.m .hero-card li{animation:rise .8s var(--ease) both}
+.m .hero-card li:nth-child(1){animation-delay:.35s}
+.m .hero-card li:nth-child(2){animation-delay:.45s}
+.m .hero-card li:nth-child(3){animation-delay:.55s}
+.m .hero-card li:nth-child(4){animation-delay:.65s}
+.m [data-rv]{opacity:0;transform:translateY(26px)}
+.m [data-rv].in{opacity:1;transform:none;transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.ln{display:block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em}
+.m [data-hl] .li{display:inline-block;transform:translateY(112%)}
+.m [data-hl].in .li{transform:none;transition:transform 1.05s var(--ease)}
+.m .steps::before{transform:scaleX(0)}
+.m .steps.in::before{transform:scaleX(1);transition:transform 1.6s var(--ease) .25s}
+/* work-card colour blocks wipe in from the bottom as the card arrives */
+.m .work-card[data-rv] .cover{clip-path:inset(100% 0 0 0)}
+.m .work-card[data-rv].in .cover{clip-path:inset(0 0 0 0);transition:clip-path 1.2s var(--ease) .15s}
+/* pointer tilt with a light that follows the cursor (motion.js adds .tilt on mouse and trackpad devices).
+   The transform applies only while the pointer is on the card, so the scroll reveal is the same on every device. */
+.tilt.tilting:not(.hero-stack){transform:perspective(1100px) rotateX(var(--ty,0deg)) rotateY(var(--tx,0deg));
+  background-image:radial-gradient(420px circle at var(--lx) var(--ly),rgba(255,255,255,.06),transparent 60%)}
+.tilt.tilting{transition:transform .15s ease-out,box-shadow .4s var(--ease)!important}
+/* looping animations rest while off screen */
+.cta.still,.diagram-svg.still .flow{animation-play-state:paused}
+/* Lenis (smooth scroll): its recommended base rules */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .diagram-svg .flow,.cta{animation:none}
+  .btn,.btn.primary,.service,.work-card,.system,.figure,.badge,.cover-ico,.cover-img,.hero-stack,.top{transition:none}
+}
+@media print{
+  .m [data-rv],.m [data-hl] .li,.m .hero-copy>*,.m .doc h1,.m .hero-card,.m .hero-card li{opacity:1;transform:none;animation:none}
+  .m .work-card .cover{clip-path:none}
+  .top,.skip{position:static}
+}
+
+/* narrow screens */
+@media (max-width:1100px){
+  .services{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .figures{grid-template-columns:repeat(2,1fr)}
+  .platform{grid-template-columns:1fr}
+  .systems{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .offer,.request{grid-template-columns:1fr}
+}
+@media (max-width:900px){
+  .top nav[aria-label="Main"]{display:none}
+  .menu{display:block}
+  .menu[open] nav{display:flex}
+  .hero-grid,.band-head,.about,.doc-panel section,.foot-grid{grid-template-columns:1fr}
+  .hero-stack{transform:none}
+  .hero-stack::before{transform:translate(10px,12px)}
+  .hero-stack::after{transform:translate(20px,24px)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .foot .about-col{grid-column:1/-1}
+  .work,.systems{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr;gap:28px 16px}
+  .steps::before{display:none}
+  .diagram-svg{display:none}
+  .diagram-stack{display:flex;flex-direction:column;align-items:center;gap:14px}
+  .diagram-stack ul{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0;padding:0;list-style:none}
+  .diagram-stack li{font-size:13.5px;font-weight:600;padding:6px 13px;border-radius:999px;
+    border:1px solid rgba(79,209,232,.55);background:rgba(255,255,255,.05)}
+  .diagram-stack .outs li{border-color:rgba(255,123,71,.6)}
+  .diagram-stack .hub-chip{font-family:var(--display);font-weight:700;padding:16px 24px;border-radius:999px;
+    background:var(--grad);color:var(--on-ember);position:relative}
+  .diagram-stack .hub-chip::before,.diagram-stack .hub-chip::after{content:"";position:absolute;left:50%;
+    width:2px;height:14px;background:var(--line-hi)}
+  .diagram-stack .hub-chip::before{top:-14px}
+  .diagram-stack .hub-chip::after{bottom:-14px}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .services,.figures,.steps,.facts{grid-template-columns:1fr}
+  .top .btn.small{display:none}
+  .hero-card{padding:20px 20px 6px}
+  .hero-card li{grid-template-columns:118px 1fr;gap:12px}
+  .hero-card .v{font-size:32px}
+  .cover{height:120px}
+  .cover-ico{width:76px;height:76px}
+  .work-card .body{padding:22px 20px}
+  .panel{padding:28px 20px}
+  .platform{padding:28px 20px}
+  .cta{padding:44px 22px}
+  .request{padding:24px 18px}
+  .lead-form{padding:22px 18px}
+  .sc-rows{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+}
+
+/* ---------------------------------------------------------------- access guide (google-access.html) */
+.access{padding-bottom:clamp(72px,10vw,128px)}
+.access .wrap{max-width:1480px}
+.g-email{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin:36px 0 28px;padding:18px 22px;
+  background:var(--surface);border:1px solid var(--line-hi);border-radius:var(--r);box-shadow:var(--lift-1)}
+.g-label{color:var(--ink-2);font-size:15px}
+.g-email code{font-family:var(--display);font-size:clamp(18px,2.4vw,24px);font-weight:650;color:var(--ink);
+  overflow-wrap:anywhere}
+.g-email .g-copy{margin-left:auto}
+.g-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.g-tabs button{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;cursor:pointer;
+  background:var(--surface);color:var(--ink-2);border:1px solid var(--line);font:600 15px var(--body)}
+.g-tabs button .ico{width:18px;height:18px}
+.g-tabs button[aria-selected=true]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.g-panel{background:var(--paper);border:1px solid var(--paper-line);border-radius:var(--r-lg);padding:clamp(18px,3vw,32px);
+  box-shadow:var(--lift-2)}
+.g-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;margin:0 0 20px}
+.g-head h3{font-size:clamp(22px,3vw,28px)}
+.g-meta{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0;color:var(--ink-2);font-size:14px}
+.g-meta strong{color:var(--ink)}
+.g-meta a{color:var(--ember-hi)}
+.g-body{display:grid;grid-template-columns:1fr;gap:20px}
+.g-player{margin:0}
+.g-screen{position:relative;border-radius:10px;overflow:hidden;background:#fff;border:1px solid var(--line-hi)}
+.g-stage{position:relative;transition:transform .8s var(--ease)}
+.g-screen img{display:block;width:100%;height:auto}
+.g-ring{position:absolute;border:3px solid var(--ember);border-radius:8px;pointer-events:none;
+  box-shadow:0 0 0 4000px rgba(10,12,24,.16);transition:left .7s var(--ease),top .7s var(--ease),width .7s var(--ease),height .7s var(--ease)}
+.g-ring.click{animation:g-pulse 1.4s var(--ease) infinite}
+@keyframes g-pulse{0%{outline:0 solid rgba(255,123,71,.55);outline-offset:0}70%{outline:10px solid rgba(255,123,71,0);outline-offset:4px}100%{outline:0 solid rgba(255,123,71,0)}}
+.g-pointer{position:absolute;width:clamp(18px,2.4vw,28px);height:auto;transform:translate(-17%,-8%);pointer-events:none;
+  fill:#0A0C18;stroke:#fff;stroke-width:1.6;stroke-linejoin:round;filter:drop-shadow(0 2px 3px rgba(0,0,0,.35));
+  transition:left .7s var(--ease),top .7s var(--ease)}
+.g-pointer.press{transform:translate(-17%,-8%) scale(.8);transition:left .7s var(--ease),top .7s var(--ease),transform .12s ease-out}
+.g-click{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;pointer-events:none;
+  border:3px solid var(--ember);background:rgba(255,123,71,.25);opacity:0;transform:scale(.2)}
+.g-click.go{animation:g-tap .65s var(--ease) forwards}
+@keyframes g-tap{0%{opacity:.95;transform:scale(.2)}100%{opacity:0;transform:scale(1.5)}}
+.g-tag{position:absolute;transform:translate(0,calc(-100% - 6px));padding:3px 10px;border-radius:6px;pointer-events:none;
+  background:var(--ember);color:var(--on-ember);font:700 13px var(--display);white-space:nowrap;box-shadow:var(--lift-1)}
+.g-tag[hidden]{display:none}
+.g-end{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  padding:24px;text-align:center;background:radial-gradient(120% 90% at 50% 0%,var(--surface-2) 0%,var(--ground) 70%);
+  color:var(--ink);opacity:0;transition:opacity .5s var(--ease)}
+.g-end[hidden]{display:none}
+.g-end.on{opacity:1}
+.g-end img{width:clamp(48px,7vw,84px);height:auto}
+.g-end-mark{font:700 clamp(22px,3vw,34px) var(--display);letter-spacing:-.02em}
+.g-end-mark .w2{font-weight:400;color:var(--ink-2)}
+.g-end-title{margin:6px 0 0;font:650 clamp(20px,2.6vw,30px) var(--display);color:var(--ember)}
+.g-end-text{margin:0;color:var(--ink-2);font-size:clamp(14px,1.6vw,17px)}
+.g-end.on img{animation:g-pop .6s var(--ease) both}
+@keyframes g-pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
+.g-controls{display:flex;align-items:center;gap:8px;margin-top:12px}
+.g-controls button{min-width:44px;height:40px;padding:0 14px;border-radius:10px;cursor:pointer;background:var(--surface);
+  color:var(--ink);border:1px solid var(--line-hi);font:600 15px var(--body)}
+.g-controls button span{font-size:22px;line-height:1}
+.g-count{margin-left:auto;color:var(--ink-2);font-size:14px}
+.g-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px}
+.g-steps button{display:flex;gap:12px;width:100%;text-align:left;padding:12px 14px;border-radius:10px;cursor:pointer;
+  background:transparent;color:var(--ink-2);border:1px solid transparent;font:400 16px/1.45 var(--body)}
+.g-steps button .n{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;
+  background:var(--surface-2);color:var(--ink);font:700 13px var(--display)}
+.g-steps button.on{background:var(--surface);color:var(--ink);border-color:var(--line-hi)}
+.g-steps button.on .n{background:var(--ember);color:var(--on-ember)}
+.g-steps strong{color:var(--ink)}
+.g-note{margin:20px 0 0;padding:14px 16px;border-radius:10px;background:var(--surface);color:var(--ink-2);font-size:15px}
+@media (max-width:600px){.g-email .g-copy{margin-left:0}.g-tabs button{padding:9px 13px;font-size:14px}}
+@media (prefers-reduced-motion:reduce){.g-ring,.g-pointer,.g-stage,.g-end{transition:none}.g-end.on img{animation:none}.g-ring.click,.g-click.go{animation:none}}
+
+</style>
+
+</head><body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4Q24P4C" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap"><a class="brand" href="index.html" aria-label="HyporDigital home"><img src="icon.svg" alt="" width="34" height="34"><span>Hypor<span class="w2">Digital</span></span></a><nav aria-label="Main"><a href="index.html#services">Services</a><a href="index.html#work">Work</a><a href="index.html#analysis">Free analysis</a><a href="index.html#systems">Systems</a><a href="index.html#about">About</a></nav><div class="top-right"><a class="btn primary small" href="mailto:service@hypordigital.com?subject=New%20project">Start a project<span class="arrow" aria-hidden="true">→</span></a><details class="menu"><summary aria-label="Menu"><span></span><span></span><span></span></summary><nav aria-label="Mobile"><a href="index.html#services">Services</a><a href="index.html#work">Work</a><a href="index.html#analysis">Free analysis</a><a href="index.html#systems">Systems</a><a href="index.html#about">About</a><a href="mailto:service@hypordigital.com?subject=New%20project">Start a project</a></nav></details></div></div></header>
+<main id="main" tabindex="-1"><section class="band access" id="guide"><div class="wrap"><div class="band-head"><p class="kicker">Getting started with HyporDigital</p><h2>Get set up in a few minutes</h2><p class="intro">We use your data to better understand your business, find opportunities and give you clear insights. For each service we asked about, add the email below with the access level shown, or accept our request in Google Ads. You stay the owner, and you can remove us at any time.</p></div><div class="g-email"><span class="g-label">The email to add</span><code>service@hypordigital.com</code><button type="button" class="btn primary small g-copy" data-copy="service@hypordigital.com">Copy</button></div><div class="g-tabs" role="tablist" aria-label="Google services"><button role="tab" id="tab-search-console" aria-controls="p-search-console" aria-selected="true" data-for="search-console"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><span>Search Console</span></button><button role="tab" id="tab-analytics" aria-controls="p-analytics" aria-selected="false" data-for="analytics"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-7"/><path d="M16 7h4v4"/></svg><span>Google Analytics</span></button><button role="tab" id="tab-merchant" aria-controls="p-merchant" aria-selected="false" data-for="merchant"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h16l-1.5-5h-13zM5 9v11h14V9"/><path d="M10 20v-6h4v6"/></svg><span>Merchant Center</span></button><button role="tab" id="tab-ads" aria-controls="p-ads" aria-selected="false" data-for="ads"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18V9m6 9V5m6 13v-6m4 6H2"/></svg><span>Google Ads</span></button></div><div class="g-panel" role="tabpanel" id="p-search-console" aria-labelledby="tab-search-console" data-steps="[{&quot;img&quot;: &quot;guides/google-access/sc-1-overview.webp&quot;, &quot;box&quot;: [&quot;0.638%&quot;, &quot;87.097%&quot;, &quot;13.712%&quot;, &quot;4.570%&quot;], &quot;at&quot;: [&quot;7.494%&quot;, &quot;89.382%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/sc-2-settings.webp&quot;, &quot;box&quot;: [&quot;54.719%&quot;, &quot;29.032%&quot;, &quot;45.281%&quot;, &quot;6.989%&quot;], &quot;at&quot;: [&quot;60.204%&quot;, &quot;32.392%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/sc-3-users.webp&quot;, &quot;box&quot;: [&quot;56.059%&quot;, &quot;30.914%&quot;, &quot;6.186%&quot;, &quot;4.570%&quot;], &quot;at&quot;: [&quot;59.152%&quot;, &quot;33.199%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/sc-4-add-user.webp&quot;, &quot;box&quot;: [&quot;34.885%&quot;, &quot;45.161%&quot;, &quot;30.230%&quot;, &quot;3.495%&quot;], &quot;at&quot;: [&quot;39.541%&quot;, &quot;46.909%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/sc-5-permission.webp&quot;, &quot;box&quot;: [&quot;34.949%&quot;, &quot;75.134%&quot;, &quot;30.102%&quot;, &quot;4.032%&quot;], &quot;at&quot;: [&quot;36.671%&quot;, &quot;77.151%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/sc-4-add-user.webp&quot;, &quot;box&quot;: [&quot;62.755%&quot;, &quot;62.903%&quot;, &quot;2.934%&quot;, &quot;3.226%&quot;], &quot;at&quot;: [&quot;64.222%&quot;, &quot;64.516%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}]"><div class="g-head"><h3>Search Console</h3><p class="g-meta"><span>Access level: <strong>Full</strong></span><span>About 2 minutes</span><a href="https://support.google.com/webmasters/answer/7687615" rel="noopener" target="_blank">Google's help page</a></p></div><div class="g-body"><figure class="g-player"><div class="g-screen"><div class="g-stage"><img src="guides/google-access/sc-1-overview.webp" alt="" width="1568" height="744" loading="eager"><span class="g-ring" aria-hidden="true"></span><span class="g-click" aria-hidden="true"></span><span class="g-tag" aria-hidden="true" hidden></span><svg class="g-pointer" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2l15 10-7 1.5L8.5 21z"/></svg></div><div class="g-end" hidden><img src="icon.svg" alt="" width="72" height="72"><span class="g-end-mark">Hypor<span class="w2">Digital</span></span><p class="g-end-title">Thank you!</p><p class="g-end-text">You're all set. We'll take it from here.</p></div></div><figcaption class="g-controls"><button type="button" class="g-prev" aria-label="Previous step"><span aria-hidden="true">‹</span></button><button type="button" class="g-play" aria-label="Pause">Pause</button><button type="button" class="g-next" aria-label="Next step"><span aria-hidden="true">›</span></button><span class="g-count" aria-live="polite">Step 1 of 6</span></figcaption></figure><ol class="g-steps"><li><button type="button" data-step="0"><span class="n">1</span><span>Open <strong>Google Search Console</strong> and pick your website at the top left. Then click <strong>Settings</strong> at the bottom of the left menu.</span></button></li><li><button type="button" data-step="1"><span class="n">2</span><span>Click <strong>Users and permissions</strong>.</span></button></li><li><button type="button" data-step="2"><span class="n">3</span><span>Click <strong>Add user</strong>.</span></button></li><li><button type="button" data-step="3"><span class="n">4</span><span>Paste <strong>service@hypordigital.com</strong> into the email box.</span></button></li><li><button type="button" data-step="4"><span class="n">5</span><span>Under <strong>Permission</strong>, choose <strong>Full</strong>.</span></button></li><li><button type="button" data-step="5"><span class="n">6</span><span>Click <strong>Add</strong>. That's it.</span></button></li></ol></div></div><div class="g-panel" role="tabpanel" id="p-analytics" aria-labelledby="tab-analytics" hidden data-steps="[{&quot;img&quot;: &quot;guides/google-access/ga-1-home.webp&quot;, &quot;box&quot;: [&quot;0.510%&quot;, &quot;92.742%&quot;, &quot;2.168%&quot;, &quot;4.570%&quot;], &quot;at&quot;: [&quot;1.594%&quot;, &quot;95.027%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/ga-2-admin.webp&quot;, &quot;box&quot;: [&quot;20.663%&quot;, &quot;67.742%&quot;, &quot;21.046%&quot;, &quot;4.301%&quot;], &quot;at&quot;: [&quot;25.510%&quot;, &quot;69.892%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/ga-3-access.webp&quot;, &quot;box&quot;: [&quot;94.324%&quot;, &quot;1.344%&quot;, &quot;2.168%&quot;, &quot;4.570%&quot;], &quot;at&quot;: [&quot;95.408%&quot;, &quot;3.629%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/ga-4-add-menu.webp&quot;, &quot;box&quot;: [&quot;86.862%&quot;, &quot;9.677%&quot;, &quot;8.163%&quot;, &quot;4.570%&quot;], &quot;at&quot;: [&quot;90.944%&quot;, &quot;11.962%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/ga-5-viewer.webp&quot;, &quot;box&quot;: [&quot;14.923%&quot;, &quot;17.608%&quot;, &quot;69.324%&quot;, &quot;4.570%&quot;], &quot;at&quot;: [&quot;21.046%&quot;, &quot;19.892%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/ga-5-viewer.webp&quot;, &quot;box&quot;: [&quot;15.051%&quot;, &quot;77.957%&quot;, &quot;26.786%&quot;, &quot;6.989%&quot;], &quot;at&quot;: [&quot;16.008%&quot;, &quot;81.048%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/ga-5-viewer.webp&quot;, &quot;box&quot;: [&quot;91.518%&quot;, &quot;1.747%&quot;, &quot;4.145%&quot;, &quot;3.763%&quot;], &quot;at&quot;: [&quot;93.591%&quot;, &quot;3.629%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}]"><div class="g-head"><h3>Google Analytics</h3><p class="g-meta"><span>Access level: <strong>Viewer</strong></span><span>About 2 minutes</span><a href="https://support.google.com/analytics/answer/9305587" rel="noopener" target="_blank">Google's help page</a></p></div><div class="g-body"><figure class="g-player"><div class="g-screen"><div class="g-stage"><img src="guides/google-access/ga-1-home.webp" alt="" width="1568" height="744" loading="lazy"><span class="g-ring" aria-hidden="true"></span><span class="g-click" aria-hidden="true"></span><span class="g-tag" aria-hidden="true" hidden></span><svg class="g-pointer" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2l15 10-7 1.5L8.5 21z"/></svg></div><div class="g-end" hidden><img src="icon.svg" alt="" width="72" height="72"><span class="g-end-mark">Hypor<span class="w2">Digital</span></span><p class="g-end-title">Thank you!</p><p class="g-end-text">You're all set. We'll take it from here.</p></div></div><figcaption class="g-controls"><button type="button" class="g-prev" aria-label="Previous step"><span aria-hidden="true">‹</span></button><button type="button" class="g-play" aria-label="Pause">Pause</button><button type="button" class="g-next" aria-label="Next step"><span aria-hidden="true">›</span></button><span class="g-count" aria-live="polite">Step 1 of 7</span></figcaption></figure><ol class="g-steps"><li><button type="button" data-step="0"><span class="n">1</span><span>Open <strong>Google Analytics</strong> and pick your website's property at the top. Click <strong>Admin</strong>, the gear at the bottom left.</span></button></li><li><button type="button" data-step="1"><span class="n">2</span><span>Under Property settings, click <strong>Property access management</strong>.</span></button></li><li><button type="button" data-step="2"><span class="n">3</span><span>Click the blue <strong>+</strong> at the top right.</span></button></li><li><button type="button" data-step="3"><span class="n">4</span><span>Choose <strong>Add users</strong>.</span></button></li><li><button type="button" data-step="4"><span class="n">5</span><span>Paste <strong>service@hypordigital.com</strong> into Email addresses.</span></button></li><li><button type="button" data-step="5"><span class="n">6</span><span>Choose <strong>Viewer</strong>. Further down, leave <strong>No Cost Metrics</strong> and <strong>No Revenue Metrics</strong> unticked, so your reports are complete.</span></button></li><li><button type="button" data-step="6"><span class="n">7</span><span>Click <strong>Add</strong> at the top right.</span></button></li></ol></div></div><div class="g-panel" role="tabpanel" id="p-merchant" aria-labelledby="tab-merchant" hidden data-steps="[{&quot;img&quot;: &quot;guides/google-access/mc-1-menu.webp&quot;, &quot;box&quot;: [&quot;0.638%&quot;, &quot;45.699%&quot;, &quot;12.755%&quot;, &quot;4.839%&quot;], &quot;at&quot;: [&quot;7.015%&quot;, &quot;48.118%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/mc-1-menu.webp&quot;, &quot;box&quot;: [&quot;0.638%&quot;, &quot;71.237%&quot;, &quot;12.755%&quot;, &quot;4.839%&quot;], &quot;at&quot;: [&quot;7.015%&quot;, &quot;73.656%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/mc-2-people.webp&quot;, &quot;box&quot;: [&quot;29.847%&quot;, &quot;32.796%&quot;, &quot;6.824%&quot;, &quot;4.167%&quot;], &quot;at&quot;: [&quot;33.259%&quot;, &quot;34.879%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/mc-3-email.webp&quot;, &quot;box&quot;: [&quot;34.949%&quot;, &quot;48.118%&quot;, &quot;21.811%&quot;, &quot;5.376%&quot;], &quot;at&quot;: [&quot;39.541%&quot;, &quot;50.806%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/mc-3-email.webp&quot;, &quot;box&quot;: [&quot;63.010%&quot;, &quot;59.812%&quot;, &quot;2.551%&quot;, &quot;3.226%&quot;], &quot;at&quot;: [&quot;64.286%&quot;, &quot;61.425%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/mc-4-access.webp&quot;, &quot;box&quot;: [&quot;36.352%&quot;, &quot;37.903%&quot;, &quot;6.378%&quot;, &quot;3.763%&quot;], &quot;at&quot;: [&quot;37.309%&quot;, &quot;39.785%&quot;], &quot;zoom&quot;: 1.8, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/mc-4-access.webp&quot;, &quot;box&quot;: [&quot;36.352%&quot;, &quot;48.118%&quot;, &quot;11.480%&quot;, &quot;3.763%&quot;], &quot;at&quot;: [&quot;37.309%&quot;, &quot;49.866%&quot;], &quot;zoom&quot;: 1.8, &quot;label&quot;: &quot;&quot;}]"><div class="g-head"><h3>Merchant Center</h3><p class="g-meta"><span>Access level: <strong>Read only, plus Performance and insights</strong></span><span>About 2 minutes</span><a href="https://support.google.com/merchants/answer/12160472" rel="noopener" target="_blank">Google's help page</a></p></div><div class="g-body"><figure class="g-player"><div class="g-screen"><div class="g-stage"><img src="guides/google-access/mc-1-menu.webp" alt="" width="1568" height="744" loading="lazy"><span class="g-ring" aria-hidden="true"></span><span class="g-click" aria-hidden="true"></span><span class="g-tag" aria-hidden="true" hidden></span><svg class="g-pointer" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2l15 10-7 1.5L8.5 21z"/></svg></div><div class="g-end" hidden><img src="icon.svg" alt="" width="72" height="72"><span class="g-end-mark">Hypor<span class="w2">Digital</span></span><p class="g-end-title">Thank you!</p><p class="g-end-text">You're all set. We'll take it from here.</p></div></div><figcaption class="g-controls"><button type="button" class="g-prev" aria-label="Previous step"><span aria-hidden="true">‹</span></button><button type="button" class="g-play" aria-label="Pause">Pause</button><button type="button" class="g-next" aria-label="Next step"><span aria-hidden="true">›</span></button><span class="g-count" aria-live="polite">Step 1 of 7</span></figcaption></figure><ol class="g-steps"><li><button type="button" data-step="0"><span class="n">1</span><span>Open <strong>Google Merchant Center</strong>. Click <strong>Settings</strong> in the left menu.</span></button></li><li><button type="button" data-step="1"><span class="n">2</span><span>Click <strong>Access and services</strong>.</span></button></li><li><button type="button" data-step="2"><span class="n">3</span><span>Under People, click <strong>Add person</strong>.</span></button></li><li><button type="button" data-step="3"><span class="n">4</span><span>Paste <strong>service@hypordigital.com</strong>.</span></button></li><li><button type="button" data-step="4"><span class="n">5</span><span>Click <strong>Next</strong>.</span></button></li><li><button type="button" data-step="5"><span class="n">6</span><span>Tick the <strong>Read-only</strong> box.</span></button></li><li><button type="button" data-step="6"><span class="n">7</span><span>Also tick the <strong>Performance and insights</strong> box. Leave every other box empty, then click the button at the bottom to send the invitation.</span></button></li></ol></div><p class="g-note">Google emails us an invitation. We accept it on our side, so there's nothing more for you to do.</p></div><div class="g-panel" role="tabpanel" id="p-ads" aria-labelledby="tab-ads" hidden data-steps="[{&quot;img&quot;: &quot;guides/google-access/ads-1-overview.webp&quot;, &quot;box&quot;: [&quot;0.765%&quot;, &quot;52.957%&quot;, &quot;2.934%&quot;, &quot;5.914%&quot;], &quot;at&quot;: [&quot;2.232%&quot;, &quot;55.914%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/ads-2-admin.webp&quot;, &quot;box&quot;: [&quot;5.102%&quot;, &quot;56.183%&quot;, &quot;13.265%&quot;, &quot;4.570%&quot;], &quot;at&quot;: [&quot;11.735%&quot;, &quot;58.468%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/ads-3-access.webp&quot;, &quot;box&quot;: [&quot;29.974%&quot;, &quot;15.054%&quot;, &quot;4.847%&quot;, &quot;4.301%&quot;], &quot;at&quot;: [&quot;32.398%&quot;, &quot;17.204%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/ads-4-managers.webp&quot;, &quot;box&quot;: [&quot;22.513%&quot;, &quot;30.914%&quot;, &quot;76.849%&quot;, &quot;4.839%&quot;], &quot;at&quot;: [&quot;25.510%&quot;, &quot;33.333%&quot;], &quot;zoom&quot;: 1, &quot;label&quot;: &quot;&quot;}, {&quot;img&quot;: &quot;guides/google-access/ads-4-managers.webp&quot;, &quot;box&quot;: [&quot;83.036%&quot;, &quot;31.720%&quot;, &quot;3.189%&quot;, &quot;3.226%&quot;], &quot;at&quot;: [&quot;84.630%&quot;, &quot;33.333%&quot;], &quot;zoom&quot;: 1.5, &quot;label&quot;: &quot;&quot;}]"><div class="g-head"><h3>Google Ads</h3><p class="g-meta"><span>Access level: <strong>Manager link (our account 356-499-6229)</strong></span><span>About 1 minute</span><a href="https://support.google.com/google-ads/answer/7459601" rel="noopener" target="_blank">Google's help page</a></p></div><div class="g-body"><figure class="g-player"><div class="g-screen"><div class="g-stage"><img src="guides/google-access/ads-1-overview.webp" alt="" width="1568" height="744" loading="lazy"><span class="g-ring" aria-hidden="true"></span><span class="g-click" aria-hidden="true"></span><span class="g-tag" aria-hidden="true" hidden></span><svg class="g-pointer" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2l15 10-7 1.5L8.5 21z"/></svg></div><div class="g-end" hidden><img src="icon.svg" alt="" width="72" height="72"><span class="g-end-mark">Hypor<span class="w2">Digital</span></span><p class="g-end-title">Thank you!</p><p class="g-end-text">You're all set. We'll take it from here.</p></div></div><figcaption class="g-controls"><button type="button" class="g-prev" aria-label="Previous step"><span aria-hidden="true">‹</span></button><button type="button" class="g-play" aria-label="Pause">Pause</button><button type="button" class="g-next" aria-label="Next step"><span aria-hidden="true">›</span></button><span class="g-count" aria-live="polite">Step 1 of 5</span></figcaption></figure><ol class="g-steps"><li><button type="button" data-step="0"><span class="n">1</span><span>Open <strong>Google Ads</strong>. Click <strong>Admin</strong>, the gear in the left bar.</span></button></li><li><button type="button" data-step="1"><span class="n">2</span><span>Click <strong>Access and security</strong>.</span></button></li><li><button type="button" data-step="2"><span class="n">3</span><span>Open the <strong>Managers</strong> tab.</span></button></li><li><button type="button" data-step="3"><span class="n">4</span><span>Under <strong>Link request</strong>, find the request from <strong>HyporDigital (356-499-6229)</strong>. Only accept a request from that account number.</span></button></li><li><button type="button" data-step="4"><span class="n">5</span><span>Click <strong>Accept</strong>. That's it.</span></button></li></ol></div><p class="g-note">Only accept a request from <strong>HyporDigital, account 356-499-6229</strong>. We send it from our manager account first, and Google also emails your account's admins about it. If your account requires a second admin to approve changes, Google asks them too.</p></div></div></section><script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.access').forEach(function(root){
+    var tabs = root.querySelectorAll('[role=tab]');
+    var players = {};
+    function player(panel){
+      var steps = JSON.parse(panel.dataset.steps), i = 0, timer = null, playing = !reduce;
+      var img = panel.querySelector('.g-screen img'), ring = panel.querySelector('.g-ring'),
+          ptr = panel.querySelector('.g-pointer'), clk = panel.querySelector('.g-click'),
+          stage = panel.querySelector('.g-stage'), tag = panel.querySelector('.g-tag'),
+          count = panel.querySelector('.g-count'), end = panel.querySelector('.g-end'),
+          N = steps.length + 1,
+          play = panel.querySelector('.g-play'), items = panel.querySelectorAll('.g-steps button');
+      steps.forEach(function(s){ var p = new Image(); p.src = s.img; });
+      function show(n){
+        i = (n + N) % N;
+        if (i === steps.length) {                       // the end card: logo and thanks
+          end.hidden = false; void end.offsetWidth; end.classList.add('on');
+          ring.classList.remove('click'); clk.classList.remove('go');
+          items.forEach(function(b){ b.classList.remove('on'); b.setAttribute('aria-current', 'false'); });
+          count.textContent = 'All done';
+          return;
+        }
+        end.classList.remove('on'); end.hidden = true;
+        var s = steps[i];
+        if (img.getAttribute('src') !== s.img) img.src = s.img;
+        ring.classList.remove('click');
+        ring.style.left = s.box[0]; ring.style.top = s.box[1]; ring.style.width = s.box[2]; ring.style.height = s.box[3];
+        ptr.style.left = s.at[0]; ptr.style.top = s.at[1];
+        clk.style.left = s.at[0]; clk.style.top = s.at[1];
+        tag.hidden = !s.label; tag.textContent = s.label || '';
+        tag.style.left = s.box[0]; tag.style.top = s.box[1];
+        stage.style.transformOrigin = s.at[0] + ' ' + s.at[1];
+        stage.style.transform = s.zoom > 1 ? 'scale(' + s.zoom + ')' : '';
+        ptr.classList.remove('press'); clk.classList.remove('go');
+        setTimeout(function(){
+          ring.classList.add('click');
+          if (reduce) return;
+          void clk.offsetWidth; ptr.classList.add('press'); clk.classList.add('go');
+          setTimeout(function(){ ptr.classList.remove('press'); }, 260);
+        }, reduce ? 0 : 800);
+        items.forEach(function(b, k){ b.classList.toggle('on', k === i); b.setAttribute('aria-current', k === i ? 'step' : 'false'); });
+        count.textContent = 'Step ' + (i + 1) + ' of ' + steps.length;
+      }
+      function tick(){ clearTimeout(timer); if (playing) timer = setTimeout(function(){ show(i + 1); tick(); },
+                                                                          i === steps.length ? 4200 : 3600); }
+      function setPlay(on){ playing = on; play.textContent = on ? 'Pause' : 'Play'; play.setAttribute('aria-label', on ? 'Pause' : 'Play'); tick(); }
+      panel.querySelector('.g-next').onclick = function(){ setPlay(false); show(i + 1); };
+      panel.querySelector('.g-prev').onclick = function(){ setPlay(false); show(i - 1); };
+      play.onclick = function(){ setPlay(!playing); };
+      items.forEach(function(b){ b.onclick = function(){ setPlay(false); show(+b.dataset.step); }; });
+      show(0); setPlay(playing);
+      return {stop: function(){ setPlay(false); }, start: function(){ show(0); setPlay(!reduce); }};
+    }
+    function select(id, focus){
+      tabs.forEach(function(t){
+        var on = t.dataset.for === id, panel = root.querySelector('#p-' + t.dataset.for);
+        t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; panel.hidden = !on;
+        if (on) { players[id] = players[id] || player(panel); players[id].start(); if (focus) t.focus(); }
+        else if (players[t.dataset.for]) players[t.dataset.for].stop();
+      });
+    }
+    tabs.forEach(function(t, k){
+      t.onclick = function(){ select(t.dataset.for); history.replaceState(null, '', '#' + t.dataset.for); };
+      t.onkeydown = function(e){
+        var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (d) { e.preventDefault(); select(tabs[(k + d + tabs.length) % tabs.length].dataset.for, true); }
+      };
+    });
+    var want = location.hash.slice(1);
+    select(Array.prototype.some.call(tabs, function(t){ return t.dataset.for === want; }) ? want : tabs[0].dataset.for);
+    var copy = root.querySelector('.g-copy');
+    if (copy) copy.onclick = function(){
+      navigator.clipboard.writeText(copy.dataset.copy).then(function(){
+        copy.textContent = 'Copied'; setTimeout(function(){ copy.textContent = 'Copy'; }, 2000); });
+    };
+  });
+})();
+</script></main>
+<footer class="foot"><div class="wrap"><div class="foot-grid"><div class="col about-col"><a class="brand" href="index.html"><img src="icon.svg" alt="" width="34" height="34"><span>Hypor<span class="w2">Digital</span></span></a><p>An ecommerce growth agency for brands that sell online. Paid media, marketplaces, websites and the systems that connect them.</p><a class="mail" href="mailto:service@hypordigital.com">service@hypordigital.com</a></div><div class="col"><p class="h">Services</p><ul><li><a href="index.html#services">Paid media & marketplaces</a></li><li><a href="index.html#services">Websites & ecommerce</a></li><li><a href="index.html#systems">Systems & automation</a></li><li><a href="index.html#services">Brand & content</a></li></ul></div><div class="col"><p class="h">Company</p><ul><li><a href="index.html#work">Our work</a></li><li><a href="index.html#process">How we work</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#contact">Contact</a></li></ul></div><div class="col"><p class="h">More</p><ul><li><a href="privacy.html">Privacy policy</a></li><li><a href="keyword-research.html">Keyword Research app</a></li><li><a href="https://www.linkedin.com/in/charles-sadler" rel="noopener" target="_blank">LinkedIn</a></li></ul></div></div><div class="foot-line"><span>© 2026 HyporDigital · Lake Bluff, Illinois · Serving brands across the US</span></div></div></footer>
+<script>
+(function(){
+var d=document,root=d.documentElement;
+if(!root.classList.contains('m'))return;
+window.__hdm=1;
+if(!('IntersectionObserver' in window)){root.classList.remove('m');return;}
+function $(s,c){return [].slice.call((c||d).querySelectorAll(s));}
+var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+/* Headings: split into the lines they actually wrap to, each rising through its own mask, then put back. */
+function lines(h){
+  var orig=h.innerHTML,words=[];
+  (function walk(n,wrap){[].slice.call(n.childNodes).forEach(function(c){
+    if(c.nodeType===3){c.textContent.split(/\s+/).forEach(function(t){if(!t)return;
+      var s=d.createElement('span');s.textContent=t;s.style.display='inline-block';var node=s;
+      if(wrap){node=wrap.cloneNode(false);node.appendChild(s);}words.push({node:node,s:s});});}
+    else if(c.nodeType===1&&c.tagName!=='BR'){walk(c,c);}
+  });})(h,null);
+  if(!words.length)return;
+  h.textContent='';
+  words.forEach(function(w,i){h.appendChild(w.node);if(i<words.length-1)h.appendChild(d.createTextNode(' '));});
+  /* a word starts a new row only when it sits half a line lower: words inside an <em> with its own line-height
+     measure a few pixels off on the same line */
+  var rows=[],top=null,half=parseFloat(getComputedStyle(h).fontSize)/2;
+  words.forEach(function(w){var t=w.s.offsetTop;if(top===null||Math.abs(t-top)>half){rows.push([]);top=t;}
+    rows[rows.length-1].push(w.node);});
+  h.textContent='';
+  rows.forEach(function(r,i){var m=d.createElement('span');m.className='ln';var l=d.createElement('span');
+    l.className='li';l.style.transitionDelay=(i*120)+'ms';
+    r.forEach(function(n,j){l.appendChild(n);if(j<r.length-1)l.appendChild(d.createTextNode(' '));});
+    m.appendChild(l);h.appendChild(m);});
+  h.setAttribute('data-hl','');
+  h._done=function(){setTimeout(function(){h.innerHTML=orig;h.classList.add('hl-done');h.removeAttribute('data-hl');},rows.length*120+1200);};
+}
+
+/* The Results panel's figures count up to exactly the text the page shows. */
+function count(el){
+  var t=el.textContent.trim(),m=t.match(/^(\D*?)(\d[\d,]*(?:\.\d+)?)(.*)$/);
+  if(!m)return;
+  var pre=m[1],raw=m[2],suf=m[3],end=parseFloat(raw.replace(/,/g,'')),dec=(raw.split('.')[1]||'').length,
+      fmt={minimumFractionDigits:dec,maximumFractionDigits:dec,useGrouping:raw.indexOf(',')>-1},t0=null;
+  el.style.minWidth=el.getBoundingClientRect().width+'px';
+  el.textContent=pre+(0).toLocaleString('en-US',fmt)+suf;
+  function step(ts){if(t0===null)t0=ts;var p=Math.min(1,(ts-t0)/1400),e=1-Math.pow(1-p,3);
+    el.textContent=p<1?pre+(end*e).toLocaleString('en-US',fmt)+suf:t;
+    if(p<1)requestAnimationFrame(step);}
+  requestAnimationFrame(step);
+}
+
+var io=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;
+  var el=en.target;io.unobserve(el);el.classList.add('in');
+  if(el.hasAttribute('data-rv'))setTimeout(function(){el.style.transitionDelay='';},1600);
+  if(el._done)el._done();
+  if(el.hasAttribute('data-ct'))setTimeout(function(){count(el);},150);
+});},{rootMargin:'0px 0px -8% 0px',threshold:.12});
+function watch(el){io.observe(el);}
+
+/* Headings split once the web fonts are in, so line breaks are measured in the real face. The first-screen heading
+   waits at most a second (site.css holds it for 1.3s on its own, so it never depends on this script); the hero's
+   other parts rise by CSS alone. */
+function fontsIn(ms){return d.fonts&&d.fonts.ready?Promise.race([d.fonts.ready,new Promise(function(r){setTimeout(r,ms);})]):Promise.resolve();}
+var first=$('.hero h1,.doc h1');
+fontsIn(1000).then(function(){first.forEach(function(h){lines(h);if(h.hasAttribute('data-hl'))watch(h);else h.classList.add('hl-done');});});
+var heads=$('.band-head h2,.panel-head h2,.platform h2,.about h2,.cta h2,.offer h2');
+fontsIn(2500).then(function(){heads.forEach(function(h){if(h.getBoundingClientRect().top<innerHeight*.9){return;}lines(h);watch(h);});});
+
+/* Cards and steps rise as they arrive; running copy, kickers, notes and the footer simply sit there
+   (Charles, 11/08/2026: the architect's signature set). */
+var groups=['.figure','.service','.work-card','.system','.step','.facts li','.gets li','.scorecard','.how li',
+  '.lead-form','.doc-panel section'];
+var seen=[];
+groups.forEach(function(sel){$(sel).forEach(function(el){
+  if(seen.indexOf(el)>-1||el.closest('.hero')||el.closest('h1,h2'))return;seen.push(el);
+  var sib=el.parentNode?[].slice.call(el.parentNode.children).filter(function(x){return x.matches(sel);}):[];
+  el.style.transitionDelay=Math.min(sib.indexOf(el),6)*90+'ms';el.setAttribute('data-rv','');watch(el);});});
+$('.steps').forEach(watch);
+$('.figure .v').forEach(function(el){
+  if(/\d/.test(el.textContent)){el.setAttribute('data-ct','');watch(el);}});
+
+var top=d.querySelector('.top');
+if(top){var on=function(){top.classList.toggle('scrolled',scrollY>8);};on();addEventListener('scroll',on,{passive:true});}
+
+/* Animations that would otherwise run forever stop while they're off screen. */
+var loop=new IntersectionObserver(function(es){es.forEach(function(en){
+  en.target.classList.toggle('still',!en.isIntersecting);});});
+$('.diagram-svg,.cta,.marquee').forEach(function(el){el.classList.add('still');loop.observe(el);});
+
+/* Depth on pointer: cards tilt toward the cursor in 3D and a soft light follows it (mouse and trackpad only). */
+if(fine){
+  $('.hero-stack,.work-card').forEach(function(el){
+    var max=el.classList.contains('hero-stack')?9:6;el.classList.add('tilt');
+    el.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect(),
+      x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      el.style.setProperty('--tx',(x*max).toFixed(2)+'deg');el.style.setProperty('--ty',(-y*max).toFixed(2)+'deg');
+      el.style.setProperty('--lx',((x+.5)*100).toFixed(1)+'%');el.style.setProperty('--ly',((y+.5)*100).toFixed(1)+'%');
+      el.classList.add('tilting');});
+    el.addEventListener('pointerleave',function(){['--tx','--ty','--lx','--ly'].forEach(function(p){
+      el.style.removeProperty(p);});el.classList.remove('tilting');});
+  });
+
+  /* Parallax: a slight drift through the translate property, so it adds to any transform. All reads, then all
+     writes, once per frame. Mouse and trackpad only. */
+  var par=$('.hero-card,.cover-ico,.diagram-svg').map(function(el){
+    return {el:el,y:0,k:el.classList.contains('cover-ico')?.12:el.classList.contains('hero-card')?.05:.04};});
+  var queued=false;
+  var drift=function(){queued=false;var vh=innerHeight,rs=par.map(function(p){return p.el.getBoundingClientRect();});
+    par.forEach(function(p,i){var r=rs[i];if(r.bottom<-300||r.top>vh+300)return;
+      var c=(r.top-p.y)+r.height/2-vh/2;p.y=-c*p.k;p.el.style.translate='0 '+p.y.toFixed(1)+'px';});};
+  var ask=function(){if(!queued){queued=true;requestAnimationFrame(drift);}};
+  drift();addEventListener('scroll',ask,{passive:true});addEventListener('resize',ask);
+}
+
+/* Smooth, inertial scrolling (Lenis, after spykercars.com), loaded after everything above so nothing waits on it.
+   Anchor links still land under the header. */
+var ls=d.createElement('script');
+ls.src='https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js';
+ls.integrity='sha384-B2WBjDzEjJpYvhmi2UyEn7rektqkf5suS6sNoyyrf0EBAwBHdkiXxIlU0V5Ru2ed';
+ls.crossOrigin='anonymous';
+ls.onload=function(){
+  if(!window.Lenis)return;
+  var lenis=new Lenis({lerp:.09});root.style.scrollBehavior='auto';
+  var raf=function(t){lenis.raf(t);requestAnimationFrame(raf);};requestAnimationFrame(raf);
+  var here=function(p){return p.replace(/index\.html$/,'');};
+  d.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="#"]');if(!a)return;
+    if(a.origin!==location.origin||here(a.pathname)!==here(location.pathname))return;
+    var id=a.hash;if(id.length<2)return;var tg=d.getElementById(id.slice(1));if(!tg)return;
+    e.preventDefault();lenis.scrollTo(tg,{offset:-88});history.pushState(null,'',id);
+    if(id==='#main')tg.focus({preventScroll:true});
+    var m=a.closest('details');if(m)m.removeAttribute('open');});
+};
+d.head.appendChild(ls);
+})();
+</script>
+</body></html>

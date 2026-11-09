@@ -1,0 +1,154 @@
+# The page brand owners follow to give HyporDigital access to their Google accounts.
+# Every request email links here, straight to a service with #search-console, #analytics, #merchant or #ads.
+# Screenshots: work\website\google-access-guide\ (frames.yaml says what's blurred; scripts\make_frames.py builds them).
+# Each step: image, box (the thing to click, [x, y, width, height] in the screenshot's 1568 x 744 pixels; measured
+# from the page itself when it was captured), optional at (where the pointer lands; the box's centre otherwise),
+# optional zoom (magnify around it), optional label (a callout naming a button) and text.
+# Edit any text, then: python build_site.py
+
+file: google-access.html
+title: Get set up with HyporDigital | HyporDigital
+description: >-
+  A short, animated walkthrough for connecting HyporDigital to your Google Search Console, Google Analytics,
+  Merchant Center and Google Ads.
+
+blocks:
+- access_guide:
+    id: guide
+    kicker: Getting started with HyporDigital
+    title: Get set up in a few minutes
+    intro: >-
+      We use your data to better understand your business, find opportunities and give you clear insights. For
+      each service we asked about, add the email below with the access level shown, or accept our request in
+      Google Ads. You stay the owner, and you can remove us at any time.
+    email: service@hypordigital.com
+    thanks:                       # the card after each walkthrough's last step, with the logo
+      title: Thank you!
+      text: You're all set. We'll take it from here.
+    size: [1568, 744]
+    services:
+
+    - id: search-console
+      name: Search Console
+      icon: search
+      level: Full
+      minutes: 2
+      help: https://support.google.com/webmasters/answer/7687615
+      steps:
+      - image: guides/google-access/sc-1-overview.webp
+        box: [10, 648, 215, 34]
+        text: Open <strong>Google Search Console</strong> and pick your website at the top left. Then click <strong>Settings</strong> at the bottom of the left menu.
+      - image: guides/google-access/sc-2-settings.webp
+        box: [858, 216, 710, 52]
+        at: [944, 241]
+        text: Click <strong>Users and permissions</strong>.
+      - image: guides/google-access/sc-3-users.webp
+        box: [879, 230, 97, 34]
+        text: Click <strong>Add user</strong>.
+      - image: guides/google-access/sc-4-add-user.webp
+        box: [547, 336, 474, 26]
+        at: [620, 349]
+        text: Paste <strong>service@hypordigital.com</strong> into the email box.
+      - image: guides/google-access/sc-5-permission.webp
+        box: [548, 559, 472, 30]
+        at: [575, 574]
+        text: Under <strong>Permission</strong>, choose <strong>Full</strong>.
+      - image: guides/google-access/sc-4-add-user.webp
+        box: [984, 468, 46, 24]
+        text: Click <strong>Add</strong>. That's it.
+
+    - id: analytics
+      name: Google Analytics
+      icon: chart
+      level: Viewer
+      minutes: 2
+      help: https://support.google.com/analytics/answer/9305587
+      steps:
+      - image: guides/google-access/ga-1-home.webp
+        box: [8, 690, 34, 34]
+        text: Open <strong>Google Analytics</strong> and pick your website's property at the top. Click <strong>Admin</strong>, the gear at the bottom left.
+      - image: guides/google-access/ga-2-admin.webp
+        box: [324, 504, 330, 32]
+        at: [400, 520]
+        text: Under Property settings, click <strong>Property access management</strong>.
+      - image: guides/google-access/ga-3-access.webp
+        box: [1479, 10, 34, 34]
+        text: Click the blue <strong>+</strong> at the top right.
+      - image: guides/google-access/ga-4-add-menu.webp
+        box: [1362, 72, 128, 34]
+        text: Choose <strong>Add users</strong>.
+      - image: guides/google-access/ga-5-viewer.webp
+        box: [234, 131, 1087, 34]
+        at: [330, 148]
+        text: Paste <strong>service@hypordigital.com</strong> into Email addresses.
+      - image: guides/google-access/ga-5-viewer.webp
+        box: [236, 580, 420, 52]
+        at: [251, 603]
+        text: Choose <strong>Viewer</strong>. Further down, leave <strong>No Cost Metrics</strong> and <strong>No Revenue Metrics</strong> unticked, so your reports are complete.
+      - image: guides/google-access/ga-5-viewer.webp
+        box: [1435, 13, 65, 28]
+        text: Click <strong>Add</strong> at the top right.
+
+    - id: merchant
+      name: Merchant Center
+      icon: store
+      level: Read only, plus Performance and insights
+      minutes: 2
+      help: https://support.google.com/merchants/answer/12160472
+      note: Google emails us an invitation. We accept it on our side, so there's nothing more for you to do.
+      steps:
+      - image: guides/google-access/mc-1-menu.webp
+        box: [10, 340, 200, 36]
+        text: Open <strong>Google Merchant Center</strong>. Click <strong>Settings</strong> in the left menu.
+      - image: guides/google-access/mc-1-menu.webp
+        box: [10, 530, 200, 36]
+        text: Click <strong>Access and services</strong>.
+      - image: guides/google-access/mc-2-people.webp
+        box: [468, 244, 107, 31]
+        text: Under People, click <strong>Add person</strong>.
+      - image: guides/google-access/mc-3-email.webp
+        box: [548, 358, 342, 40]
+        at: [620, 378]
+        text: Paste <strong>service@hypordigital.com</strong>.
+      - image: guides/google-access/mc-3-email.webp
+        box: [988, 445, 40, 24]
+        text: Click <strong>Next</strong>.
+      - image: guides/google-access/mc-4-access.webp
+        box: [570, 282, 100, 28]
+        at: [585, 296]
+        zoom: 1.8
+        text: Tick the <strong>Read-only</strong> box.
+      - image: guides/google-access/mc-4-access.webp
+        box: [570, 358, 180, 28]
+        at: [585, 371]
+        zoom: 1.8
+        text: Also tick the <strong>Performance and insights</strong> box. Leave every other box empty, then click the button at the bottom to send the invitation.
+
+    - id: ads
+      name: Google Ads
+      icon: ads
+      level: Manager link (our account 356-499-6229)
+      minutes: 1
+      help: https://support.google.com/google-ads/answer/7459601
+      note: >-
+        Only accept a request from <strong>HyporDigital, account 356-499-6229</strong>. We send it from our manager
+        account first, and Google also emails your account's admins about it. If your account requires a second admin
+        to approve changes, Google asks them too.
+      steps:
+      - image: guides/google-access/ads-1-overview.webp
+        box: [12, 394, 46, 44]
+        text: Open <strong>Google Ads</strong>. Click <strong>Admin</strong>, the gear in the left bar.
+      - image: guides/google-access/ads-2-admin.webp
+        box: [80, 418, 208, 34]
+        text: Click <strong>Access and security</strong>.
+      - image: guides/google-access/ads-3-access.webp
+        box: [470, 112, 76, 32]
+        text: Open the <strong>Managers</strong> tab.
+      - image: guides/google-access/ads-4-managers.webp
+        box: [353, 230, 1205, 36]
+        at: [400, 248]
+        text: Under <strong>Link request</strong>, find the request from <strong>HyporDigital (356-499-6229)</strong>. Only accept a request from that account number.
+      - image: guides/google-access/ads-4-managers.webp
+        box: [1302, 236, 50, 24]
+        zoom: 1.5
+        text: Click <strong>Accept</strong>. That's it.

@@ -379,9 +379,149 @@ def cta(b, site):
             f'<p>{b["text"]}</p>{buttons(b.get("actions"))}</div></div></section>')
 
 
+def access_guide(b, site):
+    """Animated how-to over real screenshots: one tab per Google service, a pointer that moves to each click and a
+    ring around it, a ripple when it clicks, the step list under it, and a thank-you card with the logo after the last
+    step (`thanks:`). A step can zoom in on its target (zoom: 2). Screenshot coordinates are in the capture's own pixels (`size`) and turn
+    into percentages here, so the overlay stays on target at any width."""
+    W, H = b.get("size", [1568, 778])
+    pct = lambda v, d: f"{v / d * 100:.3f}%"  # noqa: E731
+    email = escape(b["email"])
+    th = b.get("thanks") or {}
+    w1, w2 = site.get("wordmark", [site["name"], ""])
+    end_card = (f'<div class="g-end" hidden><img src="{a(site.get("icon", site["logo"]))}" alt="" width="72" height="72">'
+                f'<span class="g-end-mark">{escape(w1)}<span class="w2">{escape(w2)}</span></span>'
+                f'<p class="g-end-title">{th.get("title", "Thank you")}</p>'
+                + (f'<p class="g-end-text">{th["text"]}</p>' if th.get("text") else "") + '</div>')
+    tabs, panels = [], []
+    for n, s in enumerate(b["services"]):
+        sid = a(s["id"])
+        sel = "true" if n == 0 else "false"
+        tabs.append(f'<button role="tab" id="tab-{sid}" aria-controls="p-{sid}" aria-selected="{sel}" '
+                    f'data-for="{sid}">{icon(s.get("icon"))}<span>{escape(s["name"])}</span></button>')
+        steps_data, items = [], []
+        for i, st in enumerate(s["steps"], 1):
+            x, y, w, h = st["box"]
+            px, py = st.get("at", [x + w / 2, y + h / 2])
+            steps_data.append({"img": st["image"], "box": [pct(x, W), pct(y, H), pct(w, W), pct(h, H)],
+                               "at": [pct(px, W), pct(py, H)], "zoom": st.get("zoom", 1),
+                               "label": st.get("label", "")})
+            items.append(f'<li><button type="button" data-step="{i - 1}"><span class="n">{i}</span>'
+                         f'<span>{st["text"]}</span></button></li>')
+        first = s["steps"][0]
+        note = f'<p class="g-note">{s["note"]}</p>' if s.get("note") else ""
+        panels.append(
+            f'<div class="g-panel" role="tabpanel" id="p-{sid}" aria-labelledby="tab-{sid}"'
+            f'{"" if n == 0 else " hidden"} data-steps="{a(json.dumps(steps_data))}">'
+            f'<div class="g-head"><h3>{escape(s["name"])}</h3>'
+            f'<p class="g-meta"><span>Access level: <strong>{escape(s["level"])}</strong></span>'
+            f'<span>About {escape(str(s["minutes"]))} minute{"" if str(s["minutes"]) == "1" else "s"}</span>'
+            + (f'<a href="{a(s["help"])}" rel="noopener" target="_blank">Google\'s help page</a>' if s.get("help") else "")
+            + f'</p></div>'
+            f'<div class="g-body"><figure class="g-player">'
+            f'<div class="g-screen"><div class="g-stage"><img src="{a(first["image"])}" alt="" width="1568" height="{round(1568 * H / W)}" '
+            f'loading="{"eager" if n == 0 else "lazy"}">'
+            f'<span class="g-ring" aria-hidden="true"></span><span class="g-click" aria-hidden="true"></span><span class="g-tag" aria-hidden="true" hidden></span>'
+            f'<svg class="g-pointer" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2l15 10-7 1.5L8.5 21z"/></svg>'
+            f'</div>{end_card}</div>'
+            f'<figcaption class="g-controls"><button type="button" class="g-prev" aria-label="Previous step">'
+            f'<span aria-hidden="true">‹</span></button>'
+            f'<button type="button" class="g-play" aria-label="Pause">Pause</button>'
+            f'<button type="button" class="g-next" aria-label="Next step"><span aria-hidden="true">›</span></button>'
+            f'<span class="g-count" aria-live="polite">Step 1 of {len(s["steps"])}</span></figcaption></figure>'
+            f'<ol class="g-steps">{"".join(items)}</ol></div>{note}</div>')
+    copy = (f'<div class="g-email"><span class="g-label">The email to add</span><code>{email}</code>'
+            f'<button type="button" class="btn primary small g-copy" data-copy="{a(b["email"])}">Copy</button></div>')
+    return (f'<section class="band access"{head_of(b)}><div class="wrap">{band_head(b)}{copy}'
+            f'<div class="g-tabs" role="tablist" aria-label="Google services">{"".join(tabs)}</div>'
+            f'{"".join(panels)}</div></section>{GUIDE_JS}')
+
+
+GUIDE_JS = """<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.access').forEach(function(root){
+    var tabs = root.querySelectorAll('[role=tab]');
+    var players = {};
+    function player(panel){
+      var steps = JSON.parse(panel.dataset.steps), i = 0, timer = null, playing = !reduce;
+      var img = panel.querySelector('.g-screen img'), ring = panel.querySelector('.g-ring'),
+          ptr = panel.querySelector('.g-pointer'), clk = panel.querySelector('.g-click'),
+          stage = panel.querySelector('.g-stage'), tag = panel.querySelector('.g-tag'),
+          count = panel.querySelector('.g-count'), end = panel.querySelector('.g-end'),
+          N = steps.length + 1,
+          play = panel.querySelector('.g-play'), items = panel.querySelectorAll('.g-steps button');
+      steps.forEach(function(s){ var p = new Image(); p.src = s.img; });
+      function show(n){
+        i = (n + N) % N;
+        if (i === steps.length) {                       // the end card: logo and thanks
+          end.hidden = false; void end.offsetWidth; end.classList.add('on');
+          ring.classList.remove('click'); clk.classList.remove('go');
+          items.forEach(function(b){ b.classList.remove('on'); b.setAttribute('aria-current', 'false'); });
+          count.textContent = 'All done';
+          return;
+        }
+        end.classList.remove('on'); end.hidden = true;
+        var s = steps[i];
+        if (img.getAttribute('src') !== s.img) img.src = s.img;
+        ring.classList.remove('click');
+        ring.style.left = s.box[0]; ring.style.top = s.box[1]; ring.style.width = s.box[2]; ring.style.height = s.box[3];
+        ptr.style.left = s.at[0]; ptr.style.top = s.at[1];
+        clk.style.left = s.at[0]; clk.style.top = s.at[1];
+        tag.hidden = !s.label; tag.textContent = s.label || '';
+        tag.style.left = s.box[0]; tag.style.top = s.box[1];
+        stage.style.transformOrigin = s.at[0] + ' ' + s.at[1];
+        stage.style.transform = s.zoom > 1 ? 'scale(' + s.zoom + ')' : '';
+        ptr.classList.remove('press'); clk.classList.remove('go');
+        setTimeout(function(){
+          ring.classList.add('click');
+          if (reduce) return;
+          void clk.offsetWidth; ptr.classList.add('press'); clk.classList.add('go');
+          setTimeout(function(){ ptr.classList.remove('press'); }, 260);
+        }, reduce ? 0 : 800);
+        items.forEach(function(b, k){ b.classList.toggle('on', k === i); b.setAttribute('aria-current', k === i ? 'step' : 'false'); });
+        count.textContent = 'Step ' + (i + 1) + ' of ' + steps.length;
+      }
+      function tick(){ clearTimeout(timer); if (playing) timer = setTimeout(function(){ show(i + 1); tick(); },
+                                                                          i === steps.length ? 4200 : 3600); }
+      function setPlay(on){ playing = on; play.textContent = on ? 'Pause' : 'Play'; play.setAttribute('aria-label', on ? 'Pause' : 'Play'); tick(); }
+      panel.querySelector('.g-next').onclick = function(){ setPlay(false); show(i + 1); };
+      panel.querySelector('.g-prev').onclick = function(){ setPlay(false); show(i - 1); };
+      play.onclick = function(){ setPlay(!playing); };
+      items.forEach(function(b){ b.onclick = function(){ setPlay(false); show(+b.dataset.step); }; });
+      show(0); setPlay(playing);
+      return {stop: function(){ setPlay(false); }, start: function(){ show(0); setPlay(!reduce); }};
+    }
+    function select(id, focus){
+      tabs.forEach(function(t){
+        var on = t.dataset.for === id, panel = root.querySelector('#p-' + t.dataset.for);
+        t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; panel.hidden = !on;
+        if (on) { players[id] = players[id] || player(panel); players[id].start(); if (focus) t.focus(); }
+        else if (players[t.dataset.for]) players[t.dataset.for].stop();
+      });
+    }
+    tabs.forEach(function(t, k){
+      t.onclick = function(){ select(t.dataset.for); history.replaceState(null, '', '#' + t.dataset.for); };
+      t.onkeydown = function(e){
+        var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (d) { e.preventDefault(); select(tabs[(k + d + tabs.length) % tabs.length].dataset.for, true); }
+      };
+    });
+    var want = location.hash.slice(1);
+    select(Array.prototype.some.call(tabs, function(t){ return t.dataset.for === want; }) ? want : tabs[0].dataset.for);
+    var copy = root.querySelector('.g-copy');
+    if (copy) copy.onclick = function(){
+      navigator.clipboard.writeText(copy.dataset.copy).then(function(){
+        copy.textContent = 'Copied'; setTimeout(function(){ copy.textContent = 'Copy'; }, 2000); });
+    };
+  });
+})();
+</script>"""
+
+
 BLOCKS = {"hero": hero, "logos": logos, "figures": figures, "services": services,
           "work": work, "systems": systems, "cases": cases, "steps": steps, "about": about,
-          "analysis": analysis, "cta": cta}
+          "analysis": analysis, "cta": cta, "access_guide": access_guide}
 
 
 def doc_body(pg) -> str:

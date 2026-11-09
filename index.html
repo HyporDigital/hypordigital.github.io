@@ -562,6 +562,76 @@ html.lenis,html.lenis body{height:auto}
   .foot-grid{grid-template-columns:1fr}
 }
 
+/* ---------------------------------------------------------------- access guide (google-access.html) */
+.access{padding-bottom:clamp(72px,10vw,128px)}
+.access .wrap{max-width:1480px}
+.g-email{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin:36px 0 28px;padding:18px 22px;
+  background:var(--surface);border:1px solid var(--line-hi);border-radius:var(--r);box-shadow:var(--lift-1)}
+.g-label{color:var(--ink-2);font-size:15px}
+.g-email code{font-family:var(--display);font-size:clamp(18px,2.4vw,24px);font-weight:650;color:var(--ink);
+  overflow-wrap:anywhere}
+.g-email .g-copy{margin-left:auto}
+.g-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.g-tabs button{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;cursor:pointer;
+  background:var(--surface);color:var(--ink-2);border:1px solid var(--line);font:600 15px var(--body)}
+.g-tabs button .ico{width:18px;height:18px}
+.g-tabs button[aria-selected=true]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.g-panel{background:var(--paper);border:1px solid var(--paper-line);border-radius:var(--r-lg);padding:clamp(18px,3vw,32px);
+  box-shadow:var(--lift-2)}
+.g-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;margin:0 0 20px}
+.g-head h3{font-size:clamp(22px,3vw,28px)}
+.g-meta{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0;color:var(--ink-2);font-size:14px}
+.g-meta strong{color:var(--ink)}
+.g-meta a{color:var(--ember-hi)}
+.g-body{display:grid;grid-template-columns:1fr;gap:20px}
+.g-player{margin:0}
+.g-screen{position:relative;border-radius:10px;overflow:hidden;background:#fff;border:1px solid var(--line-hi)}
+.g-stage{position:relative;transition:transform .8s var(--ease)}
+.g-screen img{display:block;width:100%;height:auto}
+.g-ring{position:absolute;border:3px solid var(--ember);border-radius:8px;pointer-events:none;
+  box-shadow:0 0 0 4000px rgba(10,12,24,.16);transition:left .7s var(--ease),top .7s var(--ease),width .7s var(--ease),height .7s var(--ease)}
+.g-ring.click{animation:g-pulse 1.4s var(--ease) infinite}
+@keyframes g-pulse{0%{outline:0 solid rgba(255,123,71,.55);outline-offset:0}70%{outline:10px solid rgba(255,123,71,0);outline-offset:4px}100%{outline:0 solid rgba(255,123,71,0)}}
+.g-pointer{position:absolute;width:clamp(18px,2.4vw,28px);height:auto;transform:translate(-17%,-8%);pointer-events:none;
+  fill:#0A0C18;stroke:#fff;stroke-width:1.6;stroke-linejoin:round;filter:drop-shadow(0 2px 3px rgba(0,0,0,.35));
+  transition:left .7s var(--ease),top .7s var(--ease)}
+.g-pointer.press{transform:translate(-17%,-8%) scale(.8);transition:left .7s var(--ease),top .7s var(--ease),transform .12s ease-out}
+.g-click{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;pointer-events:none;
+  border:3px solid var(--ember);background:rgba(255,123,71,.25);opacity:0;transform:scale(.2)}
+.g-click.go{animation:g-tap .65s var(--ease) forwards}
+@keyframes g-tap{0%{opacity:.95;transform:scale(.2)}100%{opacity:0;transform:scale(1.5)}}
+.g-tag{position:absolute;transform:translate(0,calc(-100% - 6px));padding:3px 10px;border-radius:6px;pointer-events:none;
+  background:var(--ember);color:var(--on-ember);font:700 13px var(--display);white-space:nowrap;box-shadow:var(--lift-1)}
+.g-tag[hidden]{display:none}
+.g-end{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  padding:24px;text-align:center;background:radial-gradient(120% 90% at 50% 0%,var(--surface-2) 0%,var(--ground) 70%);
+  color:var(--ink);opacity:0;transition:opacity .5s var(--ease)}
+.g-end[hidden]{display:none}
+.g-end.on{opacity:1}
+.g-end img{width:clamp(48px,7vw,84px);height:auto}
+.g-end-mark{font:700 clamp(22px,3vw,34px) var(--display);letter-spacing:-.02em}
+.g-end-mark .w2{font-weight:400;color:var(--ink-2)}
+.g-end-title{margin:6px 0 0;font:650 clamp(20px,2.6vw,30px) var(--display);color:var(--ember)}
+.g-end-text{margin:0;color:var(--ink-2);font-size:clamp(14px,1.6vw,17px)}
+.g-end.on img{animation:g-pop .6s var(--ease) both}
+@keyframes g-pop{0%{transform:scale(.6);opacity:0}100%{transform:scale(1);opacity:1}}
+.g-controls{display:flex;align-items:center;gap:8px;margin-top:12px}
+.g-controls button{min-width:44px;height:40px;padding:0 14px;border-radius:10px;cursor:pointer;background:var(--surface);
+  color:var(--ink);border:1px solid var(--line-hi);font:600 15px var(--body)}
+.g-controls button span{font-size:22px;line-height:1}
+.g-count{margin-left:auto;color:var(--ink-2);font-size:14px}
+.g-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px}
+.g-steps button{display:flex;gap:12px;width:100%;text-align:left;padding:12px 14px;border-radius:10px;cursor:pointer;
+  background:transparent;color:var(--ink-2);border:1px solid transparent;font:400 16px/1.45 var(--body)}
+.g-steps button .n{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;
+  background:var(--surface-2);color:var(--ink);font:700 13px var(--display)}
+.g-steps button.on{background:var(--surface);color:var(--ink);border-color:var(--line-hi)}
+.g-steps button.on .n{background:var(--ember);color:var(--on-ember)}
+.g-steps strong{color:var(--ink)}
+.g-note{margin:20px 0 0;padding:14px 16px;border-radius:10px;background:var(--surface);color:var(--ink-2);font-size:15px}
+@media (max-width:600px){.g-email .g-copy{margin-left:0}.g-tabs button{padding:9px 13px;font-size:14px}}
+@media (prefers-reduced-motion:reduce){.g-ring,.g-pointer,.g-stage,.g-end{transition:none}.g-end.on img{animation:none}.g-ring.click,.g-click.go{animation:none}}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "HyporDigital", "url": "https://hypordigital.com/", "logo": "https://hypordigital.com/logo.png", "image": "https://hypordigital.com/og.png", "email": "service@hypordigital.com", "description": "HyporDigital grows ecommerce brands with paid media, marketplaces, Shopify websites and connected marketing systems. Based near Chicago, serving the US.", "address": {"@type": "PostalAddress", "addressLocality": "Lake Bluff", "addressRegion": "IL", "addressCountry": "US"}, "areaServed": {"@type": "Country", "name": "United States"}, "founder": {"@type": "Person", "name": "Charles Sadler", "sameAs": ["https://www.linkedin.com/in/charles-sadler"]}, "sameAs": ["https://www.linkedin.com/in/charles-sadler"], "knowsAbout": ["Google Ads management", "Amazon and marketplace advertising", "Paid social advertising", "Shopify and WooCommerce website builds", "Conversion rate optimization", "Ecommerce growth consulting", "Marketing analytics and automation"]}</script>
 </head><body>
