@@ -82,7 +82,7 @@ if(top){var on=function(){top.classList.toggle('scrolled',scrollY>8);};on();addE
 /* Animations that would otherwise run forever stop while they're off screen. */
 var loop=new IntersectionObserver(function(es){es.forEach(function(en){
   en.target.classList.toggle('still',!en.isIntersecting);});});
-$('.diagram-svg,.cta').forEach(function(el){el.classList.add('still');loop.observe(el);});
+$('.diagram-svg,.cta,.marquee').forEach(function(el){el.classList.add('still');loop.observe(el);});
 
 /* Depth on pointer: cards tilt toward the cursor in 3D and a soft light follows it (mouse and trackpad only). */
 if(fine){

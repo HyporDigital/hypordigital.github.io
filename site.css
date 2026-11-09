@@ -151,8 +151,21 @@ main:focus{outline:none}
 .marquee .label{font-size:15px;font-weight:600;color:var(--ink-3);margin-bottom:14px}
 .marquee .track{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
 .marquee ul{display:flex;flex-wrap:wrap;gap:8px 40px;margin:0;padding:0;list-style:none}
+.marquee ul[aria-hidden]{display:none}
 .marquee li{font-family:var(--display);font-size:clamp(19px,2vw,24px);font-weight:500;color:var(--ink-2);
   white-space:nowrap;display:flex;align-items:center}
+/* with motion: one full-width line that drifts left on a loop, fading in and out at the screen edges.
+   It pauses under the pointer and while off screen. */
+.m .marquee .track{max-width:none;padding:0;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.m .marquee .lane{display:flex;width:max-content;animation:marquee 60s linear infinite}
+.m .marquee ul{flex-wrap:nowrap;gap:0}
+.m .marquee ul[aria-hidden]{display:flex}
+.m .marquee li::after{content:"";width:6px;height:6px;margin:0 30px;border-radius:1px;transform:rotate(45deg);
+  background:var(--ember);opacity:.7;flex:none}
+.marquee:hover .lane,.marquee.still .lane{animation-play-state:paused}
+@keyframes marquee{to{transform:translateX(-50%)}}
 
 /* panels (results, process, doc pages) */
 .panel-wrap{padding:clamp(56px,8vw,96px) 0 0}

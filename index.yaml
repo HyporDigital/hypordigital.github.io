@@ -35,14 +35,21 @@ blocks:
 - logos:
     label: Industries we've grown brands in
     names:
-    - Billiards & game tables
-    - Arcade games
+    - Medical Supply
+    - Veterinary
+    - B2B Wholesale
+    - Luxury Billiards
+    - Arcade Games
     - Pickleball
-    - Outdoor games
-    - Sporting goods
-    - Luxury jewelry & watches
-    - Medical & veterinary supply
-    - Outdoor media
+    - Outdoor Games
+    - Sporting Goods
+    - Luxury Jewelry
+    - Luxury Watches
+    - Outdoor Media
+    - Online Gaming
+    - Outdoor Survival
+    - Dental
+    - Sports Teams
 
 - figures:
     kicker: Results

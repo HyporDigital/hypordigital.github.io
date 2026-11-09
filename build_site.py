@@ -149,11 +149,12 @@ def hero(b, site):
 
 
 def logos(b, site):
-    """The strip of industries."""
+    """The strip of industries: one line that scrolls sideways on a loop. The list is printed twice so the loop
+    is seamless; the copy is hidden from screen readers. Without motion it is one wrapped list."""
     names = "".join(f"<li>{escape(n)}</li>" for n in b["names"])
     return (f'<section class="marquee" aria-label="{a(b["label"])}">'
-            f'<p class="label wrap">{b["label"]}</p><div class="track">'
-            f'<ul>{names}</ul></div></section>')
+            f'<p class="label wrap">{b["label"]}</p><div class="track"><div class="lane">'
+            f'<ul>{names}</ul><ul aria-hidden="true">{names}</ul></div></div></section>')
 
 
 def figures(b, site):
