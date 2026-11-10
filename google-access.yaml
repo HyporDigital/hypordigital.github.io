@@ -131,6 +131,8 @@ blocks:
       minutes: 1
       help: https://support.google.com/google-ads/answer/7459601
       note: >-
+        First, send us your 10-digit Google Ads <strong>customer ID</strong>: it's at the top right of Google Ads, next
+        to your account name (it looks like 123-456-7890). We use it to send you our request.
         Only accept a request from <strong>HyporDigital, account 356-499-6229</strong>. We send it from our manager
         account first, and Google also emails your account's admins about it. If your account requires a second admin
         to approve changes, Google asks them too.
