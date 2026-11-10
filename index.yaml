@@ -323,6 +323,12 @@ blocks:
       hidden: {}
       # Google Ads conversion to fire on a request, as AW-ID/label. Blank fires none.
       ads_conversion: ""
+      # The Google Analytics event sent once a request is confirmed stored. generate_lead is Google's own
+      # event for a lead from a form. Blank sends none. Analytics' automatic form_submit never counts this
+      # form, because the page sends the request itself instead of letting the browser submit it.
+      analytics_event: generate_lead
+      # Sent with the event as lead_source, so this form can be told apart from other lead sources later.
+      lead_source: Free analysis form
 
 - systems:
     id: systems

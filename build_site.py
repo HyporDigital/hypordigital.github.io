@@ -318,6 +318,9 @@ document.querySelectorAll('form.lead-form').forEach(function (f) {
       .then(function (j) {
         if (!j || !j.ok) throw j;
         show('sent');
+        /* Analytics drops its automatic form_submit here, because the submit above is canceled. So the lead is
+           reported by hand, and only now that the relay has confirmed it. No brand or email goes with it. */
+        if (window.gtag && f.dataset.event) gtag('event', f.dataset.event, {lead_source: f.dataset.source || undefined});
         if (window.gtag && f.dataset.conversion) gtag('event', 'conversion', {send_to: f.dataset.conversion});
       })
       .catch(function () { f.classList.add('failed'); btn.disabled = false; });
@@ -349,7 +352,8 @@ def analysis(b, site):
     hidden = "".join(f'<input type="hidden" name="{a(k)}" value="{a(v)}">'
                      for k, v in (fm.get("hidden") or {}).items())
     form = (f'<form class="lead-form" data-endpoint="{a(fm.get("endpoint", ""))}" data-to="{a(site["email"])}"'
-            f' data-conversion="{a(fm.get("ads_conversion", ""))}">'
+            f' data-conversion="{a(fm.get("ads_conversion", ""))}"'
+            f' data-event="{a(fm.get("analytics_event", ""))}" data-source="{a(fm.get("lead_source", ""))}">'
             f'<h3>{fm["title"]}</h3><p class="lede">{fm["text"]}</p>{hidden}'
             f'<label>{fm["brand_label"]}<input name="brand" required autocomplete="organization" '
             f'placeholder="{a(fm["brand_hint"])}"></label>'
